@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dewan Perwakilan Mahasiswa FH UNNES</title>
+    <!-- single Tailwind + Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans bg-transparent pt-20">
+
+    <!-- Background image (low opacity, non-interactive) -->
+    <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none">
+        <img src="bg-dpm-fh-unnes.jpg" alt="" class="w-full h-full object-cover opacity-40">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="logo-dpm-fh-unnes.jpg" alt="Logo DPM FH UNNES" class="h-10 w-auto object-contain">
+                <span class="text-xl font-bold text-gray-800">DPM FH UNNES</span>
+            </div>
+
+            <!-- mobile toggle -->
+            <button id="navToggle" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+
+            <!-- Desktop menu -->
+            <div id="navMenu" class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="text-gray-700 hover:text-blue-600">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600">About</a>
+                <a href="#events" class="text-gray-700 hover:text-blue-600">Events</a>
+                <a href="#team" class="text-gray-700 hover:text-blue-600">Team</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600">Contact</a>
+                <a href="#join" class="bg-blue-500 text-white px-4 py-2 rounded-full shadow">Join Us</a>
+            </div>
+        </div>
+
+        <!-- Mobile menu items -->
+        <div id="mobileMenu" class="md:hidden hidden border-t">
+            <div class="px-6 py-4 space-y-2">
+                <a href="#home" class="block text-gray-700">Home</a>
+                <a href="#about" class="block text-gray-700">About</a>
+                <a href="#events" class="block text-gray-700">Events</a>
+                <a href="#team" class="block text-gray-700">Team</a>
+                <a href="#contact" class="block text-gray-700">Contact</a>
+                <a href="#join" class="block bg-blue-500 text-white px-4 py-2 rounded-full text-center">Join Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-8">
+            <div class="flex-1 space-y-6">
+                <h1 class="text-4xl md:text-5xl font-bold text-black-800 mb-2 animate-fade-in">Dewan Perwakilan Mahasiswa</h1>
+                <p class="text-lg text-black-800 max-w-2xl">DPM FH UNNES adalah organisasi internal yang bertujuan untuk mengawasi dan menampung aspirasi mahasiswa dalam kehidupan perkuliahan. Kami berkomitmen untuk menjaga kepercayaan civitas akademika yang telah diamanatkan kepada kami.</p>
+                <div class="space-x-4">
+                    <a href="#about" class="inline-block bg-blue-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-600 transition duration-300 transform hover:scale-105">Tentang Kami</a>
+                    <a href="#join" class="inline-block bg-white border border-blue-500 text-blue-500 px-6 py-3 rounded-full hover:bg-blue-50 transition duration-300">Gabung Sekarang</a>
+                </div>
+            </div>
+            <div class="flex-1 mt-6 md:mt-0 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="Students collaborating on a project" loading="lazy" class="rounded-xl shadow-xl w-full max-w-md animate-fade-in-up object-cover h-72">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container mx-auto px-6 py-16">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Tentang Kami</h2>
+        <p class="text-gray-600 mb-8 max-w-2xl">DPM FH UNNES berfungsi sebagai organisasi pengawas dengan tetap menjaga netralitas sebagaimana yang tertera dalam peraturan fakultas.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="font-semibold text-lg mb-2">Misi dan Visi</h3>
+                <p class="text-gray-600">To empower students with technical skills and innovative thinking to solve real-world problems through collaborative learning.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="font-semibold text-lg mb-2">Wewenang</h3>
+                <p class="text-gray-600">Create a community where every student has access to resources and mentorship to turn ideas into impactful solutions.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="font-semibold text-lg mb-2">Laporan Kegiatan</h3>
+                <p class="text-gray-600">500+ students trained, 30+ projects developed, and 10+ startups launched by our alumni in the past 3 years.</p>
+                <div class="mt-4">
+                    <a href="#achievements" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-full shadow hover:bg-blue-700 transition">Pelajari Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="container mx-auto px-6 py-16">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Prestasi & Laporan</h2>
+
+        <!-- Photo gallery -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
+            <figure class="rounded-lg overflow-hidden shadow">
+                <img src="peraih-medali-perak-mata-pelajaran-sains-dalam-ajang-olimpiade-_161111154631-880.jpg" alt="Prestasi 1" loading="lazy" class="w-full h-48 object-cover">
+                <figcaption class="p-3 text-sm text-gray-600 bg-white">Juara 1 Hackathon Fakultas — Tim DPM FH UNNES</figcaption>
+            </figure>
+            <figure class="rounded-lg overflow-hidden shadow">
+                <img src="peraih-medali-perak-mata-pelajaran-sains-dalam-ajang-olimpiade-_161111154631-880.jpg" alt="Prestasi 2" loading="lazy" class="w-full h-48 object-cover">
+                <figcaption class="p-3 text-sm text-gray-600 bg-white">Workshop & Pelatihan Kepemimpinan</figcaption>
+            </figure>
+            <figure class="rounded-lg overflow-hidden shadow">
+                <img src="peraih-medali-perak-mata-pelajaran-sains-dalam-ajang-olimpiade-_161111154631-880.jpg" alt="Prestasi 3" loading="lazy" class="w-full h-48 object-cover">
+                <figcaption class="p-3 text-sm text-gray-600 bg-white">Program Pengabdian Masyarakat</figcaption>
+            </figure>
+        </div>
+
+        <!-- Reports / Downloads -->
+        <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="font-semibold text-lg mb-3">Laporan Kegiatan & Pencapaian</h3>
+            <p class="text-gray-600 text-sm mb-4">Unduh laporan lengkap atau baca ringkasan singkat di bawah ini.</p>
+            <ul class="space-y-2">
+                <li><a href="assets/reports/laporan-tahunan-2024.pdf" class="text-blue-600 hover:underline" target="_blank" rel="noopener">Laporan Tahunan 2024 (PDF)</a></li>
+                <li><a href="assets/reports/laporan-hackathon-2024.pdf" class="text-blue-600 hover:underline" target="_blank" rel="noopener">Laporan Hackathon 2024 (PDF)</a></li>
+                <li><a href="assets/reports/laporan-workshop-2024.pdf" class="text-blue-600 hover:underline" target="_blank" rel="noopener">Laporan Workshop & Pelatihan (PDF)</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Kegiatan Mendatang</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <article class="bg-white p-4 rounded-lg shadow flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=800&auto=format&fit=crop" alt="Hackathon" loading="lazy" class="rounded-md w-full h-40 object-cover mb-4">
+                    <h3 class="font-semibold mb-1">Annual Hackathon</h3>
+                    <p class="text-gray-600 text-sm flex-1">Kompetisi 48 jam bersama mentor, hadiah, dan peluang pengembangan proyek.</p>
+                </article>
+                <article class="bg-white p-4 rounded-lg shadow flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop" alt="Web Dev Workshop" loading="lazy" class="rounded-md w-full h-40 object-cover mb-4">
+                    <h3 class="font-semibold mb-1">Web Dev Workshop</h3>
+                    <p class="text-gray-600 text-sm flex-1">Workshop praktis membangun aplikasi web modern dengan React & Node.</p>
+                </article>
+                <article class="bg-white p-4 rounded-lg shadow flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop" alt="AI Seminar" loading="lazy" class="rounded-md w-full h-40 object-cover mb-4">
+                    <h3 class="font-semibold mb-1">AI & ML Seminar</h3>
+                    <p class="text-gray-600 text-sm flex-1">Seminar tren AI terkini dari praktisi dan peneliti.</p>
+                </article>
+                <article class="bg-white p-4 rounded-lg shadow flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop" alt="Web Dev Workshop" loading="lazy" class="rounded-md w-full h-40 object-cover mb-4">
+                    <h3 class="font-semibold mb-1">Web Dev Workshop</h3>
+                    <p class="text-gray-600 text-sm flex-1">Workshop praktis membangun aplikasi web modern dengan React & Node.</p>
+                </article>
+                <article class="bg-white p-4 rounded-lg shadow flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop" alt="Web Dev Workshop" loading="lazy" class="rounded-md w-full h-40 object-cover mb-4">
+                    <h3 class="font-semibold mb-1">Web Dev Workshop</h3>
+                    <p class="text-gray-600 text-sm flex-1">Workshop praktis membangun aplikasi web modern dengan React & Node.</p>
+                </article>
+                <article class="bg-white p-4 rounded-lg shadow flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop" alt="Web Dev Workshop" loading="lazy" class="rounded-md w-full h-40 object-cover mb-4">
+                    <h3 class="font-semibold mb-1">Web Dev Workshop</h3>
+                    <p class="text-gray-600 text-sm flex-1">Workshop praktis membangun aplikasi web modern dengan React & Node.</p>
+                </article>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="container mx-auto px-6 py-16">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Tim Kami</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="bg-white p-4 rounded-lg text-center shadow">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop" alt="Sarah Johnson" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
+                <h3 class="font-medium">Sarah Johnson</h3>
+                <p class="text-sm text-gray-500">Ketua Umum DPM FH</p>
+                <a href="C:\Users\LENOVO\Documents\Web-1\assets\docs\CV Sarah Johnson.pdf" class="text-blue-500 text-sm hover:underline" target="_blank" rel="noopener">Lihat CV</a>
+            </div>
+            <div class="bg-white p-4 rounded-lg text-center shadow">
+                <img src="https://images.unsplash.com/photo-1545996124-1b3b8b0c9b19?q=80&w=400&auto=format&fit=crop" alt="Michael Chen" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
+                <h3 class="font-medium">Michael Chen</h3>
+                <p class="text-sm text-gray-500">Wakil Ketua DPM FH</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg text-center shadow">
+                <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=400&auto=format&fit=crop" alt="Emma Rodriguez" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
+                <h3 class="font-medium">Emma Rodriguez</h3>
+                <p class="text-sm text-gray-500">Wakil Ketua DPM FH</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg text-center shadow">
+                <img src="https://images.unsplash.com/photo-1548142813-1f1a6e9d6a0a?q=80&w=400&auto=format&fit=crop" alt="David Kim" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
+                <h3 class="font-medium">David Kim</h3>
+                <p class="text-sm text-gray-500">Sekretaris</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg text-center shadow">
+                <img src="https://images.unsplash.com/photo-1548142813-1f1a6e9d6a0a?q=80&w=400&auto=format&fit=crop" alt="David Kim" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
+                <h3 class="font-medium">David Kim</h3>
+                <p class="text-sm text-gray-500">Bendahara</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg text-center shadow">
+                <img src="https://images.unsplash.com/photo-1548142813-1f1a6e9d6a0a?q=80&w=400&auto=format&fit=crop" alt="David Kim" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
+                <h3 class="font-medium">David Kim</h3>
+                <p class="text-sm text-gray-500">Ketua Komisi 1</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg text-center shadow">
+                <img src="https://images.unsplash.com/photo-1548142813-1f1a6e9d6a0a?q=80&w=400&auto=format&fit=crop" alt="David Kim" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
+                <h3 class="font-medium">David Kim</h3>
+                <p class="text-sm text-gray-500">Ketua Komisi 2</p>
+            </div>
+                <div class="bg-white p-4 rounded-lg text-center shadow">
+                <img src="https://images.unsplash.com/photo-1548142813-1f1a6e9d6a0a?q=80&w=400&auto=format&fit=crop" alt="David Kim" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
+                <h3 class="font-medium">David Kim</h3>
+                <p class="text-sm text-gray-500">Ketua Komisi 3</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg text-center shadow">
+                <img src="https://images.unsplash.com/photo-1548142813-1f1a6e9d6a0a?q=80&w=400&auto=format&fit=crop" alt="David Kim" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
+                <h3 class="font-medium">David Kim</h3>
+                <p class="text-sm text-gray-500">Ketua Komisi 4</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg text-center shadow">
+                <img src="https://images.unsplash.com/photo-1548142813-1f1a6e9d6a0a?q=80&w=400&auto=format&fit=crop" alt="David Kim" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
+                <h3 class="font-medium">David Kim</h3>
+                <p class="text-sm text-gray-500">Ketua Komisi 5</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg text-center shadow">
+                <img src="https://images.unsplash.com/photo-1548142813-1f1a6e9d6a0a?q=80&w=400&auto=format&fit=crop" alt="David Kim" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
+                <h3 class="font-medium">David Kim</h3>
+                <p class="text-sm text-gray-500">Ketua Komisi 6</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg text-center shadow">
+                <img src="https://images.unsplash.com/photo-1548142813-1f1a6e9d6a0a?q=80&w=400&auto=format&fit=crop" alt="David Kim" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
+                <h3 class="font-medium">David Kim</h3>
+                <p class="text-sm text-gray-500">Ketua Komisi 7</p>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Section (form styled) -->
+    <section id="join" class="py-16">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-2xl font-semibold mb-4">Ready to Join Our Community?</h2>
+            <form class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input class="border rounded px-4 py-2 w-full" type="text" placeholder="First Name" required>
+                    <input class="border rounded px-4 py-2 w-full" type="text" placeholder="Last Name" required>
+                </div>
+                <input class="border rounded px-4 py-2 w-full" type="email" placeholder="Email" required>
+                <input class="border rounded px-4 py-2 w-full" type="text" placeholder="Major">
+                <select class="border rounded px-4 py-2 w-full">
+                    <option>Freshman</option>
+                    <option>Sophomore</option>
+                    <option>Junior</option>
+                    <option>Senior</option>
+                    <option>Graduate</option>
+                </select>
+                <textarea class="border rounded px-4 py-2 w-full" rows="4" placeholder="Why do you want to join TechVision?"></textarea>
+                <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">Submit Application</button>
+            </form>
+        </div>
+
+   <!-- Social Media -->
+            <div class="max-w-md mx-auto mt-12 text-center fade-in">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Follow Us</h3>
+                <div class="flex justify-center space-x-6">
+                    <a href="#" class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center text-gray-700 hover:bg-blue-500 hover:text-white transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center text-gray-700 hover:bg-blue-400 hover:text-white transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center text-gray-700 hover:bg-pink-500 hover:text-white transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-800 hover:text-white transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center text-gray-700 hover:bg-blue-600 hover:text-white transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Column 1 -->
+                <div class="fade-in">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-laptop-code text-3xl text-blue-400"></i>
+                        <span class="text-xl font-bold">DPM FH UNNES</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Bergerak untuk persatuan</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div class="fade-in delay-1">
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#events" class="text-gray-400 hover:text-white transition">Events</a></li>
+                        <li><a href="#team" class="text-gray-400 hover:text-white transition">Our Team</a></li>
+                        <li><a href="#join" class="text-gray-400 hover:text-white transition">Join Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div class="fade-in delay-2">
+                    <h3 class="text-lg font-bold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Learning Materials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Project Gallery</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Career Opportunities</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Mentorship Program</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Alumni Network</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div class="fade-in delay-3">
+                    <h3 class="text-lg font-bold mb-4">Contact Info</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-400"></i>
+                            <span class="text-gray-400">Universitas Negeri Semarang<br>Pusat Kegiatan Mahasiswa<br>Sekaran, Gunungpati, Semarang, Jawa Tengah, 20551</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-blue-400"></i>
+                            <a href="mailto:dpmfhunnes@gmail.com" class="text-gray-400 hover:text-white transition">dpmfhunnes@gmail.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-blue-400"></i>
+                            <a href="tel:+15551234567" class="text-gray-400 hover:text-white transition">0812-6969-6969</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-500 text-sm fade-in">
+                <p>&copy; 2025 DPM FH UNNES. All rights reserved.</p>
+                <div class="mt-2">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a> | 
+                    <a href="#" class="hover:text-white transition">Terms of Service</a> | 
+                    <a href="#" class="hover:text-white transition">Code of Conduct</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-40 invisible transition-all duration-300 hover:bg-blue-600">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      // enable smooth in-page scrolling
+      document.documentElement.style.scrollBehavior = 'smooth';
+      // simple mobile nav toggle
+      const navToggle = document.getElementById('navToggle')
+      const mobileMenu = document.getElementById('mobileMenu')
+      navToggle?.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'))
+       tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              'fade-in': 'fadeIn 1s ease-out',
+              'fade-in-up': 'fadeInUp 1s ease-out'
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' }
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(40px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+</body>
+</html>
