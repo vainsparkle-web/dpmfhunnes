@@ -237,22 +237,26 @@
     <section id="join" class="py-16">
         <div class="container mx-auto px-6 max-w-3xl">
             <h2 class="text-2xl font-semibold mb-4">Ready to Join Our Community?</h2>
-            <form class="space-y-4">
+            <form action="/api/register" method="POST" class="space-y-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input class="border rounded px-4 py-2 w-full" type="text" placeholder="First Name" required>
-                    <input class="border rounded px-4 py-2 w-full" type="text" placeholder="Last Name" required>
+                    <input class="border rounded px-4 py-2 w-full" type="text" name="fullname" placeholder="Full Name" required>
+                    <input class="border rounded px-4 py-2 w-full" type="text" name="callname" placeholder="Call Name" required>
                 </div>
-                <input class="border rounded px-4 py-2 w-full" type="email" placeholder="Email" required>
-                <form action="/api/register" method="POST">
-                <input class="border rounded px-4 py-2 w-full" type="text" placeholder="Major">
-                <select class="border rounded px-4 py-2 w-full">
-                    <option>Freshman</option>
-                    <option>Sophomore</option>
-                    <option>Junior</option>
-                    <option>Senior</option>
-                    <option>Graduate</option>
+                <input class="border rounded px-4 py-2 w-full" type="email" name="email" placeholder="Email" required>  
+                <input class="border rounded px-4 py-2 w-full" type="text" name="semester" placeholder="Semester">
+                <select name="commission" aria-placeholder="Select Commission You Wanna Join" class="border rounded px-4 py-2 w-full">
+                    <option>Komisi 1</option>
+                    <option>Komisi 2</option>
+                    <option>Komisi 3</option>
+                    <option>Komisi 4</option>
+                    <option>Komisi 5</option>
+                    <option>Komisi 6</option>
+                    <option>Komisi 7</option>
                 </select>
-                <textarea class="border rounded px-4 py-2 w-full" rows="4" placeholder="Why do you want to join TechVision?"></textarea>
+                <textarea class="border rounded px-4 py-2 w-full" rows="4" placeholder="Why do you want to join DPM FH UNNES?"></textarea>
+                <upload>
+                    <input type="file" name="cv" placeholder="Upload CV" accept=".pdf,.doc,.docx" required>
+                </upload>
                 <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">Submit Application</button>
             </form>
         </div>
@@ -390,4 +394,5 @@
     </script>
 </body>
 </html>
+
 
