@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dewan Perwakilan Mahasiswa FH UNNES</title>
+    <!-- single Tailwind + Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans bg-transparent pt-20">
+
+    <!-- Small hero image shown just under the navbar (rest of page is white with a gradient overlay) -->
+    <!-- Hero image container: fixed and limited height so only a small strip of the image is visible. It sits behind content. -->
+    <div aria-hidden="true" class="fixed left-0 right-0 top-16 h-44 pointer-events-none" style="z-index:0;">
+        <img src="bg-dpm-fh-unnes.jpg" alt="" class="w-full h-full object-cover" id="page-bg-image">
+    </div>
+
+    <!-- Full-page white gradient overlay: transparent only at the very top band so the hero image peeks through,
+         then transitions to solid white covering the rest of the page. Sits above the hero but below page content. -->
+    <div id="bg-overlay" class="fixed inset-0 pointer-events-none" style="background: linear-gradient(to bottom, rgba(255,255,255,0) 0px, rgba(255,255,255,0) 64px, rgba(255,255,255,0.85) 140px, rgba(255,255,255,1) 220px); opacity: 1; z-index:1;">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="logo dpm fh.png" alt="Logo DPM FH UNNES" class="h-10 w-auto object-contain">
+                <span class="text-xl font-bold text-gray-800">DPM FH UNNES</span>
+            </div>
+
+            <!-- mobile toggle -->
+            <button id="navToggle" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+
+            <!-- Desktop menu -->
+            <div id="navMenu" class="hidden md:flex space-x-8 items-center">
+                <a href="Structure.html" class="text-gray-700 hover:text-blue-600">Home</a>
+                <a href="Policy.html#about" class="text-gray-700 hover:text-blue-600">About</a>
+                <a href="Policy.html#events" class="text-gray-700 hover:text-blue-600">Events</a>
+                <a href="Policy.html#team" class="text-gray-700 hover:text-blue-600">Team</a>
+                <a href="Policy.html#contact" class="text-gray-700 hover:text-blue-600">Contact</a>
+                <!-- Dark mode toggle (desktop) -->
+                <button id="dark-toggle-btn" aria-pressed="false" title="Toggle dark mode" class="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun hidden"></i>
+                    <span class="sr-only">Toggle dark mode</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu items -->
+        <div id="mobileMenu" class="md:hidden hidden border-t">
+            <div class="px-6 py-4 space-y-2">
+                <a href="#home" class="block text-gray-700">Home</a>
+                <a href="#about" class="block text-gray-700">About</a>
+                <a href="#events" class="block text-gray-700">Events</a>
+                <a href="#team" class="block text-gray-700">Team</a>
+                <a href="#contact" class="block text-gray-700">Contact</a>
+                <!-- Dark mode toggle (mobile) -->
+                <button id="dark-toggle-mobile" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100" title="Toggle dark mode">Toggle dark mode <i class="fas fa-moon ml-2"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Privacy Policy (clean, semantic, interactive) -->
+    <main id="privacy" class="container mx-auto px-6 py-8 max-w-4xl relative z-20">
+            <header class="text-center mb-6">
+                <h1 class="text-4xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
+                <p class="text-sm text-gray-600">Last updated: <time datetime="2025-08-24">24 August 2025</time></p>
+                <p class="text-gray-700 mt-4 leading-relaxed">This Privacy Notice explains how Dewan Perwakilan Mahasiswa Fakultas Hukum Unnes ("we", "us", "our") collects, uses, discloses, and protects personal information when you use our website and services.</p>
+            </header>
+
+            <div class="mb-4">
+                <nav aria-label="Table of contents" class="text-sm">
+                    <ul id="toc-list" class="space-y-1 text-left">
+                        <li><a class="toc-link text-blue-600 hover:underline" href="#infocollect">1. What information do we collect?</a></li>
+                        <li><a class="toc-link text-blue-600 hover:underline" href="#infouse">2. How do we process your information?</a></li>
+                        <li><a class="toc-link text-blue-600 hover:underline" href="#whoshare">3. When and with whom do we share your information?</a></li>
+                        <li><a class="toc-link text-blue-600 hover:underline" href="#inforetain">4. How long do we keep your information?</a></li>
+                        <li><a class="toc-link text-blue-600 hover:underline" href="#infosafe">5. How do we keep your information safe?</a></li>
+                        <li><a class="toc-link text-blue-600 hover:underline" href="#infominors">6. Minors</a></li>
+                        <li><a class="toc-link text-blue-600 hover:underline" href="#privacyrights">7. Your privacy rights</a></li>
+                        <li><a class="toc-link text-blue-600 hover:underline" href="#policyupdates">10. Policy updates</a></li>
+                        <li><a class="toc-link text-blue-600 hover:underline" href="#contact">11. Contact</a></li>
+                        <li><a class="toc-link text-blue-600 hover:underline" href="#request">12. Review / delete data</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Buttons moved here so they appear between the TOC and the first section -->
+                <div class="mt-3 flex justify-center md:justify-end">
+                    <div class="inline-flex items-center gap-2">
+                        <button id="expand-all" aria-label="Expand all sections" class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1.5 rounded-lg border border-blue-100 shadow-sm hover:bg-blue-100 transition" title="Expand all">
+                            <i class="fas fa-angle-down"></i>
+                            <span class="text-sm font-medium">Expand all</span>
+                        </button>
+
+                        <button id="collapse-all" aria-label="Collapse all sections" class="inline-flex items-center gap-2 bg-white text-gray-700 px-3 py-1.5 rounded-lg border border-gray-200 shadow-sm hover:bg-gray-50 transition" title="Collapse all">
+                            <i class="fas fa-angle-up"></i>
+                            <span class="text-sm font-medium">Collapse all</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sections as accessible collapse blocks -->
+            <section id="infocollect" class="mt-6" style="scroll-margin-top:5rem;">
+                <details class="bg-white/60 p-4 rounded shadow" open>
+                    <summary class="cursor-pointer font-semibold text-lg">1. What information do we collect?</summary>
+                    <div class="mt-3 text-gray-700 leading-relaxed">
+                        <p class="mb-2">We collect information you provide directly (for example, name, email, phone), and information collected automatically (for example, IP address, device/browser details, usage data).</p>
+                        <p class="mb-2">Typical items we may collect:</p>
+                        <ul class="list-disc pl-6 mb-2 text-gray-700">
+                            <li>Contact details: name, email, phone</li>
+                            <li>Account details: username, hashed passwords</li>
+                            <li>Technical data: IP address, device and browser characteristics</li>
+                            <li>Usage data: pages visited, features used, timestamps</li>
+                        </ul>
+                        <p>If you submit personal information, ensure it is accurate and up to date.</p>
+                    </div>
+                </details>
+            </section>
+
+            <section id="infouse" class="mt-6" style="scroll-margin-top:5rem;">
+                <details class="bg-white/60 p-4 rounded shadow" open>
+                    <summary class="cursor-pointer font-semibold text-lg">2. How do we process your information?</summary>
+                    <div class="mt-3 text-gray-700 leading-relaxed">
+                        <p class="mb-2">We process information to provide and improve services, communicate with you, perform security checks, and comply with legal obligations. We only process data when we have a valid legal basis (consent, contract, legal obligation, legitimate interest).</p>
+                        <p class="mb-2">Examples: sending administrative notices, responding to inquiries, preventing fraud, and analyzing usage to improve the site.</p>
+                    </div>
+                </details>
+            </section>
+
+            <section id="whoshare" class="mt-6" style="scroll-margin-top:5rem;">
+                <details class="bg-white/60 p-4 rounded shadow">
+                    <summary class="cursor-pointer font-semibold text-lg">3. When and with whom do we share your personal information?</summary>
+                    <div class="mt-3 text-gray-700 leading-relaxed">
+                        <p class="mb-2">We may share data with service providers who operate on our behalf (hosting, analytics, email), with legal authorities when required, or in business transfers (e.g., mergers).</p>
+                        <p class="mb-2">We do not sell personal information.</p>
+                    </div>
+                </details>
+            </section>
+
+            <section id="inforetain" class="mt-6" style="scroll-margin-top:5rem;">
+                <details class="bg-white/60 p-4 rounded shadow">
+                    <summary class="cursor-pointer font-semibold text-lg">4. How long do we keep your information?</summary>
+                    <div class="mt-3 text-gray-700 leading-relaxed">
+                        <p class="mb-2">We retain personal information only as long as necessary to fulfill the purposes described, unless a longer retention period is required by law. When no longer needed we delete or anonymize the information.</p>
+                    </div>
+                </details>
+            </section>
+
+            <section id="infosafe" class="mt-6" style="scroll-margin-top:5rem;">
+                <details class="bg-white/60 p-4 rounded shadow">
+                    <summary class="cursor-pointer font-semibold text-lg">5. How do we keep your information safe?</summary>
+                    <div class="mt-3 text-gray-700 leading-relaxed">
+                        <p class="mb-2">We use administrative and technical safeguards (access controls, secure hosting, encryption where appropriate) to protect personal data. No system is perfect; if a breach occurs we will follow applicable laws and notify affected parties when required.</p>
+                    </div>
+                </details>
+            </section>
+
+            <section id="infominors" class="mt-6" style="scroll-margin-top:5rem;">
+                <details class="bg-white/60 p-4 rounded shadow">
+                    <summary class="cursor-pointer font-semibold text-lg">6. Do we collect information from minors?</summary>
+                    <div class="mt-3 text-gray-700 leading-relaxed">
+                        <p>We do not knowingly collect personal information from children under 18. If you believe we have collected such data, contact us and we will take steps to remove it.</p>
+                    </div>
+                </details>
+            </section>
+
+            <section id="privacyrights" class="mt-6" style="scroll-margin-top:5rem;">
+                <details class="bg-white/60 p-4 rounded shadow">
+                    <summary class="cursor-pointer font-semibold text-lg">7. What are your privacy rights?</summary>
+                    <div class="mt-3 text-gray-700 leading-relaxed">
+                        <p class="mb-2">Depending on where you live, you may have rights to access, correct, delete, or restrict processing of your personal information. To exercise these rights contact us using the details below.</p>
+                    </div>
+                </details>
+            </section>
+
+            <section id="policyupdates" class="mt-6" style="scroll-margin-top:5rem;">
+                <details class="bg-white/60 p-4 rounded shadow">
+                    <summary class="cursor-pointer font-semibold text-lg">10. Do we make updates to this notice?</summary>
+                    <div class="mt-3 text-gray-700 leading-relaxed">
+                        <p>Yes. We may update this Notice from time to time. We will indicate the date of the latest revision and, for material changes, provide notice on the site or directly when appropriate.</p>
+                    </div>
+                </details>
+            </section>
+
+            <section id="contact" class="mt-6" style="scroll-margin-top:5rem;">
+                <details class="bg-white/60 p-4 rounded shadow" open>
+                    <summary class="cursor-pointer font-semibold text-lg">11. How can you contact us about this notice?</summary>
+                    <div class="mt-3 text-gray-700 leading-relaxed">
+                        <p class="mb-2">If you have questions, email us at <a href="mailto:dpmfhunnes@gmail.com" class="text-blue-600">dpmfhunnes@gmail.com</a> or use the contact details in the site footer.</p>
+                        <p class="mb-0">Dewan Perwakilan Mahasiswa Fakultas Hukum Unnes<br>Universitas Negeri Semarang, Sekaran, Gunungpati, Semarang, Jawa Tengah 50242</p>
+                    </div>
+                </details>
+            </section>
+
+            <section id="request" class="mt-6 mb-8" style="scroll-margin-top:5rem;">
+                <details class="bg-white/60 p-4 rounded shadow">
+                    <summary class="cursor-pointer font-semibold text-lg">12. How can you review, update, or delete the data we collect from you?</summary>
+                    <div class="mt-3 text-gray-700 leading-relaxed">
+                        <p>You may submit a data subject access request via the following form: <a href="https://app.termly.io/notify/60511593-5242-43e4-b8eb-979004f57237" target="_blank" class="text-blue-600">data subject access request</a>. We will respond according to applicable laws.</p>
+                    </div>
+                </details>
+            </section>
+
+            </main>
+
+           <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 relative z-20">
+                <div class="container mx-auto px-6">
+                        <div class="grid md:grid-cols-4 gap-8">
+                                <!-- Column 1 -->
+<div class="fade-in">
+  <div class="flex items-center space-x-4 mb-4">
+    <img src="logo dpm fh.png" alt="Logo DPM FH UNNES" class="w-8 h-8 object-contain">
+    <div class="flex flex-col">
+      <h2 class="text-lg font-bold text-white leading-tight">DPM FH UNNES</h2>
+      <p class="mt-1 text-xs text-gray-400 leading-tight">Parlemen Satya Mandala</p>
+    </div>
+  </div>
+  <p class="text-gray-300 mb-4 italic">
+    Menjadi wadah aspirasi mahasiswa dan mengembangkan potensi mahasiswa Fakultas Hukum UNNES.
+  </p>
+  <div class="flex space-x-4">
+    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</div>
+                
+                                <!-- Column 2 -->
+                                <div class="fade-in delay-1 space-x-8">
+                                        <h3 class="text-lg font-bold mb-4 mx-8">Tautan Cepat</h3>
+                                        <ul class="space-y-1">
+                                                <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                                                <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                                                <li><a href="#events" class="text-gray-400 hover:text-white transition">Events</a></li>
+                                                <li><a href="#team" class="text-gray-400 hover:text-white transition">Our Team</a></li>
+                                        </ul>
+                                </div>
+                
+                <!-- Column 3 -->
+                                <div class="fade-in delay-3" id="contact-column">
+                                        <h3 class="text-lg font-bold mb-4">Jam Operasional</h3>
+                                        <ul class="space-y-3">
+                                                <li class="flex items-start">
+                                                        <i class="fas fa-clock mr-3 text-blue-400"></i>
+                                                        <span class="text-gray-400 hover:text-white-transition">Senin-Kamis: 07.00-17.00</span>
+                                                </li>
+                                                <li class="flex items-center">
+                                                        <i class="fas fa-clock mr-3 text-blue-400"></i>
+                                                        <a class="text-gray-400 hover:text-white transition">Jumat: 08:00-15.00</a>
+                                                </li>
+                                                <li class="flex items-center">
+                                                        <i class="fas fa-clock mr-3 text-blue-400"></i>
+                                                        <a class="text-gray-400 hover:text-white transition">Sabtu-Minggu: Tutup</a>
+                                                </li>
+                                        </ul>
+                                </div>
+                
+                                <!-- Column 4 -->
+                                <div class="fade-in delay-3" id="contact-column">
+                                        <h3 class="text-lg font-bold mb-4">Info Kontak</h3>
+                                        <ul class="space-y-3">
+                                                <li class="flex items-start">
+                                                <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-400"></i>
+                                                <span class="text-gray-400">Fakultas Hukum, Universitas Negeri Semarang<br>Kampus UNNES<br>Sekaran, Gunungpati, Semarang, Jawa Tengah, 50229</span>
+                                                </li>
+                                                <li class="flex items-center">
+                                              <i class="fas fa-envelope mr-3 text-blue-400"></i>
+                                                <a href="mailto:dpmfhunnes25@gmail.com" class="text-gray-400 hover:text-white transition">dpmfhunnes25@gmail.com</a>
+                                                </li>
+                                                <li class="flex items-center">
+                                                <i class="fas fa-phone-alt mr-3 text-blue-400"></i>
+                                                <a href="tel:+62 821-3469-3577" class="text-gray-400 hover:text-white transition">0821-3469-3577</a>
+                                                </li>
+                                        </ul>
+                                </div>
+                        </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-500 text-sm fade-in">
+                                <p>&copy; 2025 DPM FH UNNES. All rights reserved.</p>
+                                <div class="mt-2">
+                                        <a href="Policy.html" class="hover:text-white transition">Privacy Policy</a> |  
+                                        <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=sd3mfz9" class="hover:text-white transition">Created by: Maulana Habibie Yahya</a> |
+                                        <a href="Terms.html" class="hover:text-white transition">Terms of Service</a>  
+                                </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-40 invisible transition-all duration-300 hover:bg-blue-600">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      // enable smooth in-page scrolling
+      document.documentElement.style.scrollBehavior = 'smooth';
+      // simple mobile nav toggle
+      const navToggle = document.getElementById('navToggle')
+      const mobileMenu = document.getElementById('mobileMenu')
+      navToggle?.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'))
+       tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              'fade-in': 'fadeIn 1s ease-out',
+              'fade-in-up': 'fadeInUp 1s ease-out'
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' }
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(40px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <!-- Theme toggle script: adds/removes html.dark and persists preference -->
+    <script>
+        (function(){
+            const KEY = 'dpmfh-theme';
+            const btn = document.getElementById('dark-toggle-btn');
+            const mobileBtn = document.getElementById('dark-toggle-mobile');
+
+            function updateDesktopIcon(isDark){
+                if(!btn) return;
+                const moon = btn.querySelector('.fa-moon');
+                const sun = btn.querySelector('.fa-sun');
+                if(moon) moon.style.display = isDark ? 'none' : 'inline-block';
+                if(sun) sun.style.display = isDark ? 'inline-block' : 'none';
+                btn.setAttribute('aria-pressed', isDark);
+            }
+
+            function updateMobileIcon(isDark){
+                if(!mobileBtn) return;
+                // keep the label but swap icon
+                const hasSun = mobileBtn.querySelector('.fa-sun');
+                const hasMoon = mobileBtn.querySelector('.fa-moon');
+                if(hasSun || hasMoon){
+                    if(hasSun) hasSun.style.display = isDark ? 'inline-block' : 'none';
+                    if(hasMoon) hasMoon.style.display = isDark ? 'none' : 'inline-block';
+                } else {
+                    // initial markup didn't include sun; replace icon HTML
+                    mobileBtn.innerHTML = 'Toggle dark mode <i class="fas ' + (isDark ? 'fa-sun' : 'fa-moon') + ' ml-2"></i>';
+                }
+            }
+
+            function applyTheme(theme){
+                const isDark = theme === 'dark';
+                if(isDark) document.documentElement.classList.add('dark');
+                else document.documentElement.classList.remove('dark');
+                updateDesktopIcon(isDark);
+                updateMobileIcon(isDark);
+            }
+
+            function toggle(){
+                const isDark = document.documentElement.classList.contains('dark');
+                const next = isDark ? 'light' : 'dark';
+                try { localStorage.setItem(KEY, next); } catch(e) { /* ignore storage errors */ }
+                applyTheme(next);
+            }
+
+            // wire events
+            btn?.addEventListener('click', toggle);
+            mobileBtn?.addEventListener('click', toggle);
+
+            // init theme from storage or system preference
+            try {
+                const saved = localStorage.getItem(KEY);
+                if(saved) applyTheme(saved);
+                else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) applyTheme('dark');
+                else applyTheme('light');
+            } catch(e){
+                // localStorage may be disabled — fall back to system preference
+                if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) applyTheme('dark');
+            }
+        })();
+    </script>
+</body>
+</html>
