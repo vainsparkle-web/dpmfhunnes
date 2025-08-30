@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dewan Perwakilan Mahasiswa FH UNNES</title>
+    <!-- single Tailwind + Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans bg-transparent pt-20">
+
+    <!-- Small hero image shown just under the navbar (rest of page is white with a gradient overlay) -->
+    <!-- Hero image container: fixed and limited height so only a small strip of the image is visible. It sits behind content. -->
+    <div aria-hidden="true" class="fixed left-0 right-0 top-16 h-44 pointer-events-none" style="z-index:0;">
+        <img src="bg-dpm-fh-unnes.jpg" alt="" class="w-full h-full object-cover" id="page-bg-image">
+    </div>
+
+    <!-- Full-page white gradient overlay: transparent only at the very top band so the hero image peeks through,
+         then transitions to solid white covering the rest of the page. Sits above the hero but below page content. -->
+    <div id="bg-overlay" class="fixed inset-0 pointer-events-none" style="background: linear-gradient(to bottom, rgba(255,255,255,0) 0px, rgba(255,255,255,0) 64px, rgba(255,255,255,0.85) 140px, rgba(255,255,255,1) 220px); opacity: 1; z-index:1;">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="logo dpm fh.png" alt="Logo DPM FH UNNES" class="h-10 w-auto object-contain">
+                <span class="text-xl font-bold text-gray-800">DPM FH UNNES</span>
+            </div>
+
+            <!-- mobile toggle -->
+            <button id="navToggle" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+
+            <!-- Desktop menu -->
+            <div id="navMenu" class="hidden md:flex space-x-8 items-center">
+                <a href="Structure.html" class="text-gray-700 hover:text-blue-600">Home</a>
+                <a href="Policy.html#about" class="text-gray-700 hover:text-blue-600">About</a>
+                <a href="Policy.html#events" class="text-gray-700 hover:text-blue-600">Events</a>
+                <a href="Policy.html#team" class="text-gray-700 hover:text-blue-600">Team</a>
+                <a href="Pol.html#contact" class="text-gray-700 hover:text-blue-600">Contact</a>
+                <a href="Structure.html#join" class="bg-blue-500 text-white px-4 py-2 rounded-full shadow">Join Us</a>
+                <!-- Dark mode toggle (desktop) -->
+                <button id="dark-toggle-btn" aria-pressed="false" title="Toggle dark mode" class="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun hidden"></i>
+                    <span class="sr-only">Toggle dark mode</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu items -->
+        <div id="mobileMenu" class="md:hidden hidden border-t">
+            <div class="px-6 py-4 space-y-2">
+                <a href="#home" class="block text-gray-700">Home</a>
+                <a href="#about" class="block text-gray-700">About</a>
+                <a href="#events" class="block text-gray-700">Events</a>
+                <a href="#team" class="block text-gray-700">Team</a>
+                <a href="#contact" class="block text-gray-700">Contact</a>
+                <a href="#join" class="block bg-blue-500 text-white px-4 py-2 rounded-full text-center">Join Us</a>
+                <!-- Dark mode toggle (mobile) -->
+                <button id="dark-toggle-mobile" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100" title="Toggle dark mode">Toggle dark mode <i class="fas fa-moon ml-2"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Privacy Policy (clean, semantic, interactive) -->
+    
+ <main class="container mx-auto px-6 py-8 max-w-4xl relative z-20">
+            <header class="text-center mb-6">
+                <h1 class="text-4xl font-bold text-gray-900 mb-2">Terms of Service</h1>
+                <p class="text-sm text-gray-600">Last updated: <time datetime="2025-08-24">24 August 2025</time></p>
+                <p class="text-gray-700 mt-4 leading-relaxed">These Terms of Service govern your access to and use of our website, products, and services (collectively, the “Services”). Please read these Terms carefully before using our Services. By accessing or using our Services, you agree to be bound by these Terms. If you do not agree, you must not use our Services.</p>
+            </header>
+    <h2>1. Eligibility</h2>
+    <p>You must be at least 18 years old, or the legal age of majority in your jurisdiction, to use our Services. By using our Services, you represent and warrant that you meet these requirements.</p>
+
+    <h2>2. Use of Services</h2>
+    <p>- You agree to use the Services only for lawful purposes and in compliance with all applicable laws and regulations.<br>
+    - You may not use the Services in any manner that could damage, disable, overburden, or impair our systems or networks.<br>
+    - Unauthorized access, scraping, reverse engineering, or distribution of our Services is strictly prohibited.</p>
+
+    <h2>3. User Accounts</h2>
+    <p>- To access certain features, you may be required to create an account.<br>
+    - You are responsible for maintaining the confidentiality of your account credentials and for all activities under your account.<br>
+    - We reserve the right to suspend or terminate your account at our sole discretion if we suspect any violation of these Terms.</p>
+
+    <h2>4. Intellectual Property</h2>
+    <p>- All content, trademarks, logos, designs, text, images, and software available on the Services are the property of <strong>DPM FH UNNES</strong> or its licensors and are protected under intellectual property laws.<br>
+    - You are granted a limited, non-exclusive, non-transferable license to access and use the Services for personal, non-commercial purposes.<br>
+    - You may not copy, reproduce, distribute, modify, or create derivative works without our prior written consent.</p>
+
+    <h2>5. Third-Party Links and Content</h2>
+    <p>Our Services may contain links to third-party websites or services that are not owned or controlled by us. We do not endorse, and are not responsible for, the content, products, or services available from such third parties. You acknowledge and agree that we are not liable for any damages or losses caused by third-party websites or services.</p>
+
+    <h2>6. Disclaimers</h2>
+    <p>- Our Services are provided on an “AS IS” and “AS AVAILABLE” basis without warranties of any kind, either express or implied.<br>
+    - We do not guarantee that the Services will be uninterrupted, error-free, or secure.<br>
+    - We disclaim all warranties of merchantability, fitness for a particular purpose, and non-infringement to the fullest extent permitted by law.</p>
+
+    <h2>7. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by law:<br>
+    - <strong>DPM FH UNNES</strong> and its affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or goodwill, arising from your use of the Services.<br>
+    - Our total liability for any claim relating to the Services shall not exceed the greater of (a) the amount you paid us in the 12 months prior to the claim, or (b) USD $100.</p>
+
+    <h2>8. Indemnification</h2>
+    <p>You agree to indemnify, defend, and hold harmless <strong>DPM FH UNNES</strong>, its officers, employees, partners, and affiliates from any claims, liabilities, damages, costs, or expenses (including reasonable attorneys’ fees) arising from:<br>
+    - Your use or misuse of the Services;<br>
+    - Your violation of these Terms;<br>
+    - Your violation of any third-party rights.</p>
+
+    <h2>9. Governing Law and Dispute Resolution</h2>
+    <p>These Terms shall be governed by and construed in accordance with the laws of the Republic of Indonesia, without regard to its conflict of law principles.</p>
+    <p>Any dispute, claim, or controversy arising out of or relating to these Terms or the Services shall be resolved by litigation in the courts of Semarang, Indonesia. The decision of the court shall be final and binding upon the parties.</p>
+
+    <h2>10. Termination</h2>
+    <p>We may suspend or terminate your access to the Services at any time, with or without cause or notice, including if we reasonably believe you have violated these Terms. Upon termination, your right to use the Services will immediately cease.</p>
+
+    <h2>11. Changes to Terms</h2>
+    <p>We may update or modify these Terms at any time. Any changes will be posted on this page with a new “Last Updated” date. Continued use of the Services after such changes constitutes acceptance of the updated Terms.</p>
+
+    <h2>12. Contact Information</h2>
+    <p>If you have any questions or concerns about these Terms, please contact us at:<br>
+    📧 Email: <a href="mailto:dpmfhunnes25@gmail.com" class="hover:underline">dpmfhunnes25@gmail.com</a><br>
+    📍 Address: Sekretariat DPM FH UNNES, Universitas Negeri Semarang</p>
+    </main>
+
+            <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 relative z-20">
+                <div class="container mx-auto px-6">
+                        <div class="grid md:grid-cols-4 gap-8">
+                                <!-- Column 1 -->
+<div class="fade-in">
+  <div class="flex items-center space-x-4 mb-4">
+    <img src="logo dpm fh.png" alt="Logo DPM FH UNNES" class="w-8 h-8 object-contain">
+    <div class="flex flex-col">
+      <h2 class="text-lg font-bold text-white leading-tight">DPM FH UNNES</h2>
+      <p class="mt-1 text-xs text-gray-400 leading-tight">Parlemen Satya Mandala</p>
+    </div>
+  </div>
+  <p class="text-gray-300 mb-4 italic">
+    Menjadi wadah aspirasi mahasiswa dan mengembangkan potensi mahasiswa Fakultas Hukum UNNES.
+  </p>
+  <div class="flex space-x-4">
+    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</div>
+                
+                                <!-- Column 2 -->
+                                <div class="fade-in delay-1 space-x-8">
+                                        <h3 class="text-lg font-bold mb-4 mx-8">Tautan Cepat</h3>
+                                        <ul class="space-y-1">
+                                                <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                                                <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                                                <li><a href="#events" class="text-gray-400 hover:text-white transition">Events</a></li>
+                                                <li><a href="#team" class="text-gray-400 hover:text-white transition">Our Team</a></li>
+                                        </ul>
+                                </div>
+                
+                <!-- Column 3 -->
+                                <div class="fade-in delay-3" id="contact-column">
+                                        <h3 class="text-lg font-bold mb-4">Jam Operasional</h3>
+                                        <ul class="space-y-3">
+                                                <li class="flex items-start">
+                                                        <i class="fas fa-clock mr-3 text-blue-400"></i>
+                                                        <span class="text-gray-400 hover:text-white-transition">Senin-Kamis: 07.00-17.00</span>
+                                                </li>
+                                                <li class="flex items-center">
+                                                        <i class="fas fa-clock mr-3 text-blue-400"></i>
+                                                        <a class="text-gray-400 hover:text-white transition">Jumat: 08:00-15.00</a>
+                                                </li>
+                                                <li class="flex items-center">
+                                                        <i class="fas fa-clock mr-3 text-blue-400"></i>
+                                                        <a class="text-gray-400 hover:text-white transition">Sabtu-Minggu: Tutup</a>
+                                                </li>
+                                        </ul>
+                                </div>
+                
+                                <!-- Column 4 -->
+                                <div class="fade-in delay-3" id="contact-column">
+                                        <h3 class="text-lg font-bold mb-4">Info Kontak</h3>
+                                        <ul class="space-y-3">
+                                                <li class="flex items-start">
+                                                <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-400"></i>
+                                                <span class="text-gray-400">Fakultas Hukum, Universitas Negeri Semarang<br>Kampus UNNES<br>Sekaran, Gunungpati, Semarang, Jawa Tengah, 50229</span>
+                                                </li>
+                                                <li class="flex items-center">
+                                              <i class="fas fa-envelope mr-3 text-blue-400"></i>
+                                                <a href="mailto:dpmfhunnes25@gmail.com" class="text-gray-400 hover:text-white transition">dpmfhunnes25@gmail.com</a>
+                                                </li>
+                                                <li class="flex items-center">
+                                                <i class="fas fa-phone-alt mr-3 text-blue-400"></i>
+                                                <a href="tel:+62 821-3469-3577" class="text-gray-400 hover:text-white transition">0821-3469-3577</a>
+                                                </li>
+                                        </ul>
+                                </div>
+                        </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-500 text-sm fade-in">
+                                <p>&copy; 2025 DPM FH UNNES. All rights reserved.</p>
+                                <div class="mt-2">
+                                        <a href="Policy.html" class="hover:text-white transition">Privacy Policy</a> | 
+                                        <a href="Terms.html" class="hover:text-white transition">Terms of Service</a>  
+                                </div>
+                        </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-40 invisible transition-all duration-300 hover:bg-blue-600">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      // enable smooth in-page scrolling
+      document.documentElement.style.scrollBehavior = 'smooth';
+      // simple mobile nav toggle
+      const navToggle = document.getElementById('navToggle')
+      const mobileMenu = document.getElementById('mobileMenu')
+      navToggle?.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'))
+       tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              'fade-in': 'fadeIn 1s ease-out',
+              'fade-in-up': 'fadeInUp 1s ease-out'
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' }
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(40px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <!-- Theme toggle script: adds/removes html.dark and persists preference -->
+    <script>
+        (function(){
+            const KEY = 'dpmfh-theme';
+            const btn = document.getElementById('dark-toggle-btn');
+            const mobileBtn = document.getElementById('dark-toggle-mobile');
+
+            function updateDesktopIcon(isDark){
+                if(!btn) return;
+                const moon = btn.querySelector('.fa-moon');
+                const sun = btn.querySelector('.fa-sun');
+                if(moon) moon.style.display = isDark ? 'none' : 'inline-block';
+                if(sun) sun.style.display = isDark ? 'inline-block' : 'none';
+                btn.setAttribute('aria-pressed', isDark);
+            }
+
+            function updateMobileIcon(isDark){
+                if(!mobileBtn) return;
+                // keep the label but swap icon
+                const hasSun = mobileBtn.querySelector('.fa-sun');
+                const hasMoon = mobileBtn.querySelector('.fa-moon');
+                if(hasSun || hasMoon){
+                    if(hasSun) hasSun.style.display = isDark ? 'inline-block' : 'none';
+                    if(hasMoon) hasMoon.style.display = isDark ? 'none' : 'inline-block';
+                } else {
+                    // initial markup didn't include sun; replace icon HTML
+                    mobileBtn.innerHTML = 'Toggle dark mode <i class="fas ' + (isDark ? 'fa-sun' : 'fa-moon') + ' ml-2"></i>';
+                }
+            }
+
+            function applyTheme(theme){
+                const isDark = theme === 'dark';
+                if(isDark) document.documentElement.classList.add('dark');
+                else document.documentElement.classList.remove('dark');
+                updateDesktopIcon(isDark);
+                updateMobileIcon(isDark);
+            }
+
+            function toggle(){
+                const isDark = document.documentElement.classList.contains('dark');
+                const next = isDark ? 'light' : 'dark';
+                try { localStorage.setItem(KEY, next); } catch(e) { /* ignore storage errors */ }
+                applyTheme(next);
+            }
+
+            // wire events
+            btn?.addEventListener('click', toggle);
+            mobileBtn?.addEventListener('click', toggle);
+
+            // init theme from storage or system preference
+            try {
+                const saved = localStorage.getItem(KEY);
+                if(saved) applyTheme(saved);
+                else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) applyTheme('dark');
+                else applyTheme('light');
+            } catch(e){
+                // localStorage may be disabled — fall back to system preference
+                if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) applyTheme('dark');
+            }
+        })();
+    </script>
+</body>
+</html>
+</body>
+</html>
