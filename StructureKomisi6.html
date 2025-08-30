@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dewan Perwakilan Mahasiswa FH UNNES</title>
+    <!-- single Tailwind + Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
+            /* small decorative divider as pseudo-element for headings */
+            .section-heading-with-divider::after {
+                content: "";
+                display: block;
+                width: 4rem; /* 64px */
+                height: 4px;
+                margin: 6px auto 0; /* small gap from heading */
+                background: #1f2937; /* gray-800 */
+                border-radius: 9999px;
+            }
+            /* dark mode color for the divider */
+            html.dark .section-heading-with-divider::after { background: #f3f4f6; }
+        </style>
+</head>
+<body class="font-sans bg-transparent pt-20">
+
+    <!-- Background image with dark-blue tint (behind content) -->
+    <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none">
+        <img src="bg-dpm-fh-unnes.jpg" alt="background" class="absolute inset-0 w-full h-full object-cover opacity-50">
+        <!-- dark blue tint overlay placed above image but still behind content -->
+        <div aria-hidden="true" class="absolute inset-0" style="background: rgba(3,37,65,0.6); mix-blend-mode: multiply;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="logo dpm fh.png" alt="Logo DPM FH UNNES" class="h-10 w-auto object-contain">
+                <span class="text-xl font-bold text-gray-800">DPM FH UNNES</span>
+            </div>
+
+            <!-- mobile toggle -->
+            <button id="navToggle" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+
+            <!-- Desktop menu -->
+            <div id="navMenu" class="hidden md:flex space-x-8 items-center">
+                <a href="Structure.html#home" class="text-gray-700 hover:text-blue-600">Home</a>
+                <a href="Structure.html#about" class="text-gray-700 hover:text-blue-600">About</a>
+                <a href="Structure.html#events" class="text-gray-700 hover:text-blue-600">Events</a>
+                <a href="Structure.html#team" class="text-gray-700 hover:text-blue-600">Team</a>
+                <a href="Structure.html#contact" class="text-gray-700 hover:text-blue-600">Contact</a>
+                <a href="Structure.html#join" class="bg-blue-500 text-white px-4 py-2 rounded-full shadow">Join Us</a>
+                <!-- Dark mode toggle (desktop) -->
+                <button id="dark-toggle-btn" aria-pressed="false" title="Toggle dark mode" class="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun hidden"></i>
+                    <span class="sr-only">Toggle dark mode</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu items -->
+        <div id="mobileMenu" class="md:hidden hidden border-t">
+            <div class="px-6 py-4 space-y-2">
+                <a href="#home" class="block text-gray-700">Home</a>
+                <a href="#about" class="block text-gray-700">About</a>
+                <a href="#events" class="block text-gray-700">Events</a>
+                <a href="#team" class="block text-gray-700">Team</a>
+                <a href="#contact" class="block text-gray-700">Contact</a>
+                <a href="#join" class="block bg-blue-500 text-white px-4 py-2 rounded-full text-center">Join Us</a>
+                    <!-- Dark mode toggle (mobile) -->
+                    <button id="dark-toggle-mobile" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100" title="Toggle dark mode">Toggle dark mode <i class="fas fa-moon ml-2"></i></button>
+            </div>
+        </div>
+    </nav>
+
+<!-- Hero Section -->
+<section id="home" class="bg-grey-100 text-white py-20">
+  <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-8">
+    
+    <!-- Logo dan Panah -->
+    <div class="flex-1 flex flex-col items-start space-y-4">
+      <a href="Structure.html#team"
+         class="text-white text-xl font-medium hover:underline"
+  
+         aria-label="Back to team" title="Back to team">← Kembali ke Beranda</a>
+
+      <h1 class="text-3xl md:text-4xl font-bold animate-fade-in">Komisi 6 - Media dan Informasi
+      </h1>
+
+      <span class="text-lg md:text-xl animate-fade-in">
+        Dewan Perwakilan Mahasiswa Fakultas Hukum UNNES
+      </span>
+    </div>
+  </div>
+</section>
+
+    <!--BPH Explanation Section-->
+    <section id="explanation" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-6 space-y-2">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Tentang Komisi 6</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Komisi Media dan Informasi berperan sebagai pengelola informasi serta dokumentasi DPM FH UNNES. Komisi ini menjadi wajah publik organisasi dengan memaksimalkan media sosial, publikasi digital, dan dokumentasi sebagai sarana komunikasi yang efektif antara lembaga dan mahasiswa.</p>            
+              </div>
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-2 leading-tight">Tugas dan Fungsi</h3>
+                <!-- short decorative divider (not a text underline) -->
+                <div class="mx-auto mt-0 mb-5 w-16 h-1 rounded-full bg-gray-800" aria-hidden="true"></div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h4 class="font-bold text-2xl mb-2">Publikasi Data</h4>
+                    <p class="text-gray-600">Menyampaikan informasi resmi DPM melalui berbagai platform digital maupun media cetak.</p>
+               </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h5 class="font-bold text-2xl mb-2">Dokumentasi Acara</h5>
+                    <p class="text-gray-600">Mengarsipkan seluruh kegiatan organisasi dalam bentuk foto, video, maupun tulisan.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h6 class="font-bold text-2xl mb-2">Informasi Digital</h6>
+                    <p class="text-gray-600">Mengoptimalkan media sosial sebagai kanal utama komunikasi antara DPM dan mahasiswa.</p>
+                </div>
+            </div>
+    </section>
+
+<!-- Organization Structure -->
+<section id="structure" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-12 text-center">Struktur Organisasi</h2>
+
+    <!-- Top Centered Card 1 -->
+    <div class="max-w-3xl mx-auto mb-10">
+      <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+        <img src="FOTO MEDFO/ody.png" alt="Foto"
+             class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-gray-800">Claudya Mareshky</h3>
+          <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Ketua Komisi 6</span>
+          <p class="text-sm text-gray-800 mt-3">NIM: 2308010442</p>
+          <p class="text-sm text-gray-800 mt-1">Memimpin dan mengoordinasikan seluruh kegiatan Komisi 6, serta mengatur arah strategi media informasi.</p>
+        </div>
+      </div>
+    </div>
+
+    <!--Card Top 2-->
+    <div class="max-w-3xl mx-auto mb-10">
+      <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+        <img src="FOTO MEDFO/stevi.png" alt="Stevani Anekhe Dwinita Karo"
+             class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-gray-800">Stevani Anekhe Dwinita Karo</h3>
+          <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Wakil Ketua Komisi 6</span>
+          <p class="text-sm text-gray-800 mt-3">NIM: 2308010448</p>
+          <p class="text-sm text-gray-800 mt-1">Mendampingi ketua dalam pelaksanaan tugas, serta mengawasi jalannya program divisi.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Two Cards Side by Side -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">      
+      <!-- Card 1 -->
+      <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+        <img src="FOTO MEDFO/hbb.png" alt="Foto Maulana Habibie Yahya"
+             class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-gray-800">Maulana Habibie Yahya</h3>
+          <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Penanggung Jawab Website dan Desain</span>
+          <p class="text-sm text-gray-800 mt-3">NIM: 2308010362</p>
+          <p class="text-sm text-gray-800 mt-1">Mengelola dan mengembangkan website resmi komisi, serta mendukung kebutuhan desain publikasi digital maupun cetak.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+        <img src="FOTO MEDFO/regina.png" alt="Regina Rahajeng Herdian"
+             class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-gray-800">Regina Rahajeng Herdian</h3>
+          <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Penanggung Jawab Media Sosial dan Desain</span>
+          <p class="text-sm text-gray-800 mt-3">NIM: 2408010230</p>
+          <p class="text-sm text-gray-800 mt-1">Mengelola akun media sosial komisi, membuat konten kreatif, serta memastikan informasi tersampaikan secara menarik kepada publik.
+</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+        <img src="FOTO MEDFO/nadine.png" alt="Nadine Aura Kamila"
+             class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-gray-800">Nadine Aura Kamila</h3>
+          <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Penanggung Jawab Media Sosial dan Desain</span>
+          <p class="text-sm text-gray-800 mt-3">NIM: 2408010466</p>
+          <p class="text-sm text-gray-800 mt-1">Mengelola akun media sosial komisi, membuat konten kreatif, serta memastikan informasi tersampaikan secara menarik kepada publik.
+</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+        <img src="FOTO MEDFO/alviana.png" alt="Alviana Dwi Tama"
+             class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-gray-800">Alviana Dwi Tama</h3>
+          <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Penanggung Jawab Media Sosial dan Desain</span>
+          <p class="text-sm text-gray-800 mt-3">NIM: 2408010683</p>
+          <p class="text-sm text-gray-800 mt-1">Mengelola akun media sosial komisi, membuat konten kreatif, serta memastikan informasi tersampaikan secara menarik kepada publik.
+</p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+        <img src="FOTO MEDFO/alviani_tri_tama.png" alt="Alviani Tri Tama"
+             class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-gray-800">Alviani Tri Tama</h3>
+          <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Penanggung Jawab Media Sosial dan Desain</span>
+          <p class="text-sm text-gray-800 mt-3">NIM: 2408010690</p>
+          <p class="text-sm text-gray-800 mt-1">Mengelola akun media sosial komisi, membuat konten kreatif, serta memastikan informasi tersampaikan secara menarik kepada publik.
+</p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+        <img src="FOTO MEDFO/hani.png" alt="Hani Yuliana Lestari"
+             class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-gray-800">Hani Yuliana Lestari</h3>
+          <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Penanggung Jawab Media Sosial dan Desain</span>
+          <p class="text-sm text-gray-800 mt-3">NIM: 2408010338</p>
+          <p class="text-sm text-gray-800 mt-1">Mengelola akun media sosial komisi, membuat konten kreatif, serta memastikan informasi tersampaikan secara menarik kepada publik.
+</p>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+        <img src="FOTO MEDFO/reni.png" alt="Reni Nur'asih"
+             class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-gray-800">Reni Nur'asih</h3>
+          <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Penanggung Jawab Media Sosial dan Desain</span>
+          <p class="text-sm text-gray-800 mt-3">NIM: 2408010075</p>
+          <p class="text-sm text-gray-800 mt-1">Mengelola akun media sosial komisi, membuat konten kreatif, serta memastikan informasi tersampaikan secara menarik kepada publik.
+</p>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+        <img src="FOTO MEDFO/euclid.png" alt="Foto"
+             class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-gray-800">Euclid Abraham Pasaribu</h3>
+          <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Penanggung Jawab Videografi</span>
+          <p class="text-sm text-gray-800 mt-3">NIM: 2408010253</p>
+          <p class="text-sm text-gray-800 mt-1">Mendokumentasikan kegiatan, membuat konten video, serta mendukung kebutuhan publikasi berbasis audio-visual.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Bottom Card-->
+<section id="structure" class="py-4 bg-gray-50">
+  <div class="container mx-auto px-6">
+<!--Card Bottom 3-->
+    <div class="max-w-3xl mx-auto mb-10">
+      <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+        <img src="FOTO MEDFO/fislam.png" alt="Fislam Binar Albayasin"
+             class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-gray-800">Fislam Binar Albayasin</h3>
+          <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Penanggung Jawab Videografi</span>
+          <p class="text-sm text-gray-800 mt-3">NIM: 2408010138</p>
+          <p class="text-sm text-gray-800 mt-1">Mendokumentasikan kegiatan, membuat konten video, serta mendukung kebutuhan publikasi berbasis audio-visual.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROLEGFAK Section -->
+<section id="prolegfak" class="py-6 bg-gray-100">
+<!-- Tombol Navigasi Ganda -->
+<div class="flex justify-between mt-16 gap-4 px-4 md:px-0">
+  <!-- Tombol Sebelumnya -->
+  <a href="StructureKomisi5.html"
+     class="inline-block bg-gray-700 text-white text-sm font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-900 transition duration-300"
+     aria-label="Previous" title="Previous">
+    ← Sebelumnya (Komisi 5)
+  </a>
+
+  <!-- Tombol Selanjutnya -->
+  <a href="StructureKomisi7.html"
+     class="inline-block bg-gray-800 text-white text-sm font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
+     aria-label="Next" title="Next">
+    Selanjutnya (Komisi 7) →
+  </a>
+</div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 relative z-20">
+                <div class="container mx-auto px-6">
+                        <div class="grid md:grid-cols-4 gap-8">
+                                <!-- Column 1 -->
+<div class="fade-in">
+  <div class="flex items-center space-x-4 mb-4">
+    <img src="logo dpm fh.png" alt="Logo DPM FH UNNES" class="w-8 h-8 object-contain">
+    <div class="flex flex-col">
+      <h2 class="text-lg font-bold text-white leading-tight">DPM FH UNNES</h2>
+      <p class="mt-1 text-xs text-gray-400 leading-tight">Parlemen Satya Mandala</p>
+    </div>
+  </div>
+  <p class="text-gray-300 mb-4 italic">
+    Menjadi wadah aspirasi mahasiswa dan mengembangkan potensi mahasiswa Fakultas Hukum UNNES.
+  </p>
+  <div class="flex space-x-4">
+    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</div>
+                
+                                <!-- Column 2 -->
+                                <div class="fade-in delay-1 space-x-8">
+                                        <h3 class="text-lg font-bold mb-4 mx-8">Tautan Cepat</h3>
+                                        <ul class="space-y-1">
+                                                <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                                                <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                                                <li><a href="#events" class="text-gray-400 hover:text-white transition">Events</a></li>
+                                                <li><a href="#team" class="text-gray-400 hover:text-white transition">Our Team</a></li>
+                                        </ul>
+                                </div>
+                
+                <!-- Column 3 -->
+                                <div class="fade-in delay-3" id="contact-column">
+                                        <h3 class="text-lg font-bold mb-4">Jam Operasional</h3>
+                                        <ul class="space-y-3">
+                                                <li class="flex items-start">
+                                                        <i class="fas fa-clock mr-3 text-blue-400"></i>
+                                                        <span class="text-gray-400 hover:text-white-transition">Senin-Kamis: 07.00-17.00</span>
+                                                </li>
+                                                <li class="flex items-center">
+                                                        <i class="fas fa-clock mr-3 text-blue-400"></i>
+                                                        <a class="text-gray-400 hover:text-white transition">Jumat: 08:00-15.00</a>
+                                                </li>
+                                                <li class="flex items-center">
+                                                        <i class="fas fa-clock mr-3 text-blue-400"></i>
+                                                        <a class="text-gray-400 hover:text-white transition">Sabtu-Minggu: Tutup</a>
+                                                </li>
+                                        </ul>
+                                </div>
+                
+                                <!-- Column 4 -->
+                                <div class="fade-in delay-3" id="contact-column">
+                                        <h3 class="text-lg font-bold mb-4">Info Kontak</h3>
+                                        <ul class="space-y-3">
+                                                <li class="flex items-start">
+                                                <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-400"></i>
+                                                <span class="text-gray-400">Fakultas Hukum, Universitas Negeri Semarang<br>Kampus UNNES<br>Sekaran, Gunungpati, Semarang, Jawa Tengah, 50229</span>
+                                                </li>
+                                                <li class="flex items-center">
+                                              <i class="fas fa-envelope mr-3 text-blue-400"></i>
+                                                <a href="mailto:dpmfhunnes25@gmail.com" class="text-gray-400 hover:text-white transition">dpmfhunnes25@gmail.com</a>
+                                                </li>
+                                                <li class="flex items-center">
+                                                <i class="fas fa-phone-alt mr-3 text-blue-400"></i>
+                                                <a href="tel:+62 821-3469-3577" class="text-gray-400 hover:text-white transition">0821-3469-3577</a>
+                                                </li>
+                                        </ul>
+                                </div>
+                        </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-500 text-sm fade-in">
+                                <p>&copy; 2025 DPM FH UNNES. All rights reserved.</p>
+                                <div class="mt-2">
+                                        <a href="Policy.html" class="hover:text-white transition">Privacy Policy</a> |  
+                                        <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=sd3mfz9" class="hover:text-white transition">Created by: Maulana Habibie Yahya</a> |
+                                        <a href="Terms.html" class="hover:text-white transition">Terms of Service</a>  
+                                </div>
+                        </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-40 invisible transition-all duration-300 hover:bg-blue-600">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      // enable smooth in-page scrolling
+      document.documentElement.style.scrollBehavior = 'smooth';
+      // simple mobile nav toggle
+      const navToggle = document.getElementById('navToggle')
+      const mobileMenu = document.getElementById('mobileMenu')
+      navToggle?.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'))
+       tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              'fade-in': 'fadeIn 1s ease-out',
+              'fade-in-up': 'fadeInUp 1s ease-out'
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' }
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(40px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <!-- Theme toggle script: adds/removes html.dark and persists preference -->
+    <script>
+        (function(){
+            const KEY = 'dpmfh-theme';
+            const btn = document.getElementById('dark-toggle-btn');
+            const mobileBtn = document.getElementById('dark-toggle-mobile');
+
+            function updateDesktopIcon(isDark){
+                if(!btn) return;
+                const moon = btn.querySelector('.fa-moon');
+                const sun = btn.querySelector('.fa-sun');
+                if(moon) moon.style.display = isDark ? 'none' : 'inline-block';
+                if(sun) sun.style.display = isDark ? 'inline-block' : 'none';
+                btn.setAttribute('aria-pressed', isDark);
+            }
+
+            function updateMobileIcon(isDark){
+                if(!mobileBtn) return;
+                // keep the label but swap icon
+                const hasSun = mobileBtn.querySelector('.fa-sun');
+                const hasMoon = mobileBtn.querySelector('.fa-moon');
+                if(hasSun || hasMoon){
+                    if(hasSun) hasSun.style.display = isDark ? 'inline-block' : 'none';
+                    if(hasMoon) hasMoon.style.display = isDark ? 'none' : 'inline-block';
+                } else {
+                    // initial markup didn't include sun; replace icon HTML
+                    mobileBtn.innerHTML = 'Toggle dark mode <i class="fas ' + (isDark ? 'fa-sun' : 'fa-moon') + ' ml-2"></i>';
+                }
+            }
+
+            function applyTheme(theme){
+                const isDark = theme === 'dark';
+                if(isDark) document.documentElement.classList.add('dark');
+                else document.documentElement.classList.remove('dark');
+                updateDesktopIcon(isDark);
+                updateMobileIcon(isDark);
+            }
+
+            function toggle(){
+                const isDark = document.documentElement.classList.contains('dark');
+                const next = isDark ? 'light' : 'dark';
+                try { localStorage.setItem(KEY, next); } catch(e) { /* ignore storage errors */ }
+                applyTheme(next);
+            }
+
+            // wire events
+            btn?.addEventListener('click', toggle);
+            mobileBtn?.addEventListener('click', toggle);
+
+            // init theme from storage or system preference
+            try {
+                const saved = localStorage.getItem(KEY);
+                if(saved) applyTheme(saved);
+                else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) applyTheme('dark');
+                else applyTheme('light');
+            } catch(e){
+                // localStorage may be disabled — fall back to system preference
+                if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) applyTheme('dark');
+            }
+        })();
+    </script>
+</body>
+</html>
