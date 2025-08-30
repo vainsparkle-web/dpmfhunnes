@@ -51,3 +51,80 @@ html {
   text-align: auto;
   animation: fade-in 1s ease-in-out; 
 }
+
+/* Dark mode overrides (class-based) */
+html, body {
+    transition: background-color 220ms ease, color 220ms ease;
+}
+
+html.dark, html.dark body {
+    background-color: #071225 !important;
+    color: #e6eef8 !important;
+}
+
+html.dark nav {
+    background-color: #071225 !important;
+}
+
+/* Invert common light surfaces used in the templates */
+html.dark .bg-white { background-color: #0f1724 !important; color: #e6eef8 !important; }
+html.dark .bg-gray-800 { background-color: #071225 !important; }
+html.dark .bg-gray-100 { background-color: #0f1724 !important; color: #e6eef8 !important; }
+
+/* Text colors */
+html.dark .text-gray-800, html.dark .text-gray-900 { color: #e6eef8 !important; }
+html.dark .text-gray-600, html.dark .text-gray-500, html.dark .text-gray-400 { color: #9aa6b2 !important; }
+
+/* Links and buttons */
+html.dark a.text-blue-900, html.dark a { color: #262b49 !important; }
+html.dark .bg-blue-900 { background-color: #262b49 !important; }
+html.dark .bg-blue-900 { background-color: #262b49 !important; }
+
+/* Details / summary dark surface */
+html.dark details { background-color: #0b1622 !important; border-color: rgba(255,255,255,0.04) !important; color: #e6eef8 !important; }
+html.dark summary { color: #e6eef8 !important; }
+
+/* Footer adjustments */
+html.dark footer { background-color: #071225 !important; color: #9fb3c8 !important; }
+
+/* Tame shadows in dark mode */
+html.dark .shadow, html.dark .shadow-lg { box-shadow: none !important; }
+
+/* Make PNG images appear white in dark mode (targets files ending with .png) */
+html.dark img[src$=".png"] {
+    filter: brightness(0) invert(1) saturate(0);
+    transition: filter 200ms ease-in-out, opacity 200ms ease-in-out;
+}
+
+/* Keep logos slightly opaque so they remain visible on dark backgrounds */
+html.dark img[src$=".png"].logo, html.dark img[src$=".png"].brand {
+    opacity: 0.95;
+}
+
+/* Prevent white gradient overlays from covering the hero image in dark mode */
+html.dark #bg-overlay,
+html.dark .hero-overlay {
+    background: transparent !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Ensure hero images stay visible in dark mode */
+html.dark #site-hero-bg,
+html.dark #page-bg-image {
+    filter: none !important;
+    opacity: 0.98 !important;
+}
+.contact {
+  text-align: right;
+}
+
+.short-decorative-divider:not(:first-child):after {
+                content: "";
+                display: block;
+                width: 4rem; /* 64px */
+                height: 4px;
+                margin: 6px auto 0; /* small gap from heading */
+                background: #1f2937; /* gray-800 */
+                border-radius: 9999px;
+            }
