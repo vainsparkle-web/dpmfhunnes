@@ -12,13 +12,11 @@
 </head>
 <body class="font-sans bg-transparent pt-20">
 
-    <!-- Site background image placed behind content and follows page scroll (moves with content). -->
-    <div aria-hidden="true" class="absolute inset-0 -z-50 pointer-events-none">
-        <!-- visible band at top; image height slightly extended using calc to add responsive space -->
-        <img src="bg-dpm-fh-unnes.jpg" alt="" class="absolute left-0 w-full object-cover" id="site-hero-bg" style="top:64px; height: calc(18rem + 8vh); z-index: -60;">
-    <!-- left-side white gradient overlay applied on top of image but behind content; extended to ~75% width -->
-    <div id="bg-overlay" class="hero-overlay absolute left-0 pointer-events-none" style="top:64px; height: calc(28rem + 30vh); width:75%; z-index:-55; background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 15%, rgba(255,255,255,0.85) 35%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%);"></div>
+   <div aria-hidden="true" class="absolute inset-0 -z-50 pointer-events-none">
+    <img src="bg-dpm-fh-unnes.jpg" alt="" class="absolute left-0 w-full object-cover" id="site-hero-bg" style="top:64px; height: calc(26rem + 15vh); z-index: -60;">
+    <div id="bg-overlay" class="hero-overlay absolute left-0 pointer-events-none" style="top:64px; height: calc(30rem + 30vh); width:75%; z-index:-55; background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 15%, rgba(255,255,255,0.85) 35%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%);"> 
     </div>
+</div>
 
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
@@ -41,12 +39,6 @@
                 <a href="#team" class="text-gray-700 hover:text-blue-600">Komisi</a>
                 <a href="#contact" class="text-gray-700 hover:text-blue-600">Info Kontak</a>
                 <a href="StructureKomisi3.html#ForbisaSection" class="bg-blue-500 text-white px-4 py-2 rounded-full shadow">Form Aduan</a>
-                <!-- Dark mode toggle (desktop) -->
-                <button id="dark-toggle-btn" aria-pressed="false" title="Dark Mode" class="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun hidden"></i>
-                    <span class="sr-only">Dark Mode</span>
-                </button>
             </div>
         </div>
 
@@ -60,7 +52,6 @@
                 <a href="#contact" class="block text-gray-700">Kontak</a>
                 <a href="StructureKomisi3.html#ForbisaSection" class="block bg-blue-500 text-white px-4 py-2 rounded-full text-center">Form Aduan</a>
                     <!-- Dark mode toggle (mobile) -->
-                    <button id="dark-toggle-mobile" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100" title="Toggle dark mode">Dark Mode <i class="fas fa-moon ml-2"></i></button>
             </div>
         </div>
     </nav>
@@ -213,19 +204,10 @@
             <div class="max-w-md mx-auto mt-12 py-10 text-center fade-in">
                 <h3 class="text-xl font-bold text-gray-800 mb-4">Follow Us</h3>
                 <div class="flex justify-center space-x-6">
-                    <a href="#" class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center text-gray-700 hover:bg-blue-500 hover:text-white transition">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center text-gray-700 hover:bg-blue-400 hover:text-white transition">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center text-gray-700 hover:bg-pink-500 hover:text-white transition">
+                    <a href="https://www.instagram.com/dpmfhunnes" class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center text-gray-700 hover:bg-pink-500 hover:text-white transition">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="#" class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-800 hover:text-white transition">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
-                    <a href="#" class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center text-gray-700 hover:bg-red-600 hover:text-white transition">
+                    <a href="https://www.youtube.com/@DPMFHUNNES" class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center text-gray-700 hover:bg-red-600 hover:text-white transition">
                         <i class="fab fa-youtube"></i>
                     </a>
                 </div>
@@ -252,7 +234,7 @@
   <div class="flex space-x-4">
     <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
     <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
-    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+    <a href="instagram.com/dpmfhunnes" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
     <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
   </div>
 </div>
@@ -416,6 +398,7 @@
     </script>
 </body>
 </html>
+
 
 
 
