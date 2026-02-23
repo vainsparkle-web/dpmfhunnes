@@ -1,0 +1,21 @@
+name: Footer Guardian
+on: [push]
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Auto-Fix Missing Footer
+        run: |
+          find . -name "*.html" -print0 | while IFS= read -r -d '' file; do
+            if ! grep -q "footer-loader.js" "$file"; then
+              sed -i 's|</body>|<div id="footer-placeholder"></div><script src="footer-loader.js"></script></body>|g' "$file"
+            fi
+          done
+      - name: Save Fix
+        run: |
+          git config --global user.name "Guardian-Bot"
+          git config --global user.email "bot@github.com"
+          git add .
+          git commit -m "Guardian: Memulihkan footer yang terhapus" || echo "No changes"
+          git push
