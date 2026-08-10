@@ -5,316 +5,332 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo dpm fh.png" type="image/png">
     <title>Dewan Perwakilan Mahasiswa FH UNNES</title>
-    <!-- single Tailwind + Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="Untitled-1.css">
 </head>
 <body class="font-sans bg-transparent pt-20">
 
-   <div aria-hidden="true" class="absolute inset-0 -z-50 pointer-events-none">
-    <img src="bg-dpm-fh-unnes.jpg" alt="" class="absolute left-0 w-full object-cover" id="site-hero-bg" style="top:64px; height: calc(26rem + 15vh); z-index: -60;">
-    <div id="bg-overlay" class="hero-overlay absolute left-0 pointer-events-none" style="top:64px; height: calc(30rem + 30vh); width:75%; z-index:-55; background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 15%, rgba(255,255,255,0.85) 35%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%);"> 
+    <!-- Hero Background -->
+    <div aria-hidden="true" class="absolute inset-0 -z-50 pointer-events-none">
+        <img src="bg-dpm-fh-unnes.jpg" alt="" class="absolute left-0 w-full object-cover" id="site-hero-bg"
+             style="top:64px; height: calc(26rem + 15vh); z-index: -60;">
+        <div id="bg-overlay" class="hero-overlay absolute left-0 pointer-events-none"
+             style="top:64px; height: calc(30rem + 30vh); width:75%; z-index:-55;
+                    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 15%,
+                    rgba(255,255,255,0.85) 35%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%);">
+        </div>
     </div>
-</div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+    <nav class="glass-nav fixed top-0 left-0 right-0 bg-white shadow-md z-50">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-2">
-                <img src="logo dpm fh.png" alt="Logo DPM FH UNNES" class="h-10 dark:bg-white-0 w-auto object-contain">
+                <img src="logo dpm fh.png" alt="Logo DPM FH UNNES" class="h-10 w-auto object-contain">
                 <span class="text-xl font-bold text-gray-800">DPM FH UNNES</span>
             </div>
 
-            <!-- mobile toggle -->
-            <button id="navToggle" class="md:hidden text-gray-700">
+            <!-- Tombol hamburger mobile -->
+            <button id="navToggle" class="md:hidden text-gray-700 p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Buka menu">
                 <i class="fas fa-bars text-xl"></i>
             </button>
-            
+
             <!-- Desktop menu -->
-            <div id="navMenu" class="hidden md:flex space-x-8 items-center dark:text-white">
-                <a href="#home" class="text-gray-700 hover:text-blue-600">Beranda</a>
-                <a href="#about" class="text-gray-700 hover:text-blue-600">Tentang</a>
-                <a href="#events" class="text-gray-700 hover:text-blue-600">Program</a>
-                <a href="#team" class="text-gray-700 hover:text-blue-600">Komisi</a>
-                <a href="#contact" class="text-gray-700 hover:text-blue-600">Info Kontak</a>
-                <a href="StructureKomisi3.html#ForbisaSection" class="bg-blue-500 text-white px-4 py-2 rounded-full shadow">Form Aduan</a>
+            <div id="navMenu" class="hidden md:flex space-x-6 items-center">
+                <a href="#home"    class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Beranda</a>
+                <a href="#about"   class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Tentang</a>
+                <a href="#events"  class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Program</a>
+                <a href="#team"    class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Komisi</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Info Kontak</a>
+                <a href="StructureKomisi3.html#ForbisaSection"
+                   class="hover-lift bg-blue-500 text-white px-5 py-2 rounded-full shadow hover:bg-blue-600 transition-all duration-200 font-medium">
+                   Form Aduan
+                </a>
+                <button id="dark-toggle-btn" aria-pressed="false" title="Dark Mode"
+                        class="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun hidden"></i>
+                    <span class="sr-only">Dark Mode</span>
+                </button>
             </div>
         </div>
 
-        <!-- Mobile menu items -->
-        <div id="mobileMenu" class="md:hidden hidden border-t">
-            <div class="px-6 py-4 space-y-2">
-                <a href="#home" class="block text-gray-700">Beranda</a>
-                <a href="#about" class="block text-gray-700">Tentang</a>
-                <a href="#events" class="block text-gray-700">Program</a>
-                <a href="#team" class="block text-gray-700">Komisi</a>
-                <a href="#contact" class="block text-gray-700">Kontak</a>
-                <a href="StructureKomisi3.html#ForbisaSection" class="block bg-blue-500 text-white px-4 py-2 rounded-full text-center">Form Aduan</a>
-                    <!-- Dark mode toggle (mobile) -->
+        <!--
+            Mobile menu
+        -->
+        <div id="mobileMenu">
+            <div class="border-t px-6 py-4 space-y-1">
+                <a href="#home"    class="block px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors">Beranda</a>
+                <a href="#about"   class="block px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors">Tentang</a>
+                <a href="#events"  class="block px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors">Program</a>
+                <a href="#team"    class="block px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors">Komisi</a>
+                <a href="#contact" class="block px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors">Kontak</a>
+                <a href="StructureKomisi3.html#ForbisaSection"
+                   class="block bg-blue-500 text-white px-4 py-2 rounded-full text-center font-medium hover:bg-blue-600 transition-colors">
+                   Form Aduan
+                </a>
+                <button id="dark-toggle-mobile"
+                        class="w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 font-medium transition-colors"
+                        title="Toggle dark mode">
+                    Dark Mode <i class="fas fa-moon ml-2"></i>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ═══════════════════════════════════════════════════
+         HERO SECTION
+    ═══════════════════════════════════════════════════ -->
     <section id="home">
         <div class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-8">
             <div class="flex-1 space-y-6">
-                <h1 class="text-4xl md:text-5xl font-bold text-black-800 mb-2 animate-fade-in">Dewan Perwakilan Mahasiswa</h1>
-                <p class="text-lg text-black-800 max-w-2xl">DPM FH UNNES adalah organisasi internal yang bertujuan untuk mengawasi dan menampung aspirasi mahasiswa dalam kehidupan perkuliahan. Kami berkomitmen untuk menjaga kepercayaan civitas akademika yang telah diamanatkan kepada kami.</p>
-                <div class="flex flex-col sm:flex-row items-start gap-3">
-                    <a href="#about" class="inline-flex items-center justify-center h-12 bg-blue-500 text-white px-6 rounded-full shadow-lg hover:bg-blue-600 transition duration-300">Tentang Kami</a>
+                <h1 data-reveal class="text-4xl md:text-5xl font-bold text-gray-900 mb-2 leading-tight">
+                    Dewan Perwakilan Mahasiswa
+                </h1>
+                <p data-reveal class="text-lg text-gray-700 max-w-2xl leading-relaxed">
+                    DPM FH UNNES adalah organisasi internal yang bertujuan untuk mengawasi dan menampung
+                    aspirasi mahasiswa dalam kehidupan perkuliahan. Kami berkomitmen untuk menjaga
+                    kepercayaan civitas akademika yang telah diamanatkan kepada kami.
+                </p>
+                <div data-reveal class="flex flex-col sm:flex-row items-start gap-3">
+                    <a href="#about"
+                       class="hover-lift inline-flex items-center justify-center h-12 bg-blue-500 text-white
+                              px-6 rounded-full shadow-lg hover:bg-blue-600 transition-all duration-300 font-medium">
+                        Tentang Kami
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ═══════════════════════════════════════════════════
+         ABOUT SECTION
+    ═══════════════════════════════════════════════════ -->
     <section id="about" class="container mx-auto px-6 py-16">
-        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Tentang Kami</h2>
-        <p class="text-gray-600 mb-8 max-w-2xl">Dewan Perwakilan Mahasiswa (DPM) FH UNNES adalah lembaga legislatif mahasiswa di Fakultas Hukum Universitas Negeri Semarang yang berfungsi sebagai perancang undang-undang, pengawas jalannya organisasi kemahasiswaan (BEM, UKM, dan Kelompok Belajar), serta sebagai penyalur aspirasi di lingkungan FH UNNES.
-</p>
+        <h2 data-reveal class="text-2xl font-semibold text-gray-800 mb-2">Tentang Kami</h2>
+        <div data-reveal class="w-12 h-1 bg-blue-500 rounded mb-6"></div>
+        <p data-reveal class="text-gray-600 mb-10 max-w-2xl leading-relaxed">
+            Dewan Perwakilan Mahasiswa (DPM) FH UNNES adalah lembaga legislatif mahasiswa di Fakultas Hukum
+            Universitas Negeri Semarang yang berfungsi sebagai perancang undang-undang, pengawas jalannya
+            organisasi kemahasiswaan (BEM, UKM, dan Kelompok Belajar), serta sebagai penyalur aspirasi
+            di lingkungan FH UNNES.
+        </p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-lg shadow-xl dark:border-gray-400">
-                <h3 class="font-semibold text-lg mb-2">Misi dan Visi</h3>
-                <p class="text-gray-600">DPM FH UNNES memiliki visi untuk menjadi lembaga perwakilan mahasiswa yang aspiratif, inspiratif, dan profesional, serta berkontribusi nyata dalam pengembangan potensi mahasiswa. Untuk mewujudkan visi tersebut, DPM FH UNNES menjalankan misi membangun lingkungan internal yang inklusif dan harmonis, mengoptimalkan fungsi sebagai wadah aspirasi yang akuntabel, serta menciptakan ruang kolaboratif melalui program kerja edukatif dan advokatif. Selain itu, DPM FH UNNES berkomitmen memperkuat fungsi legislasi dengan produk hukum yang relevan dan adaptif, serta meningkatkan pengawasan secara profesional melalui koordinasi aktif demi efektivitas pemantauan kelembagaan.</br></p>
+            <div data-reveal class="glass-card hover-lift p-6">
+                <h3 class="font-semibold text-lg mb-3 text-gray-800">Misi dan Visi</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    DPM FH UNNES memiliki visi untuk menjadi lembaga perwakilan mahasiswa yang aspiratif,
+                    inspiratif, dan profesional, serta berkontribusi nyata dalam pengembangan potensi
+                    mahasiswa. Untuk mewujudkan visi tersebut, DPM FH UNNES menjalankan misi membangun
+                    lingkungan internal yang inklusif dan harmonis, mengoptimalkan fungsi sebagai wadah
+                    aspirasi yang akuntabel, serta menciptakan ruang kolaboratif melalui program kerja
+                    edukatif dan advokatif. Selain itu, DPM FH UNNES berkomitmen memperkuat fungsi
+                    legislasi dengan produk hukum yang relevan dan adaptif, serta meningkatkan pengawasan
+                    secara profesional melalui koordinasi aktif demi efektivitas pemantauan kelembagaan.
+                </p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-xl dark:border-gray-400">
-                <h3 class="font-semibold text-lg mb-2 text-align justify-center">Wewenang</h3>
-                <p class="text-gray-600">Mengajukan rancangan undang-undang (produk hukum internal), menyampaikan usul, pendapat, dan menyalurkan aspirasi mahasiswa, melakukan fungsi pengawasan terhadap BEM, UKM, dan kelompok belajar, menggunakan hak interpelasi, hak angket, dan hak menyatakan pendapat terhadap kebijakan BEM, menyelenggarakan Kongres KM FH UNNES sebagai forum tertinggi mahasiswa hukum.</p>
+            <div data-reveal class="glass-card hover-lift p-6">
+                <h3 class="font-semibold text-lg mb-3 text-gray-800">Wewenang</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Mengajukan rancangan undang-undang (produk hukum internal), menyampaikan usul,
+                    pendapat, dan menyalurkan aspirasi mahasiswa, melakukan fungsi pengawasan terhadap
+                    BEM, UKM, dan kelompok belajar, menggunakan hak interpelasi, hak angket, dan hak
+                    menyatakan pendapat terhadap kebijakan BEM, menyelenggarakan Kongres KM FH UNNES
+                    sebagai forum tertinggi mahasiswa hukum.
+                </p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-xl dark:border-gray-400">
-                <h3 class="font-semibold text-lg mb-2">Info Parlemen</h3>
-                <p class="text-gray-600">Sebagai lembaga legislatif, parlemen berperan menjaga transparansi, mendorong partisipasi aktif, dan menjadi ruang diskusi strategis bagi seluruh elemen kampus. Melalui forum-forum terbuka dan produk hukum yang adaptif, parlemen mahasiswa berkomitmen membangun iklim akademik yang inklusif, demokratis, dan progresif.</p>
-                <div class="mt-4">
-                    <a href="Parlemen.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-full shadow hover:bg-blue-700 transition">Pelajari Selengkapnya</a>
+            <div data-reveal class="glass-card hover-lift p-6">
+                <h3 class="font-semibold text-lg mb-3 text-gray-800">Info Parlemen</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Sebagai lembaga legislatif, parlemen berperan menjaga transparansi, mendorong
+                    partisipasi aktif, dan menjadi ruang diskusi strategis bagi seluruh elemen kampus.
+                    Melalui forum-forum terbuka dan produk hukum yang adaptif, parlemen mahasiswa
+                    berkomitmen membangun iklim akademik yang inklusif, demokratis, dan progresif.
+                </p>
+                <div class="mt-5">
+                    <a href="Parlemen.html"
+                       class="hover-lift inline-block bg-blue-600 text-white px-4 py-2 rounded-full
+                              shadow hover:bg-blue-700 transition-all duration-200 text-sm font-medium">
+                        Pelajari Selengkapnya
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Events Section -->
+    <!-- 
+         EVENTS SECTION
+          -->
     <section id="events" class="py-16">
         <div class="container mx-auto px-6">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Program Kerja Periode 2024-2025</h2>
+            <h2 data-reveal class="text-2xl font-semibold text-gray-800 mb-2">Program Kerja Periode 2024-2025</h2>
+            <div data-reveal class="w-12 h-1 bg-blue-500 rounded mb-8"></div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <article class="bg-white p-4 rounded-lg shadow flex flex-col">
-                    <img src="kmfh.JPG" alt="Hackathon" loading="lazy" class="rounded-md w-full h-40 object-cover mb-4">
-                    <h3 class="font-semibold mb-1">Kongres KMFH 2025</h3>
-                    <p class="text-gray-600 text-sm flex-1">Forum tertinggi KM FH UNNES untuk menetapkan AD/ART, mengevaluasi lembaga, serta mengesahkan keputusan strategis kelembagaan.</p>
+
+                <article data-reveal class="glass-card hover-lift overflow-hidden flex flex-col">
+                    <img src="kmfh.JPG" alt="Hackathon" loading="lazy" class="w-full h-44 object-cover">
+                    <div class="p-5 flex-1 flex flex-col">
+                        <h3 class="font-semibold mb-2 text-gray-800">Kongres KMFH 2025</h3>
+                        <p class="text-gray-600 text-sm flex-1 leading-relaxed">Forum tertinggi KM FH UNNES untuk menetapkan AD/ART, mengevaluasi lembaga, serta mengesahkan keputusan strategis kelembagaan.</p>
+                    </div>
                 </article>
-                <article class="bg-white p-4 rounded-lg shadow flex flex-col">
-                    <img src="temu.JPG" alt="Web Dev Workshop" loading="lazy" class="rounded-md w-full h-40 object-cover mb-4">
-                    <h3 class="font-semibold mb-1">Temu Perdana DPM FH UNNES 2025</h3>
-                    <p class="text-gray-600 text-sm flex-1">Pertemuan perdana anggota untuk mempererat solidaritas, menyamakan persepsi, dan membangun kekompakan awal kepengurusan.</p>
+
+                <article data-reveal class="glass-card hover-lift overflow-hidden flex flex-col">
+                    <img src="temu.JPG" alt="Web Dev Workshop" loading="lazy" class="w-full h-44 object-cover">
+                    <div class="p-5 flex-1 flex flex-col">
+                        <h3 class="font-semibold mb-2 text-gray-800">Temu Perdana DPM FH UNNES 2025</h3>
+                        <p class="text-gray-600 text-sm flex-1 leading-relaxed">Pertemuan perdana anggota untuk mempererat solidaritas, menyamakan persepsi, dan membangun kekompakan awal kepengurusan.</p>
+                    </div>
                 </article>
-                <article class="bg-white p-4 rounded-lg shadow flex flex-col">
-                    <img src="raker.JPG" alt="AI Seminar" loading="lazy" class="rounded-md w-full h-40 object-cover mb-4">
-                    <h3 class="font-semibold mb-1">Rapat Kerja DPM FH UNNES</h3>
-                    <p class="text-gray-600 text-sm flex-1">Rapat kerja awal periode guna merumuskan program, strategi, serta timeline pelaksanaan kegiatan.</p>
+
+                <article data-reveal class="glass-card hover-lift overflow-hidden flex flex-col">
+                    <img src="raker.JPG" alt="AI Seminar" loading="lazy" class="w-full h-44 object-cover">
+                    <div class="p-5 flex-1 flex flex-col">
+                        <h3 class="font-semibold mb-2 text-gray-800">Rapat Kerja DPM FH UNNES</h3>
+                        <p class="text-gray-600 text-sm flex-1 leading-relaxed">Rapat kerja awal periode guna merumuskan program, strategi, serta timeline pelaksanaan kegiatan.</p>
+                    </div>
                 </article>
-                <article class="bg-white p-4 rounded-lg shadow flex flex-col">
-                    <img src="Temu Alumni.jpeg" alt="Web Dev Workshop" loading="lazy" class="rounded-md w-full h-40 object-cover mb-4">
-                    <h3 class="font-semibold mb-1">Temu Alumni Edisi 2025</h3>
-                    <p class="text-gray-600 text-sm flex-1">Silaturahmi dan diskusi bersama alumni FH UNNES untuk berbagi pengalaman dan kontribusi kelembagaan.</p>
+
+                <article data-reveal class="glass-card hover-lift overflow-hidden flex flex-col">
+                    <img src="Temu Alumni.jpeg" alt="Web Dev Workshop" loading="lazy" class="w-full h-44 object-cover">
+                    <div class="p-5 flex-1 flex flex-col">
+                        <h3 class="font-semibold mb-2 text-gray-800">Temu Alumni Edisi 2025</h3>
+                        <p class="text-gray-600 text-sm flex-1 leading-relaxed">Silaturahmi dan diskusi bersama alumni FH UNNES untuk berbagi pengalaman dan kontribusi kelembagaan.</p>
+                    </div>
                 </article>
-                <article class="bg-white p-4 rounded-lg shadow flex flex-col">
-                    <img src="diesnat.JPG" alt="Web Dev Workshop" loading="lazy" class="rounded-md w-full h-40 object-cover mb-4">
-                    <h3 class="font-semibold mb-1">Upgrading & Dies Natalis DPM FH UNNES 2025</h3>
-                    <p class="text-gray-600 text-sm flex-1">Pelatihan internal peningkatan kapasitas anggota sekaligus peringatan hari jadi DPM FH UNNES.</p>
+
+                <article data-reveal class="glass-card hover-lift overflow-hidden flex flex-col">
+                    <img src="diesnat.JPG" alt="Web Dev Workshop" loading="lazy" class="w-full h-44 object-cover">
+                    <div class="p-5 flex-1 flex flex-col">
+                        <h3 class="font-semibold mb-2 text-gray-800">Upgrading & Dies Natalis DPM FH UNNES 2025</h3>
+                        <p class="text-gray-600 text-sm flex-1 leading-relaxed">Pelatihan internal peningkatan kapasitas anggota sekaligus peringatan hari jadi DPM FH UNNES.</p>
+                    </div>
                 </article>
-                <article class="bg-white p-4 rounded-lg shadow flex flex-col">
-                    <img src="rakor.JPG" alt="Web Dev Workshop" loading="lazy" class="rounded-md w-full h-40 object-cover mb-4">
-                    <h3 class="font-semibold mb-1">Rapat Koordinasi BEM x DPM 2025</h3>
-                    <p class="text-gray-600 text-sm flex-1">Pertemuan BEM dan DPM untuk menyinergikan program kerja serta memperkuat hubungan kelembagaan.</p>
+
+                <article data-reveal class="glass-card hover-lift overflow-hidden flex flex-col">
+                    <img src="rakor.JPG" alt="Web Dev Workshop" loading="lazy" class="w-full h-44 object-cover">
+                    <div class="p-5 flex-1 flex flex-col">
+                        <h3 class="font-semibold mb-2 text-gray-800">Rapat Koordinasi BEM x DPM 2025</h3>
+                        <p class="text-gray-600 text-sm flex-1 leading-relaxed">Pertemuan BEM dan DPM untuk menyinergikan program kerja serta memperkuat hubungan kelembagaan.</p>
+                    </div>
                 </article>
+
             </div>
         </div>
     </section>
-
-    <!-- Team Section -->
+    
     <section id="team" class="container mx-auto px-6 py-16">
-        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Struktur Organisasi</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <!-- Row 1 -->
-            <div class="bg-white p-4 rounded-lg text-center shadow-sm border border-gray-200 hover:shadow-lg transition-shadow duration-800 dark:bg-white-300 dark:border-gray-200">
-                <img src="logo1.png" alt="logo bph" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
-                <h3 class="font-medium">BPH</h3>
-                <p class="text-sm text-gray-500">Badan Pengurus Harian</p>
-                <a href="StructureBPH.html" class="text-blue-500 text-sm hover:text-white transition">Info Selengkapnya</a>
-            </div>
+        <h2 data-reveal class="text-2xl font-semibold text-gray-800 mb-2">Struktur Organisasi</h2>
+        <div data-reveal class="w-12 h-1 bg-blue-500 rounded mb-8"></div>
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-5">
 
-            <div class="bg-white p-4 rounded-lg text-center shadow-sm border border-gray-200 hover:shadow-lg transition-shadow duration-800 dark:bg-white dark:border-gray-200">
-                <img src="2.png" alt="David Kim" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
-                <h3 class="font-medium">Komisi 1</h3>
-                <p class="text-sm text-gray-500">Legislasi</p>
-                <a href="StructureKomisi1.html" class="text-blue-500 text-sm hover:underline">Info Selengkapnya</a>
-            </div>
-
-            <div class="bg-white p-4 rounded-lg text-center shadow-sm border border-gray-200 hover:shadow-lg transition-shadow duration-800 dark:bg-white dark:border-gray-200">
-                <img src="5.png" alt="David Kim" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
-                <h3 class="font-medium">Komisi 2</h3>
-                <p class="text-sm text-gray-500">Pengawasan</p>
-                <a href="StructureKomisi2.html" class="text-blue-500 text-sm hover:underline">Info Selengkapnya</a>
-            </div>
-
-            <!-- Row 2 -->
-            <div class="bg-white p-4 rounded-lg text-center shadow-sm border border-gray-200 hover:shadow-lg transition-shadow duration-800 dark:bg-white dark:border-gray-200">
-                <img src="4.png" alt="David Kim" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
-                <h3 class="font-medium">Komisi 3</h3>
-                <p class="text-sm text-gray-500">Aspirasi dan Advokasi</p>
-                <a href="StructureKomisi3.html" class="text-blue-500 text-sm hover:underline">Info Selengkapnya</a>
-            </div>
-
-            <div class="bg-white p-4 rounded-lg text-center shadow-sm border border-gray-200 hover:shadow-lg transition-shadow duration-800 dark:bg-white dark:border-gray-200">
-                <img src="6.png" alt="David Kim" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
-                <h3 class="font-medium">Komisi 4</h3>
-                <p class="text-sm text-gray-500">Sosial Politik</p>
-                <a href="StructureKomisi4.html" class="text-blue-500 text-sm hover:underline">Info Selengkapnya</a>
-            </div>
-
-            <div class="bg-white p-4 rounded-lg text-center shadow-sm border border-gray-200 hover:shadow-lg transition-shadow duration-800 dark:bg-white dark:border-gray-200">
-                <img src="7.png" alt="David Kim" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
-                <h3 class="font-medium">Komisi 5</h3>
-                <p class="text-sm text-gray-500">Pengembangan Sumber Daya Mahasiswa</p>
-                <a href="StructureKomisi5.html" class="text-blue-500 text-sm hover:underline">Info Selengkapnya</a>
-            </div>
-
-            <!-- Row 3 (2 items) -->
-            <div class="bg-white p-4 rounded-lg text-center shadow-sm border border-gray-200 hover:shadow-lg transition-shadow duration-800 dark:bg-white dark:border-gray-200">
-                <img src="9.png" alt="Claudya Mareshky" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
-                <h3 class="font-medium">Komisi 6</h3>
-                <p class="text-sm text-gray-500">Media dan Informasi</p>
-                <a href="StructureKomisi6.html" onclick="loadpage ('StructureKomisi6.html')" class="text-blue-500 text-sm hover:underline">Info Selengkapnya</a>
-            </div>
-
-            <div class="bg-white p-4 rounded-lg text-center shadow-sm border border-gray-200 hover:shadow-lg transition-shadow duration-800 dark:bg-white dark:border-gray-200">
-                <img src="10.png" alt="David Kim" loading="lazy" class="h-24 w-24 rounded-full mx-auto mb-3 object-cover">
-                <h3 class="font-medium">Komisi 7</h3>
-                <p class="text-sm text-gray-500">Hubungan Masyarakat</p>
-                <a href="StructureKomisi7.html" class="text-blue-500 text-sm hover:underline">Info Selengkapnya</a>
-            </div>
-        </div>
-    </section>
-
-   <!-- Social Media -->
-    <section>
-        <div>
-            <div class="max-w-md mx-auto mt-12 py-10 text-center fade-in">
-                <h3 class="text-xl font-bold text-gray-800 mb-4">Follow Us</h3>
-                <div class="flex justify-center space-x-6">
-                    <a href="https://www.instagram.com/dpmfhunnes" class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center text-gray-700 hover:bg-pink-500 hover:text-white transition">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@DPMFHUNNES" class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center text-gray-700 hover:bg-red-600 hover:text-white transition">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+            <div data-reveal class="glass-card hover-lift p-5 text-center">
+                <div class="w-20 h-20 rounded-full mx-auto mb-3 overflow-hidden ring-2 ring-blue-100">
+                    <img src="logo1.png" alt="logo bph" loading="lazy" class="w-full h-full object-cover">
                 </div>
+                <h3 class="font-semibold text-gray-800 text-sm">BPH</h3>
+                <p class="text-xs text-gray-500 mb-3">Badan Pengurus Harian</p>
+                <a href="StructureBPH.html" class="text-xs text-blue-500 hover:text-blue-700 font-medium transition-colors hover:underline">Info Selengkapnya</a>
+            </div>
+
+            <div data-reveal class="glass-card hover-lift p-5 text-center">
+                <div class="w-20 h-20 rounded-full mx-auto mb-3 overflow-hidden ring-2 ring-blue-100">
+                    <img src="2.png" alt="Komisi 1" loading="lazy" class="w-full h-full object-cover">
+                </div>
+                <h3 class="font-semibold text-gray-800 text-sm">Komisi 1</h3>
+                <p class="text-xs text-gray-500 mb-3">Legislasi</p>
+                <a href="StructureKomisi1.html" class="text-xs text-blue-500 hover:text-blue-700 font-medium transition-colors hover:underline">Info Selengkapnya</a>
+            </div>
+
+            <div data-reveal class="glass-card hover-lift p-5 text-center">
+                <div class="w-20 h-20 rounded-full mx-auto mb-3 overflow-hidden ring-2 ring-blue-100">
+                    <img src="5.png" alt="Komisi 2" loading="lazy" class="w-full h-full object-cover">
+                </div>
+                <h3 class="font-semibold text-gray-800 text-sm">Komisi 2</h3>
+                <p class="text-xs text-gray-500 mb-3">Pengawasan</p>
+                <a href="StructureKomisi2.html" class="text-xs text-blue-500 hover:text-blue-700 font-medium transition-colors hover:underline">Info Selengkapnya</a>
+            </div>
+
+            <div data-reveal class="glass-card hover-lift p-5 text-center">
+                <div class="w-20 h-20 rounded-full mx-auto mb-3 overflow-hidden ring-2 ring-blue-100">
+                    <img src="4.png" alt="Komisi 3" loading="lazy" class="w-full h-full object-cover">
+                </div>
+                <h3 class="font-semibold text-gray-800 text-sm">Komisi 3</h3>
+                <p class="text-xs text-gray-500 mb-3">Aspirasi dan Advokasi</p>
+                <a href="StructureKomisi3.html" class="text-xs text-blue-500 hover:text-blue-700 font-medium transition-colors hover:underline">Info Selengkapnya</a>
+            </div>
+
+            <div data-reveal class="glass-card hover-lift p-5 text-center">
+                <div class="w-20 h-20 rounded-full mx-auto mb-3 overflow-hidden ring-2 ring-blue-100">
+                    <img src="6.png" alt="Komisi 4" loading="lazy" class="w-full h-full object-cover">
+                </div>
+                <h3 class="font-semibold text-gray-800 text-sm">Komisi 4</h3>
+                <p class="text-xs text-gray-500 mb-3">Sosial Politik</p>
+                <a href="StructureKomisi4.html" class="text-xs text-blue-500 hover:text-blue-700 font-medium transition-colors hover:underline">Info Selengkapnya</a>
+            </div>
+
+            <div data-reveal class="glass-card hover-lift p-5 text-center">
+                <div class="w-20 h-20 rounded-full mx-auto mb-3 overflow-hidden ring-2 ring-blue-100">
+                    <img src="7.png" alt="Komisi 5" loading="lazy" class="w-full h-full object-cover">
+                </div>
+                <h3 class="font-semibold text-gray-800 text-sm">Komisi 5</h3>
+                <p class="text-xs text-gray-500 mb-3">Pengembangan Sumber Daya Mahasiswa</p>
+                <a href="StructureKomisi5.html" class="text-xs text-blue-500 hover:text-blue-700 font-medium transition-colors hover:underline">Info Selengkapnya</a>
+            </div>
+
+            <div data-reveal class="glass-card hover-lift p-5 text-center">
+                <div class="w-20 h-20 rounded-full mx-auto mb-3 overflow-hidden ring-2 ring-blue-100">
+                    <img src="9.png" alt="Claudya Mareshky" loading="lazy" class="w-full h-full object-cover">
+                </div>
+                <h3 class="font-semibold text-gray-800 text-sm">Komisi 6</h3>
+                <p class="text-xs text-gray-500 mb-3">Media dan Informasi</p>
+                <a href="StructureKomisi6.html" class="text-xs text-blue-500 hover:text-blue-700 font-medium transition-colors hover:underline">Info Selengkapnya</a>
+            </div>
+
+            <div data-reveal class="glass-card hover-lift p-5 text-center">
+                <div class="w-20 h-20 rounded-full mx-auto mb-3 overflow-hidden ring-2 ring-blue-100">
+                    <img src="10.png" alt="Komisi 7" loading="lazy" class="w-full h-full object-cover">
+                </div>
+                <h3 class="font-semibold text-gray-800 text-sm">Komisi 7</h3>
+                <p class="text-xs text-gray-500 mb-3">Hubungan Masyarakat</p>
+                <a href="StructureKomisi7.html" class="text-xs text-blue-500 hover:text-blue-700 font-medium transition-colors hover:underline">Info Selengkapnya</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Social Media -->
+    <section>
+        <div data-reveal class="max-w-md mx-auto mt-6 py-10 text-center">
+            <h3 class="text-xl font-bold text-gray-800 mb-5">Follow Us</h3>
+            <div class="flex justify-center space-x-4">
+                <a href="https://www.instagram.com/dpmfhunnes"
+                   class="hover-lift w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center
+                          text-gray-700 hover:bg-pink-500 hover:text-white transition-all duration-200">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/@DPMFHUNNES"
+                   class="hover-lift w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center
+                          text-gray-700 hover:bg-red-600 hover:text-white transition-all duration-200">
+                    <i class="fab fa-youtube"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-40 invisible transition-all duration-300 hover:bg-blue-600">
+    <button id="back-to-top"
+            class="fixed bottom-8 right-8 bg-blue-500 text-white w-12 h-12 rounded-full shadow-lg
+                   flex items-center justify-center opacity-40 invisible transition-all duration-300
+                   hover:bg-blue-600">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script>
-      // enable smooth in-page scrolling
-      document.documentElement.style.scrollBehavior = 'smooth';
-      // simple mobile nav toggle
-      const navToggle = document.getElementById('navToggle')
-      const mobileMenu = document.getElementById('mobileMenu')
-      navToggle?.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'))
-       tailwind.config = {
-        theme: {
-          extend: {
-            animation: {
-              'fade-in': 'fadeIn 1s ease-out',
-              'fade-in-up': 'fadeInUp 1s ease-out'
-            },
-            keyframes: {
-              fadeIn: {
-                '0%': { opacity: '0' },
-                '100%': { opacity: '1' }
-              },
-              fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(40px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' }
-              }
-            }
-          }
-        }
-      }
-    </script>
-    <!-- Theme toggle script: adds/removes html.dark and persists preference -->
-    <script>
-        (function(){
-            const KEY = 'dpmfh-theme';
-            const btn = document.getElementById('dark-toggle-btn');
-            const mobileBtn = document.getElementById('dark-toggle-mobile');
+    <div id="footer-placeholder"></div>
+    <script src="footer-loader.js"></script>
 
-            function updateDesktopIcon(isDark){
-                if(!btn) return;
-                const moon = btn.querySelector('.fa-moon');
-                const sun = btn.querySelector('.fa-sun');
-                if(moon) moon.style.display = isDark ? 'none' : 'inline-block';
-                if(sun) sun.style.display = isDark ? 'inline-block' : 'none';
-                btn.setAttribute('aria-pressed', isDark);
-            }
-
-            function updateMobileIcon(isDark){
-                if(!mobileBtn) return;
-                // keep the label but swap icon
-                const hasSun = mobileBtn.querySelector('.fa-sun');
-                const hasMoon = mobileBtn.querySelector('.fa-moon');
-                if(hasSun || hasMoon){
-                    if(hasSun) hasSun.style.display = isDark ? 'inline-block' : 'none';
-                    if(hasMoon) hasMoon.style.display = isDark ? 'none' : 'inline-block';
-                } else {
-                    // initial markup didn't include sun; replace icon HTML
-                    mobileBtn.innerHTML = 'Toggle dark mode <i class="fas ' + (isDark ? 'fa-sun' : 'fa-moon') + ' ml-2"></i>';
-                }
-            }
-
-            function applyTheme(theme){
-                const isDark = theme === 'dark';
-                if(isDark) document.documentElement.classList.add('dark');
-                else document.documentElement.classList.remove('dark');
-                updateDesktopIcon(isDark);
-                updateMobileIcon(isDark);
-            }
-
-            function toggle(){
-                const isDark = document.documentElement.classList.contains('dark');
-                const next = isDark ? 'light' : 'dark';
-                try { localStorage.setItem(KEY, next); } catch(e) { /* ignore storage errors */ }
-                applyTheme(next);
-            }
-
-            // wire events
-            btn?.addEventListener('click', toggle);
-            mobileBtn?.addEventListener('click', toggle);
-
-            // init theme from storage or system preference
-            try {
-                const saved = localStorage.getItem(KEY);
-                if(saved) applyTheme(saved);
-                else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) applyTheme('dark');
-                else applyTheme('light');
-            } catch(e){
-                // localStorage may be disabled — fall back to system preference
-                if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) applyTheme('dark');
-            }
-        })();
-    </script>
-<div id="footer-placeholder"></div><script src="footer-loader.js"></script></body>
+    <script src="ui-interactions.js"></script>
+</body>
 </html>
-
-
-
-
-
-
-
