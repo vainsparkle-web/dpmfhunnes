@@ -1,129 +1,618 @@
-if (window.tailwind) {
-    tailwind.config = {
-        theme: {
-            extend: {
-                animation: {
-                    'fade-in': 'fadeIn 1s ease-out',
-                    'fade-in-up': 'fadeInUp 1s ease-out'
-                },
-                keyframes: {
-                    fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
-                    fadeInUp: {
-                        '0%': { opacity: '0', transform: 'translateY(40px)' },
-                        '100%': { opacity: '1', transform: 'translateY(0)' }
-                    }
-                }
-            }
+/* ============================================================
+   DPM FH UNNES — UNIVERSAL INTERACTION ENGINE
+   Version: 1.0
+
+   Responsibilities:
+   - Universal dark/light mode
+   - Theme persistence
+   - System theme detection
+   - Theme button state
+   - Mobile navigation
+   - Scroll reveal
+   - Navbar scroll state
+   - Back-to-top
+   - Hero subtle parallax
+   - Accessibility
+   ============================================================ */
+
+(() => {
+
+    'use strict';
+
+
+    /* ============================================================
+       01. DOM REFERENCES
+       ============================================================ */
+
+    const root = document.documentElement;
+
+    const themeButton =
+        document.getElementById('dark-toggle-btn');
+
+    const nav =
+        document.querySelector('nav');
+
+    const navToggle =
+        document.getElementById('navToggle');
+
+    const navMenu =
+        document.getElementById('navMenu');
+
+    const backToTop =
+        document.getElementById('back-to-top');
+
+    const heroBackground =
+        document.getElementById('site-hero-bg');
+
+
+    /* ============================================================
+       02. THEME SYSTEM
+       ============================================================ */
+
+    const THEME_KEY = 'dpm-theme';
+
+
+    /**
+     * Get user's preferred theme.
+     *
+     * Priority:
+     * 1. Saved preference
+     * 2. System preference
+     * 3. Light mode
+     */
+    function getPreferredTheme() {
+
+        const savedTheme =
+            localStorage.getItem(THEME_KEY);
+
+        if (
+            savedTheme === 'dark' ||
+            savedTheme === 'light'
+        ) {
+            return savedTheme;
         }
-    };
-}
 
-document.documentElement.style.scrollBehavior = 'smooth';
+        if (
+            window.matchMedia &&
+            window.matchMedia(
+                '(prefers-color-scheme: dark)'
+            ).matches
+        ) {
+            return 'dark';
+        }
 
-const navToggle = document.getElementById('navToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-
-if (mobileMenu) {
-    mobileMenu.classList.remove('hidden'); // serahkan tampil/sembunyi ke CSS
-}
-
-navToggle?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('menu-open');
-});
-
-// ----------------------------------------------------------------
-// 4. DARK MODE TOGGLE
-// Prinsip: simpan pilihan user ('dark'/'light') ke localStorage,
-// supaya saat halaman dibuka lagi nanti, tema yang sama langsung
-// dipakai tanpa user perlu klik ulang.
-// ----------------------------------------------------------------
-(function initDarkMode() {
-    const KEY = 'dpmfh-theme';
-    const btn = document.getElementById('dark-toggle-btn');
-    const mobileBtn = document.getElementById('dark-toggle-mobile');
-
-    function updateDesktopIcon(isDark) {
-        if (!btn) return;
-        const moon = btn.querySelector('.fa-moon');
-        const sun = btn.querySelector('.fa-sun');
-        if (moon) moon.style.display = isDark ? 'none' : 'inline-block';
-        if (sun) sun.style.display = isDark ? 'inline-block' : 'none';
-        btn.setAttribute('aria-pressed', isDark);
+        return 'light';
     }
 
-    function updateMobileIcon(isDark) {
-        if (!mobileBtn) return;
-        const hasSun = mobileBtn.querySelector('.fa-sun');
-        const hasMoon = mobileBtn.querySelector('.fa-moon');
-        if (hasSun || hasMoon) {
-            if (hasSun) hasSun.style.display = isDark ? 'inline-block' : 'none';
-            if (hasMoon) hasMoon.style.display = isDark ? 'none' : 'inline-block';
-        } else {
-            mobileBtn.innerHTML = 'Dark Mode <i class="fas ' + (isDark ? 'fa-sun' : 'fa-moon') + ' ml-2"></i>';
-        }
-    }
 
+    /**
+     * Apply theme to entire document.
+     *
+     * IMPORTANT:
+     * This function does NOT decide how every page looks.
+     *
+     * It only controls:
+     *
+     * <html class="dark">
+     *
+     * Each HTML page can then style its own components
+     * using html.dark selectors / global CSS variables.
+     */
     function applyTheme(theme) {
-        const isDark = theme === 'dark';
-        document.documentElement.classList.toggle('dark', isDark);
-        updateDesktopIcon(isDark);
-        updateMobileIcon(isDark);
-    }
 
-    function toggleTheme() {
-        const isDark = document.documentElement.classList.contains('dark');
-        const next = isDark ? 'light' : 'dark';
-        try { localStorage.setItem(KEY, next); } catch (e) { /* localStorage mungkin dimatikan */ }
-        applyTheme(next);
-    }
+        const isDark =
+            theme === 'dark';
 
-    btn?.addEventListener('click', toggleTheme);
-    mobileBtn?.addEventListener('click', toggleTheme);
+        root.classList.toggle(
+            'dark',
+            isDark
+        );
 
-    try {
-        const saved = localStorage.getItem(KEY);
-        applyTheme(saved === 'dark' ? 'dark' : 'light'); // default selalu Light kalau belum pernah pilih
-    } catch (e) {
-        applyTheme('light');
-    }
-})();
-const backToTopBtn = document.getElementById('back-to-top');
+        root.dataset.theme =
+            isDark
+                ? 'dark'
+                : 'light';
 
-if (backToTopBtn) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('show');
-        } else {
-            backToTopBtn.classList.remove('show');
-        }
-    });
+        if (themeButton) {
 
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
+            themeButton.setAttribute(
+                'aria-pressed',
+                String(isDark)
+            );
 
-(function initScrollReveal() {
-    const revealElements = document.querySelectorAll('[data-reveal]');
-    if (!revealElements.length) return;
+            themeButton.setAttribute(
+                'title',
+                isDark
+                    ? 'Gunakan Light Mode'
+                    : 'Gunakan Dark Mode'
+            );
 
-    // Fallback untuk browser sangat lawas tanpa IntersectionObserver
-    if (!('IntersectionObserver' in window)) {
-        revealElements.forEach(el => el.classList.add('is-visible'));
-        return;
-    }
+            themeButton.setAttribute(
+                'aria-label',
+                isDark
+                    ? 'Gunakan Light Mode'
+                    : 'Gunakan Dark Mode'
+            );
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // sudah muncul, tak perlu dipantau lagi
+            const moon =
+                themeButton.querySelector(
+                    '.fa-moon'
+                );
+
+            const sun =
+                themeButton.querySelector(
+                    '.fa-sun'
+                );
+
+            if (moon) {
+                moon.classList.toggle(
+                    'hidden',
+                    isDark
+                );
             }
-        });
-    }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -40px 0px'
+
+            if (sun) {
+                sun.classList.toggle(
+                    'hidden',
+                    !isDark
+                );
+            }
+        }
+    }
+
+
+    /**
+     * Initialize theme immediately.
+     */
+    applyTheme(
+        getPreferredTheme()
+    );
+
+
+    /**
+     * Theme toggle.
+     */
+    themeButton?.addEventListener(
+        'click',
+        () => {
+
+            const isCurrentlyDark =
+                root.classList.contains('dark');
+
+            const nextTheme =
+                isCurrentlyDark
+                    ? 'light'
+                    : 'dark';
+
+            localStorage.setItem(
+                THEME_KEY,
+                nextTheme
+            );
+
+            applyTheme(
+                nextTheme
+            );
+        }
+    );
+
+
+    /**
+     * If user has NOT manually selected a theme,
+     * follow operating-system theme changes.
+     */
+    if (window.matchMedia) {
+
+        const mediaQuery =
+            window.matchMedia(
+                '(prefers-color-scheme: dark)'
+            );
+
+        const handleSystemThemeChange =
+            (event) => {
+
+                const savedTheme =
+                    localStorage.getItem(
+                        THEME_KEY
+                    );
+
+                /*
+                 * Do not override user's explicit choice.
+                 */
+                if (savedTheme) {
+                    return;
+                }
+
+                applyTheme(
+                    event.matches
+                        ? 'dark'
+                        : 'light'
+                );
+            };
+
+
+        /*
+         * Modern browsers.
+         */
+        if (mediaQuery.addEventListener) {
+
+            mediaQuery.addEventListener(
+                'change',
+                handleSystemThemeChange
+            );
+
+        }
+
+        /*
+         * Compatibility fallback.
+         */
+        else if (mediaQuery.addListener) {
+
+            mediaQuery.addListener(
+                handleSystemThemeChange
+            );
+        }
+    }
+
+
+    /* ============================================================
+       03. MOBILE NAVIGATION
+       ============================================================ */
+
+    function closeMobileMenu() {
+
+        if (!navMenu) {
+            return;
+        }
+
+        navMenu.classList.add(
+            'hidden'
+        );
+
+        navToggle?.setAttribute(
+            'aria-expanded',
+            'false'
+        );
+    }
+
+
+    function toggleMobileMenu() {
+
+        if (!navMenu) {
+            return;
+        }
+
+        const isOpen =
+            !navMenu.classList.contains(
+                'hidden'
+            );
+
+        navMenu.classList.toggle(
+            'hidden'
+        );
+
+        navToggle?.setAttribute(
+            'aria-expanded',
+            String(!isOpen)
+        );
+    }
+
+
+    navToggle?.setAttribute(
+        'aria-expanded',
+        'false'
+    );
+
+
+    navToggle?.addEventListener(
+        'click',
+        toggleMobileMenu
+    );
+
+
+    /**
+     * Close mobile menu after clicking an in-page link.
+     */
+    navMenu?.querySelectorAll(
+        'a[href^="#"]'
+    ).forEach(link => {
+
+        link.addEventListener(
+            'click',
+            () => {
+
+                if (
+                    window.innerWidth < 768
+                ) {
+                    closeMobileMenu();
+                }
+
+            }
+        );
+
     });
 
-    revealElements.forEach(el => observer.observe(el));
+
+    /**
+     * Close mobile menu when clicking outside.
+     */
+    document.addEventListener(
+        'click',
+        (event) => {
+
+            if (
+                window.innerWidth >= 768 ||
+                !navMenu ||
+                navMenu.classList.contains('hidden')
+            ) {
+                return;
+            }
+
+            const clickedInsideMenu =
+                navMenu.contains(event.target);
+
+            const clickedToggle =
+                navToggle?.contains(event.target);
+
+            if (
+                !clickedInsideMenu &&
+                !clickedToggle
+            ) {
+                closeMobileMenu();
+            }
+
+        }
+    );
+
+
+    /**
+     * Close mobile menu when viewport becomes desktop.
+     */
+    window.addEventListener(
+        'resize',
+        () => {
+
+            if (
+                window.innerWidth >= 768
+            ) {
+                closeMobileMenu();
+            }
+
+        }
+    );
+
+
+    /* ============================================================
+       04. SCROLL REVEAL
+       ============================================================ */
+
+    if (
+        'IntersectionObserver' in window
+    ) {
+
+        const revealObserver =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach(
+                        (entry) => {
+
+                            if (
+                                !entry.isIntersecting
+                            ) {
+                                return;
+                            }
+
+                            entry.target.classList.add(
+                                'is-visible'
+                            );
+
+                            revealObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.12,
+
+                    rootMargin:
+                        '0px 0px -40px 0px'
+                }
+            );
+
+
+        document
+            .querySelectorAll(
+                '[data-reveal]'
+            )
+            .forEach(
+                (element, index) => {
+
+                    /*
+                     * Small stagger.
+                     *
+                     * Never gets longer than 210ms.
+                     */
+                    const delay =
+                        Math.min(
+                            index % 4,
+                            3
+                        ) * 70;
+
+                    element.style.transitionDelay =
+                        `${delay}ms`;
+
+                    revealObserver.observe(
+                        element
+                    );
+                }
+            );
+
+    } else {
+
+        /*
+         * Fallback for very old browsers.
+         */
+        document
+            .querySelectorAll(
+                '[data-reveal]'
+            )
+            .forEach(
+                element => {
+                    element.classList.add(
+                        'is-visible'
+                    );
+                }
+            );
+    }
+
+
+    /* ============================================================
+       05. SCROLL STATE
+       ============================================================ */
+
+    let ticking =
+        false;
+
+
+    function updateScrollState() {
+
+        const scrollY =
+            window.scrollY;
+
+
+        /*
+         * Navbar shadow.
+         */
+        if (nav) {
+
+            nav.classList.toggle(
+                'shadow-lg',
+                scrollY > 12
+            );
+
+        }
+
+
+        /*
+         * Back to top.
+         */
+        if (backToTop) {
+
+            backToTop.classList.toggle(
+                'show',
+                scrollY > 500
+            );
+
+        }
+
+
+        /*
+         * Hero parallax.
+         */
+        if (
+            heroBackground &&
+            scrollY < 700 &&
+            !window.matchMedia(
+                '(prefers-reduced-motion: reduce)'
+            ).matches
+        ) {
+
+            const offset =
+                Math.min(
+                    scrollY * 0.035,
+                    22
+                );
+
+            heroBackground.style.transform =
+                `scale(1.02) translateY(${offset}px)`;
+        }
+
+
+        ticking =
+            false;
+    }
+
+
+    function requestScrollUpdate() {
+
+        if (ticking) {
+            return;
+        }
+
+        ticking =
+            true;
+
+        window.requestAnimationFrame(
+            updateScrollState
+        );
+    }
+
+
+    window.addEventListener(
+        'scroll',
+        requestScrollUpdate,
+        {
+            passive: true
+        }
+    );
+
+
+    /*
+     * Initial state.
+     */
+    updateScrollState();
+
+
+    /* ============================================================
+       06. BACK TO TOP
+       ============================================================ */
+
+    backToTop?.addEventListener(
+        'click',
+        () => {
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+        }
+    );
+
+
+    /* ============================================================
+       07. KEYBOARD ACCESSIBILITY
+       ============================================================ */
+
+    document.addEventListener(
+        'keydown',
+        (event) => {
+
+            /*
+             * Escape closes mobile navigation.
+             */
+            if (
+                event.key === 'Escape'
+            ) {
+
+                closeMobileMenu();
+
+                navToggle?.focus();
+            }
+
+        }
+    );
+
+
+    /* ============================================================
+       08. PAGE READY
+       ============================================================ */
+
+    document.documentElement.classList.add(
+        'dpm-ready'
+    );
+
 })();
