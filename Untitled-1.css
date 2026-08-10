@@ -1,246 +1,690 @@
-/* ===================================================================
-   Untitled-1.css — Design System DPM FH UNNES (v2 - Modern Refresh)
-   =================================================================== */
+/* ============================================================
+   DPM FH UNNES — GLOBAL DESIGN SYSTEM
+   Version: 1.0
+   Scope:
+   - Global theme tokens
+   - Universal dark/light mode
+   - Navigation
+   - Cards
+   - Buttons
+   - Forms
+   - Scroll reveal
+   - Responsive utilities
+   - Accessibility
+   ============================================================ */
 
-/* ===== IMPOR FONT ===== */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
-/* ===== VARIABEL DESAIN (DESIGN TOKENS) =====
-   Variabel CSS itu seperti "kotak penyimpanan nilai" yang bisa
-   dipakai berulang. Kalau suatu saat mau ganti warna utama,
-   cukup ubah di SATU baris ini, semua tempat yang memakainya
-   otomatis ikut berubah. */
+/* ============================================================
+   01. DESIGN TOKENS
+   ============================================================ */
+
 :root {
-    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    /* Background */
+    --dpm-bg: #f7f9fc;
+    --dpm-bg-elevated: #ffffff;
+    --dpm-surface: #ffffff;
+    --dpm-surface-glass: rgba(255, 255, 255, 0.78);
 
-    --radius-md: 14px;
-    --radius-lg: 20px;
+    /* Text */
+    --dpm-text: #172033;
+    --dpm-text-secondary: #334155;
+    --dpm-muted: #64748b;
+    --dpm-subtle: #94a3b8;
 
-    --shadow-soft: 0 4px 20px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -2px rgba(15, 23, 42, 0.04);
-    --shadow-soft-hover: 0 14px 34px -6px rgba(15, 23, 42, 0.16), 0 4px 12px -2px rgba(15, 23, 42, 0.06);
-    --shadow-soft-dark: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
+    /* Brand */
+    --dpm-primary: #2563eb;
+    --dpm-primary-hover: #1d4ed8;
+    --dpm-primary-soft: rgba(37, 99, 235, 0.10);
 
-    --color-dark-bg: #0f172a;      /* Slate-900 */
-    --color-dark-surface: #1e293b; /* Slate-800 */
-    --color-dark-border: rgba(255, 255, 255, 0.08);
-    --color-dark-link: #60a5fa;    /* Biru terang, kontras aman di atas Slate-900 */
+    /* Border */
+    --dpm-border: rgba(15, 23, 42, 0.08);
+    --dpm-border-strong: rgba(15, 23, 42, 0.14);
+
+    /* Shadow */
+    --dpm-shadow-sm:
+        0 4px 18px rgba(15, 23, 42, 0.05);
+
+    --dpm-shadow:
+        0 16px 45px rgba(15, 23, 42, 0.08);
+
+    --dpm-shadow-lg:
+        0 26px 70px rgba(15, 23, 42, 0.13);
+
+    /* Radius */
+    --dpm-radius-sm: 10px;
+    --dpm-radius-md: 14px;
+    --dpm-radius-lg: 20px;
+    --dpm-radius-xl: 26px;
+
+    /* Motion */
+    --dpm-ease:
+        cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    --dpm-duration-fast: 180ms;
+    --dpm-duration: 300ms;
+    --dpm-duration-slow: 650ms;
+
+    /* Navigation */
+    --dpm-nav-height: 72px;
+
+    color-scheme: light;
+}
+
+
+/* ============================================================
+   02. DARK MODE TOKENS
+   ============================================================ */
+
+html.dark {
+    --dpm-bg: #080d18;
+    --dpm-bg-elevated: #0d1422;
+    --dpm-surface: #111827;
+    --dpm-surface-glass: rgba(17, 24, 39, 0.84);
+
+    --dpm-text: #f1f5f9;
+    --dpm-text-secondary: #cbd5e1;
+    --dpm-muted: #94a3b8;
+    --dpm-subtle: #64748b;
+
+    --dpm-primary: #60a5fa;
+    --dpm-primary-hover: #93c5fd;
+    --dpm-primary-soft: rgba(96, 165, 250, 0.12);
+
+    --dpm-border: rgba(255, 255, 255, 0.075);
+    --dpm-border-strong: rgba(255, 255, 255, 0.13);
+
+    --dpm-shadow-sm:
+        0 6px 22px rgba(0, 0, 0, 0.20);
+
+    --dpm-shadow:
+        0 18px 55px rgba(0, 0, 0, 0.28);
+
+    --dpm-shadow-lg:
+        0 30px 80px rgba(0, 0, 0, 0.40);
+
+    color-scheme: dark;
+}
+
+
+/* ============================================================
+   03. GLOBAL RESET / BASE
+   ============================================================ */
+
+html {
+    scroll-behavior: smooth;
+    background: var(--dpm-bg);
 }
 
 body {
-    font-family: var(--font-sans);
+    margin: 0;
+
+    font-family:
+        'Plus Jakarta Sans',
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 8% 0%,
+            rgba(37, 99, 235, 0.055),
+            transparent 28rem
+        ),
+        radial-gradient(
+            circle at 92% 10%,
+            rgba(14, 165, 233, 0.045),
+            transparent 24rem
+        ),
+        var(--dpm-bg);
+
+    color: var(--dpm-text);
+
+    transition:
+        background-color 350ms ease,
+        color 350ms ease;
 }
 
-/* ===================================================================
-   ANIMASI MASUK (PLAY OTOMATIS SAAT HALAMAN DIBUKA)
-   Catatan: ini animasi LAMA yang sudah ada sebelumnya, tetap
-   dipertahankan karena masih dipakai di banyak tempat (termasuk
-   footer baru kita) dan TIDAK butuh JavaScript sama sekali.
-   =================================================================== */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
+
+/* Smooth theme transition for major surfaces */
+
+body,
+nav,
+section,
+header,
+footer,
+main,
+article,
+aside,
+div,
+button,
+a,
+input,
+textarea,
+select {
+    transition:
+        background-color 300ms ease,
+        border-color 300ms ease,
+        color 300ms ease,
+        box-shadow 300ms ease;
 }
 
-.fade-in { animation: fadeIn 0.8s ease-out forwards; }
 
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.4s; }
-.delay-3 { animation-delay: 0.6s; }
+/* ============================================================
+   04. TYPOGRAPHY
+   ============================================================ */
 
-/* ===================================================================
-   GLASSMORPHISM CARD
-   Konsepnya: background semi-transparan + blur di belakangnya =
-   efek "kaca buram". Cukup tambahkan class "glass-card" ke elemen
-   card (anggota, komisi, dsb) untuk memakainya nanti di Tahap 2.
-   =================================================================== */
+body .text-gray-900,
+body .text-gray-800 {
+    color: var(--dpm-text) !important;
+}
+
+body .text-gray-700,
+body .text-gray-600 {
+    color: var(--dpm-text-secondary) !important;
+}
+
+body .text-gray-500 {
+    color: var(--dpm-muted) !important;
+}
+
+body .text-gray-400 {
+    color: var(--dpm-subtle) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--dpm-text);
+    letter-spacing: -0.025em;
+}
+
+p {
+    color: inherit;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* ============================================================
+   05. NAVIGATION
+   ============================================================ */
+
+.glass-nav {
+    background:
+        var(--dpm-surface-glass) !important;
+
+    border-bottom:
+        1px solid var(--dpm-border) !important;
+
+    box-shadow:
+        0 8px 30px rgba(15, 23, 42, 0.045) !important;
+
+    backdrop-filter:
+        blur(18px)
+        saturate(150%);
+
+    -webkit-backdrop-filter:
+        blur(18px)
+        saturate(150%);
+}
+
+html.dark .glass-nav {
+    box-shadow:
+        0 8px 35px rgba(0, 0, 0, 0.20) !important;
+}
+
+
+/* Navbar links */
+
+nav a {
+    color: var(--dpm-text-secondary);
+
+    transition:
+        color 200ms ease,
+        transform 200ms var(--dpm-ease);
+}
+
+nav a:hover {
+    color: var(--dpm-primary);
+    transform: translateY(-1px);
+}
+
+
+/* Mobile menu */
+
+#navMenu {
+    transition:
+        opacity 250ms ease,
+        transform 250ms var(--dpm-ease);
+}
+
+#navToggle {
+    color: var(--dpm-text-secondary) !important;
+}
+
+#navToggle:hover {
+    background: var(--dpm-primary-soft) !important;
+    color: var(--dpm-primary) !important;
+}
+
+
+/* ============================================================
+   06. DARK MODE BUTTON
+   ============================================================ */
+
+#dark-toggle-btn {
+    background:
+        var(--dpm-surface) !important;
+
+    color:
+        var(--dpm-muted) !important;
+
+    border:
+        1px solid var(--dpm-border) !important;
+
+    box-shadow:
+        var(--dpm-shadow-sm);
+}
+
+#dark-toggle-btn:hover {
+    color:
+        var(--dpm-primary) !important;
+
+    background:
+        var(--dpm-primary-soft) !important;
+
+    border-color:
+        rgba(96, 165, 250, 0.18) !important;
+
+    transform:
+        translateY(-1px);
+}
+
+#dark-toggle-btn i {
+    transition:
+        transform 350ms var(--dpm-ease),
+        opacity 200ms ease;
+}
+
+
+/* ============================================================
+   07. GLOBAL GLASS CARD
+   ============================================================ */
+
 .glass-card {
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-soft);
-    transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
+    background:
+        var(--dpm-surface-glass) !important;
+
+    border:
+        1px solid var(--dpm-border) !important;
+
+    box-shadow:
+        var(--dpm-shadow) !important;
+
+    border-radius:
+        var(--dpm-radius-lg) !important;
+
+    backdrop-filter:
+        blur(16px)
+        saturate(135%);
+
+    -webkit-backdrop-filter:
+        blur(16px)
+        saturate(135%);
+
+    transition:
+        transform 350ms var(--dpm-ease),
+        box-shadow 350ms ease,
+        border-color 350ms ease,
+        background-color 350ms ease;
 }
+
 .glass-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-soft-hover);
-}
-html.dark .glass-card {
-    background: rgba(30, 41, 59, 0.55);
-    border-color: rgba(255, 255, 255, 0.07);
-    box-shadow: var(--shadow-soft-dark);
-}
+    transform:
+        translateY(-6px);
 
-/* ===== UTILITY HOVER (untuk tombol, link, card apapun) ===== */
-.hover-lift { transition: transform .25s ease, box-shadow .25s ease; }
-.hover-lift:hover { transform: translateY(-3px); }
+    box-shadow:
+        var(--dpm-shadow-lg) !important;
 
-.hover-scale { transition: transform .2s ease; }
-.hover-scale:hover { transform: scale(1.06); }
-
-/* ===== SENTUHAN GLASS UNTUK NAVBAR (opsional, tambahkan class "glass-nav" ke <nav> nanti) ===== */
-nav.glass-nav {
-    background: rgba(255, 255, 255, 0.75) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-html.dark nav.glass-nav {
-    background: rgba(15, 23, 42, 0.75) !important;
-    border-bottom: 1px solid var(--color-dark-border);
+    border-color:
+        rgba(37, 99, 235, 0.18) !important;
 }
 
-/* ===================================================================
-   ANIMASI MENU MOBILE (TEKNIK "GRID TRICK")
-   Kenapa tidak pakai class "hidden" Tailwind biasa? Karena
-   "display:none" tidak bisa dianimasikan dengan mulus oleh
-   browser. Solusinya: kita animasikan "grid-template-rows" dari
-   0fr (tertutup) ke 1fr (terbuka sepenuhnya) — otomatis pas
-   dengan tinggi konten, tanpa perlu menebak-nebak angka piksel.
-   =================================================================== */
-#mobileMenu {
-    display: grid;
-    grid-template-rows: 0fr;
-    opacity: 0;
-    overflow: hidden;
-    transition: grid-template-rows .35s ease, opacity .3s ease;
+html.dark .glass-card:hover {
+    border-color:
+        rgba(96, 165, 250, 0.20) !important;
 }
-#mobileMenu > div { overflow: hidden; min-height: 0; }
-#mobileMenu.menu-open { grid-template-rows: 1fr; opacity: 1; }
 
-/* ===================================================================
-   ANIMASI SAAT SCROLL (dipasangkan dengan ui-interactions.js)
-   Elemen dengan atribut [data-reveal] akan TERSEMBUNYI dulu,
-   lalu JavaScript akan menambahkan class "is-visible" saat
-   elemen itu masuk ke layar. Tiga variasi animasi disiapkan.
-   =================================================================== */
+
+/* ============================================================
+   08. HOVER LIFT
+   ============================================================ */
+
+.hover-lift {
+    transition:
+        transform 280ms var(--dpm-ease),
+        box-shadow 280ms ease,
+        filter 280ms ease;
+}
+
+.hover-lift:hover {
+    transform:
+        translateY(-3px);
+
+    filter:
+        brightness(1.015);
+}
+
+
+/* ============================================================
+   09. BUTTON SYSTEM
+   ============================================================ */
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline:
+        3px solid
+        rgba(96, 165, 250, 0.35);
+
+    outline-offset:
+        3px;
+}
+
+
+/* ============================================================
+   10. HERO
+   ============================================================ */
+
+#home h1 {
+    letter-spacing:
+        -0.045em;
+
+    text-wrap:
+        balance;
+}
+
+#home a {
+    box-shadow:
+        0 10px 25px
+        rgba(37, 99, 235, 0.16);
+}
+
+html.dark #home a {
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.28);
+}
+
+
+/* Hero background */
+
+#site-hero-bg {
+    transition:
+        transform 1200ms var(--dpm-ease),
+        filter 450ms ease;
+}
+
+html.dark #site-hero-bg {
+    filter:
+        brightness(0.52)
+        saturate(0.82);
+}
+
+
+/* Hero overlay */
+
+#bg-overlay {
+    transition:
+        background 450ms ease,
+        opacity 450ms ease;
+}
+
+html.dark #bg-overlay {
+    background:
+        linear-gradient(
+            to right,
+            rgba(8, 13, 24, 0.98) 0%,
+            rgba(8, 13, 24, 0.93) 20%,
+            rgba(8, 13, 24, 0.72) 42%,
+            rgba(8, 13, 24, 0.28) 70%,
+            rgba(8, 13, 24, 0) 100%
+        ) !important;
+}
+
+
+/* ============================================================
+   11. SECTION SYSTEM
+   ============================================================ */
+
+section {
+    scroll-margin-top:
+        calc(var(--dpm-nav-height) + 18px);
+}
+
+#events {
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    border-top:
+        1px solid var(--dpm-border);
+
+    border-bottom:
+        1px solid var(--dpm-border);
+}
+
+html.dark #events {
+    background:
+        rgba(8, 13, 24, 0.38);
+}
+
+
+/* ============================================================
+   12. SOCIAL BUTTONS
+   ============================================================ */
+
+#contact a {
+    transition:
+        transform 250ms var(--dpm-ease),
+        background-color 250ms ease,
+        color 250ms ease,
+        box-shadow 250ms ease;
+}
+
+#contact a:hover {
+    transform:
+        translateY(-4px);
+}
+
+
+/* ============================================================
+   13. SCROLL REVEAL
+   ============================================================ */
+
 [data-reveal] {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity .7s ease, transform .7s ease;
+    opacity:
+        0;
+
+    transform:
+        translateY(22px);
+
+    transition:
+        opacity 720ms ease,
+        transform 720ms var(--dpm-ease);
 }
-[data-reveal].is-visible { opacity: 1; transform: translateY(0); }
 
-[data-reveal="left"] { transform: translateX(-28px); }
-[data-reveal="left"].is-visible { transform: translateX(0); }
+[data-reveal].is-visible {
+    opacity:
+        1;
 
-[data-reveal="scale"] { transform: scale(.92); }
-[data-reveal="scale"].is-visible { transform: scale(1); }
+    transform:
+        translateY(0);
+}
 
-/* ===================================================================
-   TOMBOL "BACK TO TOP"
-   Default-nya tetap memakai class Tailwind "opacity-40 invisible"
-   dari HTML. JS akan menambah/menghapus class "show" untuk
-   menimpanya (pakai !important) saat halaman sudah discroll.
-   =================================================================== */
+
+/* ============================================================
+   14. BACK TO TOP
+   ============================================================ */
+
 #back-to-top {
-    box-shadow: var(--shadow-soft);
-    transition: transform .25s ease, opacity .3s ease, visibility .3s ease;
-}
-#back-to-top:hover { transform: translateY(-3px) scale(1.05); }
-#back-to-top.show { opacity: 1 !important; visibility: visible !important; }
+    background:
+        var(--dpm-primary) !important;
 
-/* ===================================================================
-   Smooth scrolling
-   =================================================================== */
-html { scroll-behavior: smooth; }
+    color:
+        #ffffff !important;
 
-/* Active nav link */
-.nav-link.active { color: #3b82f6; font-weight: 600; }
+    box-shadow:
+        0 12px 30px
+        rgba(37, 99, 235, 0.22) !important;
 
-/* Event card hover effect (dipertahankan, masih relevan) */
-.event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-soft-hover);
-}
+    opacity:
+        0 !important;
 
-/* Custom scrollbar */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #f1f1f1; }
-::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
+    visibility:
+        hidden !important;
 
-.Sosmed {
-    max-width: 448px;
-    margin-top: 48px;
-    text-align: auto;
-    animation: fade-in 1s ease-in-out;
+    transform:
+        translateY(12px) !important;
+
+    transition:
+        opacity 300ms ease,
+        visibility 300ms ease,
+        transform 300ms var(--dpm-ease),
+        background-color 250ms ease !important;
 }
 
-/* ===================================================================
-   DARK MODE OVERRIDES (DIPERBARUI KE PALET SLATE)
-   =================================================================== */
-html, body {
-    transition: background-color 220ms ease, color 220ms ease;
+#back-to-top.show {
+    opacity:
+        1 !important;
+
+    visibility:
+        visible !important;
+
+    transform:
+        translateY(0) !important;
 }
 
-html.dark, html.dark body {
-    background-color: var(--color-dark-bg) !important;
-    color: #e6eef8 !important;
+#back-to-top:hover {
+    background:
+        var(--dpm-primary-hover) !important;
+
+    transform:
+        translateY(-3px) !important;
 }
 
-html.dark nav {
-    background-color: var(--color-dark-bg) !important;
+
+/* ============================================================
+   15. IMAGES
+   ============================================================ */
+
+img {
+    max-width:
+        100%;
+
+    transition:
+        filter 350ms ease,
+        opacity 350ms ease;
 }
 
-/* Invert permukaan terang yang dipakai di template */
-html.dark .bg-white   { background-color: var(--color-dark-surface) !important; color: #e6eef8 !important; }
-html.dark .bg-gray-800 { background-color: var(--color-dark-bg) !important; }
-html.dark .bg-gray-100 { background-color: var(--color-dark-surface) !important; color: #e6eef8 !important; }
 
-/* Warna teks */
-html.dark .text-gray-800, html.dark .text-gray-900 { color: #e6eef8 !important; }
-html.dark .text-gray-600, html.dark .text-gray-500, html.dark .text-gray-400 { color: #9aa6b2 !important; }
+/*
+   IMPORTANT:
+   Jangan menggunakan global invert/filter untuk PNG.
+   Foto anggota, logo, dan aset visual harus tetap natural.
+*/
 
-/* Link & tombol — DIPERBAIKI supaya kontrasnya aman dibaca */
-html.dark a { color: var(--color-dark-link) !important; }
-html.dark .bg-blue-900 { background-color: #1e3a8a !important; }
 
-/* Details / summary */
-html.dark details {
-    background-color: var(--color-dark-surface) !important;
-    border-color: var(--color-dark-border) !important;
-    color: #e6eef8 !important;
-}
-html.dark summary { color: #e6eef8 !important; }
+/* ============================================================
+   16. MOBILE
+   ============================================================ */
 
-/* Footer (fallback, footer-loader.js sudah dark secara default) */
-html.dark footer { background-color: var(--color-dark-bg) !important; color: #9fb3c8 !important; }
+@media (max-width: 767px) {
 
-/* Shadow di dark mode — DIPERBAIKI: dulu dihilangkan total,
-   sekarang diganti shadow gelap lembut agar tetap terasa "elevated" */
-html.dark .shadow, html.dark .shadow-lg {
-    box-shadow: var(--shadow-soft-dark) !important;
-}
+    :root {
+        --dpm-nav-height: 64px;
+    }
 
-/* PNG jadi putih di dark mode */
-html.dark img[src$=".png"] {
-    filter: brightness(0) invert(1) saturate(0);
-    transition: filter 200ms ease-in-out, opacity 200ms ease-in-out;
-}
-html.dark img[src$=".png"].logo, html.dark img[src$=".png"].brand {
-    opacity: 0.95;
+    #home h1 {
+        font-size:
+            clamp(2.25rem, 10vw, 3.4rem);
+    }
+
+    .glass-card {
+        border-radius:
+            var(--dpm-radius-md) !important;
+    }
+
+    #back-to-top {
+        right:
+            1.25rem;
+
+        bottom:
+            1.25rem;
+    }
 }
 
-/* Overlay & hero image di dark mode */
-html.dark #bg-overlay, html.dark .hero-overlay {
-    background: transparent !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-}
-html.dark #site-hero-bg, html.dark #page-bg-image {
-    filter: none !important;
-    opacity: 0.98 !important;
+
+/* ============================================================
+   17. TABLET
+   ============================================================ */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .glass-card {
+        border-radius:
+            var(--dpm-radius-md) !important;
+    }
 }
 
-.contact { text-align: right; }
 
-.short-decorative-divider:not(:first-child):after {
-    content: "";
-    display: block;
-    width: 4rem;
-    height: 4px;
-    margin: 6px auto 0;
-    background: #1f2937;
-    border-radius: 9999px;
+/* ============================================================
+   18. REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior:
+            auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        scroll-behavior:
+            auto !important;
+    }
+
+    [data-reveal] {
+        opacity:
+            1;
+
+        transform:
+            none;
+    }
 }
-html.dark .short-decorative-divider:not(:first-child):after { background: #f3f4f6; }
