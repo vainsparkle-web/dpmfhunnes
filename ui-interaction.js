@@ -381,189 +381,220 @@
     );
 
 
-    /* ============================================================
-       04. SCROLL REVEAL
-       ============================================================ */
+   /* ============================================================
+   04. SCROLL REVEAL
+   ============================================================ */
 
-    if (
-        'IntersectionObserver' in window
-    ) {
+if ('IntersectionObserver' in window) {
 
-        const revealObserver =
-            new IntersectionObserver(
-                (entries) => {
-
-                    entries.forEach(
-                        (entry) => {
-
-                            if (
-                                !entry.isIntersecting
-                            ) {
-                                return;
-                            }
-
-                            entry.target.classList.add(
-                                'is-visible'
-                            );
-
-                            revealObserver.unobserve(
-                                entry.target
-                            );
-
-                        }
-                    );
-
-                },
-                {
-                    threshold: 0.12,
-
-                    rootMargin:
-                        '0px 0px -40px 0px'
-                }
-            );
-
-
-        document
-            .querySelectorAll(
-                '[data-reveal]'
-            )
-            .forEach(
-                (element, index) => {
-
-                    /*
-                     * Small stagger.
-                     *
-                     * Never gets longer than 210ms.
-                     */
-                    const delay =
-                        Math.min(
-                            index % 4,
-                            3
-                        ) * 70;
-
-                    element.style.transitionDelay =
-                        `${delay}ms`;
-
-                    revealObserver.observe(
-                        element
-                    );
-                }
-            );
-
-    } else {
-
-        /*
-         * Fallback for very old browsers.
-         */
-        document
-            .querySelectorAll(
-                '[data-reveal]'
-            )
-            .forEach(
-                element => {
-                    element.classList.add(
-                        'is-visible'
-                    );
-                }
-            );
-    }
-
-
-    /* ============================================================
-       05. SCROLL STATE
-       ============================================================ */
-
-    let ticking =
-        false;
-
-
-    function updateScrollState() {
-
-        const scrollY =
-            window.scrollY;
-
-
-        /*
-         * Navbar shadow.
-         */
-        if (nav) {
-
-            nav.classList.toggle(
-                'shadow-lg',
-                scrollY > 12
-            );
-
-        }
-
-
-        /*
-         * Back to top.
-         */
-        if (backToTop) {
-
-            backToTop.classList.toggle(
-                'show',
-                scrollY > 500
-            );
-
-        }
-
-
-        /*
-         * Hero parallax.
-         */
-        if (
-            heroBackground &&
-            scrollY < 700 &&
-            !window.matchMedia(
-                '(prefers-reduced-motion: reduce)'
-            ).matches
-        ) {
-
-            const offset =
-                Math.min(
-                    scrollY * 0.035,
-                    22
-                );
-
-            heroBackground.style.transform =
-                `scale(1.02) translateY(${offset}px)`;
-        }
-
-
-        ticking =
-            false;
-    }
-
-
-    function requestScrollUpdate() {
-
-        if (ticking) {
-            return;
-        }
-
-        ticking =
-            true;
-
-        window.requestAnimationFrame(
-            updateScrollState
+    const revealElements =
+        document.querySelectorAll(
+            '[data-reveal]'
         );
-    }
 
 
-    window.addEventListener(
-        'scroll',
-        requestScrollUpdate,
-        {
-            passive: true
+    /*
+     * Enable the reveal system ONLY after JavaScript
+     * is confirmed to be running.
+     *
+     * Without this class, elements stay visible.
+     * This prevents a blank page if JS fails.
+     */
+    revealElements.forEach(
+        (element, index) => {
+
+            element.classList.add(
+                'dpm-reveal-ready'
+            );
+
+
+            /*
+             * Small stagger.
+             *
+             * Maximum delay:
+             * 210ms
+             */
+            const delay =
+                Math.min(
+                    index % 4,
+                    3
+                ) * 70;
+
+
+            element.style.transitionDelay =
+                `${delay}ms`;
+
         }
     );
 
 
+    const revealObserver =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(
+                    (entry) => {
+
+                        if (
+                            !entry.isIntersecting
+                        ) {
+                            return;
+                        }
+
+
+                        entry.target.classList.add(
+                            'is-visible'
+                        );
+
+
+                        revealObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
+                );
+
+            },
+            {
+                threshold: 0.12,
+
+                rootMargin:
+                    '0px 0px -40px 0px'
+            }
+        );
+
+
+    revealElements.forEach(
+        (element) => {
+
+            revealObserver.observe(
+                element
+            );
+
+        }
+    );
+
+
+} else {
+
     /*
-     * Initial state.
+     * Fallback for browsers that don't support
+     * IntersectionObserver.
+     *
+     * Everything stays visible.
      */
-    updateScrollState();
+    document
+        .querySelectorAll(
+            '[data-reveal]'
+        )
+        .forEach(
+            (element) => {
+
+                element.classList.add(
+                    'is-visible'
+                );
+
+            }
+        );
+}
+
+
+/* ============================================================
+   05. SCROLL STATE
+   ============================================================ */
+
+let ticking = false;
+
+
+function updateScrollState() {
+
+    const scrollY =
+        window.scrollY;
+
+
+    /*
+     * Navbar shadow.
+     */
+    if (nav) {
+
+        nav.classList.toggle(
+            'shadow-lg',
+            scrollY > 12
+        );
+
+    }
+
+
+    /*
+     * Back to top.
+     */
+    if (backToTop) {
+
+        backToTop.classList.toggle(
+            'show',
+            scrollY > 500
+        );
+
+    }
+
+
+    /*
+     * Hero parallax.
+     */
+    if (
+        heroBackground &&
+        scrollY < 700 &&
+        !window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        ).matches
+    ) {
+
+        const offset =
+            Math.min(
+                scrollY * 0.035,
+                22
+            );
+
+
+        heroBackground.style.transform =
+            `scale(1.02) translateY(${offset}px)`;
+
+    }
+
+
+    ticking = false;
+}
+
+
+function requestScrollUpdate() {
+
+    if (ticking) {
+        return;
+    }
+
+
+    ticking = true;
+
+
+    window.requestAnimationFrame(
+        updateScrollState
+    );
+}
+
+
+window.addEventListener(
+    'scroll',
+    requestScrollUpdate,
+    {
+        passive: true
+    }
+);
+
+
+/*
+ * Initial state.
+ */
+updateScrollState();
 
 
     /* ============================================================
