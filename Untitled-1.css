@@ -1,46 +1,21 @@
-/* ============================================================
-   DPM FH UNNES — GLOBAL DESIGN SYSTEM
-   Version: 1.0
-   Scope:
-   - Global theme tokens
-   - Universal dark/light mode
-   - Navigation
-   - Cards
-   - Buttons
-   - Forms
-   - Scroll reveal
-   - Responsive utilities
-   - Accessibility
-   ============================================================ */
-
-
-/* ============================================================
-   01. DESIGN TOKENS
-   ============================================================ */
-
 :root {
-    /* Background */
     --dpm-bg: #f7f9fc;
     --dpm-bg-elevated: #ffffff;
     --dpm-surface: #ffffff;
     --dpm-surface-glass: rgba(255, 255, 255, 0.78);
 
-    /* Text */
     --dpm-text: #172033;
     --dpm-text-secondary: #334155;
     --dpm-muted: #64748b;
     --dpm-subtle: #94a3b8;
 
-    /* Brand */
     --dpm-primary: #2563eb;
     --dpm-primary-hover: #1d4ed8;
     --dpm-primary-soft: rgba(37, 99, 235, 0.10);
 
-    /* Border */
     --dpm-border: rgba(15, 23, 42, 0.08);
     --dpm-border-strong: rgba(15, 23, 42, 0.14);
 
-    /* Shadow */
     --dpm-shadow-sm:
         0 4px 18px rgba(15, 23, 42, 0.05);
 
@@ -50,13 +25,11 @@
     --dpm-shadow-lg:
         0 26px 70px rgba(15, 23, 42, 0.13);
 
-    /* Radius */
     --dpm-radius-sm: 10px;
     --dpm-radius-md: 14px;
     --dpm-radius-lg: 20px;
     --dpm-radius-xl: 26px;
 
-    /* Motion */
     --dpm-ease:
         cubic-bezier(0.2, 0.8, 0.2, 1);
 
@@ -149,8 +122,6 @@ body {
 }
 
 
-/* Smooth theme transition for major surfaces */
-
 body,
 nav,
 section,
@@ -159,9 +130,7 @@ footer,
 main,
 article,
 aside,
-div,
 button,
-a,
 input,
 textarea,
 select {
@@ -341,7 +310,7 @@ nav a:hover {
         blur(16px)
         saturate(135%);
 
-    transition:
+   transition:
         transform 350ms var(--dpm-ease),
         box-shadow 350ms ease,
         border-color 350ms ease,
