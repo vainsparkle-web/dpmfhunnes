@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="picset/logo dpm fh.png" type="image/png">
+    <title>Dewan Perwakilan Mahasiswa FH UNNES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Untitled-1.css">
+</head>
+<body class="font-sans bg-transparent pt-20">
+
+    <!-- Hero strip background -->
+    <div aria-hidden="true" class="fixed left-0 right-0 top-16 h-44 pointer-events-none" style="z-index:0;">
+        <img src="picset/bg-dpm-fh-unnes.jpg" alt="" class="w-full h-full object-cover" id="page-bg-image">
+    </div>
+    <div id="bg-overlay" class="fixed inset-0 pointer-events-none"
+         style="background: linear-gradient(to bottom, rgba(255,255,255,0) 0px, rgba(255,255,255,0) 64px,
+                rgba(255,255,255,0.85) 140px, rgba(255,255,255,1) 220px); opacity:1; z-index:1;">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="picset/logo dpm fh.png" alt="Logo DPM FH UNNES" class="h-10 w-auto object-contain">
+                <span class="text-xl font-bold text-gray-800">DPM FH UNNES</span>
+            </a>
+
+            <button id="navToggle" class="md:hidden text-gray-700 p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Buka menu">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+
+            <div id="navMenu" class="hidden md:flex space-x-6 items-center">
+                <a href="index.html#home"    class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Beranda</a>
+                <a href="index.html#about"   class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Tentang</a>
+                <a href="index.html#events"  class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Program</a>
+                <a href="index.html#team"    class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Komisi</a>
+                <a href="index.html#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Info Kontak</a>
+                <a href="StructureKomisi3.html#ForbisaSection"
+                   class="hover-lift bg-blue-500 text-white px-5 py-2 rounded-full shadow hover:bg-blue-600 transition-all duration-200 font-medium">
+                   Form Aduan
+                </a>
+                <button id="dark-toggle-btn" aria-pressed="false" title="Dark Mode"
+                        class="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun hidden"></i>
+                    <span class="sr-only">Dark Mode</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden">
+            <div class="border-t px-6 py-4 space-y-1">
+                <a href="index.html#home"    class="block px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors">Beranda</a>
+                <a href="index.html#about"   class="block px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors">Tentang</a>
+                <a href="index.html#events"  class="block px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors">Program</a>
+                <a href="index.html#team"    class="block px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors">Komisi</a>
+                <a href="index.html#contact" class="block px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors">Kontak</a>
+                <a href="StructureKomisi3.html#ForbisaSection"
+                   class="block bg-blue-500 text-white px-4 py-2 rounded-full text-center font-medium hover:bg-blue-600 transition-colors">
+                   Form Aduan
+                </a>
+                <button id="dark-toggle-mobile"
+                        class="w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 font-medium transition-colors">
+                    Dark Mode <i class="fas fa-moon ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════
+         MAIN CONTENT
+    ═══════════════════════════════════════════════════ -->
+    <main class="container mx-auto px-6 py-12 max-w-4xl relative z-20">
+
+        <!-- Header -->
+        <header data-reveal class="text-center mb-10">
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">Terms of Service</h1>
+            <div class="mx-auto mt-3 mb-4 w-16 h-1 rounded bg-blue-500"></div>
+            <p class="text-sm text-gray-500">Last updated: <time datetime="2025-08-24">24 August 2025</time></p>
+            <p class="text-gray-600 mt-4 leading-relaxed max-w-2xl mx-auto">
+                These Terms of Service govern your access to and use of our website, products, and services
+                (collectively, the "Services"). Please read these Terms carefully before using our Services.
+                By accessing or using our Services, you agree to be bound by these Terms. If you do not agree,
+                you must not use our Services.
+            </p>
+        </header>
+
+        <!--
+            Setiap section dibungkus glass-card.
+            h2 dan p sebelumnya tidak punya class sama sekali (tampil default browser).
+            Class tipografi ditambahkan agar konsisten dengan desain situs — konten tidak berubah.
+        -->
+        <div class="space-y-4">
+
+            <section data-reveal class="glass-card p-6">
+                <h2 class="text-lg font-bold text-gray-800 mb-3">1. Eligibility</h2>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    You must be at least 18 years old, or the legal age of majority in your jurisdiction, to use
+                    our Services. By using our Services, you represent and warrant that you meet these requirements.
+                </p>
+            </section>
+
+            <section data-reveal class="glass-card p-6">
+                <h2 class="text-lg font-bold text-gray-800 mb-3">2. Use of Services</h2>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    - You agree to use the Services only for lawful purposes and in compliance with all applicable
+                    laws and regulations.<br>
+                    - You may not use the Services in any manner that could damage, disable, overburden, or impair
+                    our systems or networks.<br>
+                    - Unauthorized access, scraping, reverse engineering, or distribution of our Services is
+                    strictly prohibited.
+                </p>
+            </section>
+
+            <section data-reveal class="glass-card p-6">
+                <h2 class="text-lg font-bold text-gray-800 mb-3">3. User Accounts</h2>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    - To access certain features, you may be required to create an account.<br>
+                    - You are responsible for maintaining the confidentiality of your account credentials and for
+                    all activities under your account.<br>
+                    - We reserve the right to suspend or terminate your account at our sole discretion if we
+                    suspect any violation of these Terms.
+                </p>
+            </section>
+
+            <section data-reveal class="glass-card p-6">
+                <h2 class="text-lg font-bold text-gray-800 mb-3">4. Intellectual Property</h2>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    - All content, trademarks, logos, designs, text, images, and software available on the
+                    Services are the property of <strong>DPM FH UNNES</strong> or its licensors and are protected
+                    under intellectual property laws.<br>
+                    - You are granted a limited, non-exclusive, non-transferable license to access and use the
+                    Services for personal, non-commercial purposes.<br>
+                    - You may not copy, reproduce, distribute, modify, or create derivative works without our
+                    prior written consent.
+                </p>
+            </section>
+
+            <section data-reveal class="glass-card p-6">
+                <h2 class="text-lg font-bold text-gray-800 mb-3">5. Third-Party Links and Content</h2>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Our Services may contain links to third-party websites or services that are not owned or
+                    controlled by us. We do not endorse, and are not responsible for, the content, products, or
+                    services available from such third parties. You acknowledge and agree that we are not liable
+                    for any damages or losses caused by third-party websites or services.
+                </p>
+            </section>
+
+            <section data-reveal class="glass-card p-6">
+                <h2 class="text-lg font-bold text-gray-800 mb-3">6. Disclaimers</h2>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    - Our Services are provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any
+                    kind, either express or implied.<br>
+                    - We do not guarantee that the Services will be uninterrupted, error-free, or secure.<br>
+                    - We disclaim all warranties of merchantability, fitness for a particular purpose, and
+                    non-infringement to the fullest extent permitted by law.
+                </p>
+            </section>
+
+            <section data-reveal class="glass-card p-6">
+                <h2 class="text-lg font-bold text-gray-800 mb-3">7. Limitation of Liability</h2>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    To the maximum extent permitted by law:<br>
+                    - <strong>DPM FH UNNES</strong> and its affiliates shall not be liable for any indirect,
+                    incidental, special, consequential, or punitive damages, including loss of profits, data, or
+                    goodwill, arising from your use of the Services.<br>
+                    - Our total liability for any claim relating to the Services shall not exceed the greater of
+                    (a) the amount you paid us in the 12 months prior to the claim, or (b) USD $100.
+                </p>
+            </section>
+
+            <section data-reveal class="glass-card p-6">
+                <h2 class="text-lg font-bold text-gray-800 mb-3">8. Indemnification</h2>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    You agree to indemnify, defend, and hold harmless <strong>DPM FH UNNES</strong>, its officers,
+                    employees, partners, and affiliates from any claims, liabilities, damages, costs, or expenses
+                    (including reasonable attorneys' fees) arising from:<br>
+                    - Your use or misuse of the Services;<br>
+                    - Your violation of these Terms;<br>
+                    - Your violation of any third-party rights.
+                </p>
+            </section>
+
+            <section data-reveal class="glass-card p-6">
+                <h2 class="text-lg font-bold text-gray-800 mb-3">9. Governing Law and Dispute Resolution</h2>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    These Terms shall be governed by and construed in accordance with the laws of the Republic
+                    of Indonesia, without regard to its conflict of law principles.
+                </p>
+                <p class="text-gray-600 text-sm leading-relaxed mt-3">
+                    Any dispute, claim, or controversy arising out of or relating to these Terms or the Services
+                    shall be resolved by litigation in the courts of Semarang, Indonesia. The decision of the
+                    court shall be final and binding upon the parties.
+                </p>
+            </section>
+
+            <section data-reveal class="glass-card p-6">
+                <h2 class="text-lg font-bold text-gray-800 mb-3">10. Termination</h2>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    We may suspend or terminate your access to the Services at any time, with or without cause
+                    or notice, including if we reasonably believe you have violated these Terms. Upon termination,
+                    your right to use the Services will immediately cease.
+                </p>
+            </section>
+
+            <section data-reveal class="glass-card p-6">
+                <h2 class="text-lg font-bold text-gray-800 mb-3">11. Changes to Terms</h2>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    We may update or modify these Terms at any time. Any changes will be posted on this page
+                    with a new "Last Updated" date. Continued use of the Services after such changes constitutes
+                    acceptance of the updated Terms.
+                </p>
+            </section>
+
+            <section data-reveal class="glass-card p-6">
+                <h2 class="text-lg font-bold text-gray-800 mb-3">12. Contact Information</h2>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    If you have any questions or concerns about these Terms, please contact us at:<br>
+                    📧 Email: <a href="mailto:dpmfhunnes2026@gmail.com"
+                                 class="text-blue-600 hover:underline transition-colors">dpmfhunnes2026@gmail.com</a><br>
+                    📍 Address: Sekretariat DPM FH UNNES, Universitas Negeri Semarang
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Back to Top -->
+    <button id="back-to-top"
+            class="fixed bottom-8 right-8 bg-blue-500 text-white w-12 h-12 rounded-full shadow-lg
+                   flex items-center justify-center opacity-40 invisible transition-all duration-300
+                   hover:bg-blue-600">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script src="footer-loader.js"></script>
+    <script src="ui-interactions.js"></script>
+</body>
+</html>

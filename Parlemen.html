@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="picset/logo dpm fh.png" type="image/png">
+    <title>Dewan Perwakilan Mahasiswa FH UNNES</title>
+    <!-- single Tailwind + Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Untitled-1.css">
+</head>
+<body class="font-sans bg-transparent pt-20">
+
+    <!-- Site background image placed behind content and follows page scroll (moves with content). -->
+    <div aria-hidden="true" class="absolute inset-0 z-0 pointer-events-none">
+        <!-- visible band at top; image height slightly extended using calc to add responsive space -->
+        <img src="picset/IMG_3000.jpg" alt="" class="absolute left-0 w-full object-cover" id="site-hero-bg" style="top:64px; height: calc(18rem + 8vh); z-index: 0;">
+        <!-- readability overlay so heading/paragraph stay legible on the image and white page -->
+        <div id="bg-overlay" class="absolute left-0 pointer-events-none"
+             style="top:64px; height: calc(18rem + 8vh); z-index: 1;
+                    background: linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 100%);">
+        </div>
+    </div>
+
+        <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+  <img src="picset/logo dpm fh.png" alt="Logo DPM FH UNNES" class="h-10 w-auto object-contain">
+  <span class="text-xl font-bold text-gray-800">DPM FH UNNES</span>
+</a>
+
+            <!-- mobile toggle -->
+            <button id="navToggle" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+            
+            <!-- Desktop menu -->
+            <div id="navMenu" class="hidden md:flex space-x-8 items-center dark:text-white">
+                <a href="index.html#home" class="text-gray-700 hover:text-blue-600">Beranda</a>
+                <a href="index.html#about" class="text-gray-700 hover:text-blue-600">Tentang</a>
+                <a href="index.html#events" class="text-gray-700 hover:text-blue-600">Program</a>
+                <a href="index.html#team" class="text-gray-700 hover:text-blue-600">Komisi</a>
+                <a href="index.html#contact" class="text-gray-700 hover:text-blue-600">Info Kontak</a>
+                <a href="StructureKomisi3.html#ForbisaSection" class="bg-blue-500 text-white px-4 py-2 rounded-full shadow">Form Aduan</a>
+                <!-- Dark mode toggle (desktop) -->
+                <button id="dark-toggle-btn" aria-pressed="false" title="Dark Mode" class="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun hidden"></i>
+                    <span class="sr-only">Dark Mode</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu items -->
+        <div id="mobileMenu" class="md:hidden hidden border-t">
+            <div class="px-6 py-4 space-y-2">
+                <a href="index.html#home" class="block text-gray-700">Beranda</a>
+                <a href="index.html#about" class="block text-gray-700">Tentang</a>
+                <a href="index.html#events" class="block text-gray-700">Program</a>
+                <a href="index.html#team" class="block text-gray-700">Komisi</a>
+                <a href="index.html#contact" class="block text-gray-700">Kontak</a>
+                <a href="StructureKomisi3.html#ForbisaSection" class="block bg-blue-500 text-white px-4 py-2 rounded-full text-center">Form Aduan</a>
+                    <!-- Dark mode toggle (mobile) -->
+                    <button id="dark-toggle-mobile" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100" title="Toggle dark mode">Dark Mode <i class="fas fa-moon ml-2"></i></button>
+            </div>
+        </div>
+    </nav>
+    
+<!--Section Parlemen-->
+   <main class="relative z-10">
+   <section id="info-parlemen" class="max-w-5xl mx-auto px-4 py-12">
+  <h2 class="text-3xl md:text-4xl text-gray-900 font-bold text-center">Parlemen Satya Mandala</h2>
+  <div class="mx-auto mt-3 w-16 h-1 rounded bg-blue-500"></div>
+
+  <p class="mt-6 text-gray-700">
+    Parlemen Satya Mandala adalah parlemen mahasiswa DPM FH UNNES yang berdiri sebagai ruang musyawarah,
+    pengawasan, dan penyalur aspirasi sivitas akademika secara berintegritas. “Satya” berarti
+    <em>keteguhan pada kebenaran</em>, sedangkan “Mandala” melambangkan <em>ruang yang menyatukan banyak unsur</em>—
+    menegaskan komitmen kami pada keputusan bersama yang adil, inklusif, dan bertanggung jawab.
+  </p>
+
+  <div class="mt-8 grid md:grid-cols-2 gap-6">
+    <div class="bg-white rounded-xl shadow p-6">
+      <h3 class="font-semibold text-lg">Visi</h3>
+      <p class="mt-2 text-gray-700">
+        Terciptanya Dewan Perwakilan Mahasiswa yang aspiratif, inspiratif, dan profesional sebagai wakil mahasiswa dan sebagai bentuk kontribusi nyata bagi pengembangan mahasiswa.
+      </p>
+      <h3 class="font-semibold text-lg mt-4">Misi</h3>
+      <ul class="mt-2 list-disc list-inside text-gray-700 space-y-1">
+        <li>Membangun lingkungan internal DPM FH UNNES yang Inklusif dan Harmonis.</li>
+        <li>Mengoptimalkan Fungsi DPM FH UNNES sebagai wadah aspirasi mahasiswa yang akuntabel.</li>
+        <li>Menjadikan DPM FH UNNES sebagai ruang kerja sama mahasiswa melalui program kerja yang edukatif, diskusif, dan forum advokasi guna mendukung pengembangan mahasiswa KM FH UNNES.</li>
+        <li>Mengoptimalkan fungsi legislasi dalam menciptakan dan menyalurkan produk hukum yang relevan dan adaptif bagi KM FH UNNES.</li>
+        <li>Meningkatkan pengawasan secara profesional dengan menjalin koordinasi yang aktif guna pemantauan yang lebih efektif.</li>  
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-xl shadow p-6">
+      <h3 class="font-semibold text-lg">Fungsi & Wewenang</h3>
+      <ul class="mt-2 list-disc list-inside text-gray-700 space-y-1">
+        <li><strong>Komisi 1:</strong> legislator, merancang dan mengesahkan peraturan.</li>
+        <li><strong>Komisi 2:</strong> pengawas UKM, BEM, kelompok belajar, dan program mahasiswa.</li>
+        <li><strong>Komisi 3:</strong> pejuang aspirasi, wadah utama dalam menampung kritik dan saran dari berbagai pihak.</li>
+        <li><strong>Komisi 4:</strong> mengkaji isu-isu di bidang sosial politik dan hukum.</li>
+        <li><strong>Komisi 5:</strong> kaderisasi dan peningkatan kualitas mahasiwa.</li>
+        <li><strong>Komisi 6:</strong> desainer internal, mengatur website dan keaktifan organisasi di dunia maya.</li>
+        <li><strong>Komisi 7:</strong> hubungan eksternal, kolaborasi antarorganisasi, dan kemitraan strategis.</li>
+      </ul>
+
+      <h3 class="font-semibold text-lg mt-4">Program Inti</h3>
+      <ul class="mt-2 list-disc list-inside text-gray-700 space-y-1">
+       <li>Forum Bicara Mahasiswa (FORBISA)</li>
+        <li>Sekolah Legislator Muda (SLM)</li>
+        <li>Open House DPM</li>
+        <li>Training Legislatif Dasar (TLD)</li>
+        <li>Perancangan RUU Pemilihan Umum Raya</li>
+        <li>Sinau Bersama (SIBER)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-xl shadow p-6 mt-6">
+    <h3 class="font-semibold text-lg">Alur Aspirasi Singkat</h3>
+    <p class="mt-2 text-gray-700">
+      Kirim aspirasi → verifikasi → pembahasan komisi → rekomendasi resmi →
+      tindak lanjut → publikasi progres.
+    </p>
+  </div>
+
+  <!-- Filosofi Logo -->
+  <div class="bg-white rounded-xl shadow p-6 mt-6 flex flex-col md:flex-row gap-6 items-start">
+    <!-- Ganti src dengan path logo kamu -->
+    <img src="picset/logo parlemen.png" alt="Logo Satya Mandala" class="w-28 h-28 object-contain">
+    <div>
+      <h3 class="font-semibold text-lg">Filosofi Logo Satya Mandala</h3>
+      <ul class="mt-2 list-disc list-inside text-gray-700 space-y-1">
+        <li><strong>Mandala berkelopak:</strong> Keberagaman gagasan yang disatukan dalam musyawarah.</li>
+        <li><strong>Gradasi kuning-oranye:</strong> Semangat, kejernihan, dan harapan.</li>
+        <li><strong>Lingkaran pusat:</strong> Titik temu mufakat &amp; keputusan berbasis data.</li>
+        <li><strong>Siluet burung/garis utama:</strong> Keberanian menyuarakan kebenaran &amp; semangat kebangsaan.</li>
+        <li><strong>Latar gelap:</strong> Menonjolkan transparansi—cahaya musyawarah di atas segala bias.</li>
+      </ul>
+      <p class="mt-3 italic text-gray-600">Tagline: “Bersatu untuk keadilan, bergerak untuk perubahan”</p>
+    </div>
+  </div>
+</section>
+
+   <!-- Social Media -->
+    <section>
+        <div>
+            <div class="max-w-md mx-auto mt-12 py-10 text-center fade-in">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Follow Us</h3>
+                <div class="flex justify-center space-x-6">
+                    <a href="#" class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center text-gray-700 hover:bg-blue-500 hover:text-white transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center text-gray-700 hover:bg-blue-400 hover:text-white transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/dpmfhunnes" target="_blank" rel="noopener noreferrer" class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center text-gray-700 hover:bg-pink-500 hover:text-white transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-800 hover:text-white transition">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@DPMFHUNNES" target="_blank" rel="noopener noreferrer" class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center text-gray-700 hover:bg-red-600 hover:text-white transition">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-40 invisible transition-all duration-300 hover:bg-blue-600">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+<div id="footer-placeholder"></div>
+    <script src="footer-loader.js"></script>
+    <script src="ui-interactions.js"></script></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

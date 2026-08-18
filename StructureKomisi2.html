@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="picset/logo dpm fh.png" type="image/png">
+    <title>Dewan Perwakilan Mahasiswa FH UNNES</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Untitled-1.css">
+    <style>
+        .section-heading-with-divider::after {
+            content: "";
+            display: block;
+            width: 4rem; 
+            height: 4px;
+            margin: 6px auto 0; 
+            background: #1f2937; 
+            border-radius: 9999px;
+        }
+        html.dark .section-heading-with-divider::after { background: #f3f4f6; }
+    </style>
+</head>
+<body class="font-sans pt-20">
+
+    <nav class="glass-nav fixed top-0 left-0 right-0 z-50 mb-6">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="picset/logo dpm fh.png" alt="Logo DPM FH UNNES" class="h-10 w-auto object-contain">
+                <span class="text-xl font-bold text-gray-800">DPM FH UNNES</span>
+            </a>
+
+            <button id="navToggle" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+
+            <div id="navMenu" class="hidden md:flex space-x-8 items-center dark:text-white">
+                <a href="index.html#home" class="text-gray-700 hover:text-blue-600">Beranda</a>
+                <a href="index.html#about" class="text-gray-700 hover:text-blue-600">Tentang</a>
+                <a href="index.html#events" class="text-gray-700 hover:text-blue-600">Program</a>
+                <a href="index.html#team" class="text-gray-700 hover:text-blue-600">Komisi</a>
+                <a href="index.html#contact" class="text-gray-700 hover:text-blue-600">Info Kontak</a>
+                <a href="StructureKomisi3.html#ForbisaSection" class="bg-blue-500 text-white px-4 py-2 rounded-full shadow">Form Aduan</a>
+                <button id="dark-toggle-btn" aria-pressed="false" title="Dark Mode" class="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun hidden"></i>
+                    <span class="sr-only">Dark Mode</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="md:hidden hidden border-t">
+            <div class="px-6 py-4 space-y-2">
+                <a href="index.html#home" class="block text-gray-700">Beranda</a>
+                <a href="index.html#about" class="block text-gray-700">Tentang</a>
+                <a href="index.html#events" class="block text-gray-700">Program</a>
+                <a href="index.html#team" class="block text-gray-700">Komisi</a>
+                <a href="index.html#contact" class="block text-gray-700">Kontak</a>
+                <a href="StructureKomisi3.html#ForbisaSection" class="block bg-blue-500 text-white px-4 py-2 rounded-full text-center">Form Aduan</a>
+                <button id="dark-toggle-mobile" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100" title="Toggle dark mode">Dark Mode <i class="fas fa-moon ml-2"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative overflow-hidden text-white py-24 md:py-32">
+        <img src="picset/bg-dpm-fh-unnes.jpg" alt="background" class="absolute inset-0 w-full h-full object-cover opacity-40">
+        <div aria-hidden="true" class="absolute inset-0 bg-slate-950/60"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl">
+                <a href="index.html#team" class="inline-flex items-center gap-2 text-white/80 hover:underline mb-6">
+                    <span>←</span>
+                    <span>Kembali ke Beranda</span>
+                </a>
+
+                <p class="text-sm md:text-base uppercase tracking-[0.2em] text-white/65 mb-4">
+                    Dewan Perwakilan Mahasiswa Fakultas Hukum UNNES
+                </p>
+
+                <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight mb-5">
+                    Komisi 2 - Pengawasan
+                </h1>
+
+                <p class="text-lg md:text-xl text-white/75 max-w-2xl">
+                    Struktur keanggotaan Komisi Pengawasan DPM FH UNNES.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="explanation" class="bg-gray-100 py-16">
+        <div class="text-center container mx-auto px-6 space-y-2">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Tentang Komisi 2</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Komisi Pengawasan memiliki fungsi vital dalam mengontrol jalannya organisasi mahasiswa. Komisi ini memastikan bahwa BEM, UKM, maupun kelompok belajar menjalankan program sesuai AD/ART serta prinsip transparansi dan akuntabilitas. Hasil pengawasan kemudian dituangkan dalam evaluasi yang menjadi acuan perbaikan lembaga di periode selanjutnya.</p>
+            </div>
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-2 leading-tight">Tugas dan Fungsi</h3>
+                <div class="mx-auto mt-0 mb-5 w-16 h-1 rounded-full bg-gray-800" aria-hidden="true"></div>
+            </div> <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h4 class="font-bold text-2xl mb-2">Pengawasan Program</h4>
+                    <p class="text-gray-600">Mengawasi pelaksanaan program kerja seluruh lembaga kemahasiswaan agar selaras dengan rencana dan AD/ART.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h5 class="font-bold text-2xl mb-2">Evaluasi Kinerja</h5>
+                    <p class="text-gray-600">Melakukan penilaian dan evaluasi menyeluruh terhadap kinerja BEM, UKM, dan kelompok belajar.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h6 class="font-bold text-2xl mb-2">Kontrol Keuangan</h6>
+                    <p class="text-gray-600">Mengawasi pengelolaan dana mahasiswa agar tertib administrasi, transparan, dan tidak menyimpang dari aturan.</p>
+                </div>
+            </div>
+        </div> </section>
+
+    <section id="structure" class="py-16 bg-gray-50 call=foto pengawasan">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-12 text-center">Struktur Organisasi</h2>
+
+            <div class="max-w-3xl mx-auto mb-10">
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <img src="picset/Farrel.png" alt="Foto" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800">Farrel Arya Ramadhan</h3>
+                        <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Ketua Komisi 2</span>
+                        <p class="text-sm text-gray-800 mt-1">Memimpin komisi pengawasan, mengoordinasikan evaluasi kinerja lembaga, serta memastikan fungsi pengawasan berjalan efektif.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-3xl mx-auto mb-10">
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <img src="picset/Satrio.png" alt="Muhammad Satriyo Nugroho" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800">Muhammad Satriyo Nugroho</h3>
+                        <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Wakil Ketua Komisi 2</span>
+                        <p class="text-sm text-gray-800 mt-1">Mendampingi ketua, membantu koordinasi internal, serta mengawasi jalannya tugas pengawasan secara berkesinambungan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <img src="picset/Ahmad.png" alt="Foto Ahmad Maulana Revalian" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800">Ahmad Maulana Revalian</h3>
+                        <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Staff Ahli Komisi 2</span>
+                        <p class="text-sm text-gray-800 mt-1">Mendukung kerja pengawasan, menyusun laporan evaluasi, serta memastikan pelaksanaan sesuai AD/ART.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <img src="picset/Alda.png" alt="Foto" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800">Alda Marshalina Agnesia</h3>
+                        <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Staff Ahli Komisi 2</span>
+                        <p class="text-sm text-gray-800 mt-1">Mendukung kerja pengawasan, menyusun laporan evaluasi, serta memastikan pelaksanaan sesuai AD/ART.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <img src="picset/Berlian.png" alt="Foto" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800">Berliana Putri</h3>
+                        <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Staff Ahli Komisi 2</span>
+                        <p class="text-sm text-gray-800 mt-1">Mendukung kerja pengawasan, menyusun laporan evaluasi, serta memastikan pelaksanaan sesuai AD/ART.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <img src="picset/Aldo.png" alt="Foto" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800">Aldho Fernandho</h3>
+                        <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Staff Ahli Komisi 2</span>
+                        <p class="text-sm text-gray-800 mt-1">Mendukung kerja pengawasan, menyusun laporan evaluasi, serta memastikan pelaksanaan sesuai AD/ART.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <img src="picset/Ere.png" alt="Foto" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800">Erenanda Selfi Triyani</h3>
+                        <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Staff Ahli Komisi 2</span>
+                        <p class="text-sm text-gray-800 mt-1">Mendukung kerja pengawasan, menyusun laporan evaluasi, serta memastikan pelaksanaan sesuai AD/ART.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <img src="picset/Halida.png" alt="Foto" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800">Halida Fatkhia Zona</h3>
+                        <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Staff Ahli Komisi 2</span>
+                        <p class="text-sm text-gray-800 mt-1">Mendukung kerja pengawasan, menyusun laporan evaluasi, serta memastikan pelaksanaan sesuai AD/ART.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <img src="picset/Hanim.png" alt="Foto" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800">Hanim Asfi Muhimmah</h3>
+                        <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Staff Ahli Komisi 2</span>
+                        <p class="text-sm text-gray-800 mt-1">Mendukung kerja pengawasan, menyusun laporan evaluasi, serta memastikan pelaksanaan sesuai AD/ART.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <img src="picset/Joses.png" alt="Foto" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800">Joses Tegar Enesia Gunawan</h3>
+                        <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Staff Ahli Komisi 2</span>
+                        <p class="text-sm text-gray-800 mt-1">Mendukung kerja pengawasan, menyusun laporan evaluasi, serta memastikan pelaksanaan sesuai AD/ART.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <img src="picset/Safira.png" alt="Foto" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800">Khadijah Safira Maharani</h3>
+                        <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Staff Ahli Komisi 2</span>
+                        <p class="text-sm text-gray-800 mt-1">Mendukung kerja pengawasan, menyusun laporan evaluasi, serta memastikan pelaksanaan sesuai AD/ART.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <img src="picset/Rizky.png" alt="Foto" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800">Muhammad Rizky Firdaus Syahputra</h3>
+                        <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Staff Ahli Komisi 2</span>
+                        <p class="text-sm text-gray-800 mt-1">Mendukung kerja pengawasan, menyusun laporan evaluasi, serta memastikan pelaksanaan sesuai AD/ART.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <img src="picset/Monica.png" alt="Foto" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800">Monica Calista Matram</h3>
+                        <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Staff Ahli Komisi 2</span>
+                        <p class="text-sm text-gray-800 mt-1">Mendukung kerja pengawasan, menyusun laporan evaluasi, serta memastikan pelaksanaan sesuai AD/ART.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <img src="picset/Sheila.png" alt="Foto" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800">Sheila Nasywa Razani</h3>
+                        <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Staff Ahli Komisi 2</span>
+                        <p class="text-sm text-gray-800 mt-1">Mendukung kerja pengawasan, menyusun laporan evaluasi, serta memastikan pelaksanaan sesuai AD/ART.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <img src="picset/Siti.png" alt="Foto" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800">Siti Nur Fadhilatul Bariyah</h3>
+                        <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Staff Ahli Komisi 2</span>
+                        <p class="text-sm text-gray-800 mt-1">Mendukung kerja pengawasan, menyusun laporan evaluasi, serta memastikan pelaksanaan sesuai AD/ART.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <img src="picset/Zahra.png" alt="Foto Zahra Anindya Pramesti" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800">Zahra Anindya Pramesti</h3>
+                        <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Staff Ahli Komisi 2</span>
+                        <p class="text-sm text-gray-800 mt-1">Mendukung kerja pengawasan, menyusun laporan evaluasi, serta memastikan pelaksanaan sesuai AD/ART.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="structure-bottom" class="py-4 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto mb-10">
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+                    <img src="picset/iko.png" alt="Iko Juliant Junior" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800">Iko Juliant Junior</h3>
+                        <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Staff Ahli Komisi 2</span>
+                        <p class="text-sm text-gray-800 mt-1">Mendukung kerja pengawasan, menyusun laporan evaluasi, serta memastikan pelaksanaan sesuai AD/ART.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="navigasi-komisi" class="py-6 bg-gray-100">
+        <div class="flex justify-between mt-16 mb-20 gap-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <a href="StructureKomisi1.html" class="inline-block bg-gray-700 text-white text-sm font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-900 transition duration-300" aria-label="Previous" title="Previous">
+                ← Sebelumnya (Komisi 1)
+            </a>
+            <a href="StructureKomisi3.html" class="inline-block bg-gray-800 text-white text-sm font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-blue-600 transition duration-300" aria-label="Next" title="Next">
+                Selanjutnya (Komisi 3) →
+            </a>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="footer-loader.js"></script>
+
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-40 invisible transition-all duration-300 hover:bg-blue-600">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="ui-interactions.js"></script>
+</body>
+</html>

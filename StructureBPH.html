@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badan Pengurus Harian - DPM FH UNNES</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Untitled-1.css">
+</head>
+
+<body class="font-sans pt-20">
+
+    <nav class="glass-nav fixed top-0 left-0 right-0 z-50 mb-6">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="picset/logo dpm fh.png" alt="Logo DPM FH UNNES" class="h-10 w-auto object-contain">
+                <span class="text-xl font-bold">DPM FH UNNES</span>
+            </a>
+
+            <div class="flex items-center gap-3">
+                <button id="navToggle" class="md:hidden p-2 rounded-lg" aria-label="Buka menu navigasi">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+
+                <div id="navMenu" class="hidden md:flex items-center gap-7">
+                    <a href="index.html">Beranda</a>
+                    <a href="index.html#about">Tentang</a>
+                    <a href="index.html#events">Program</a>
+                    <a href="index.html#team">Komisi</a>
+                    <a href="index.html#contact">Info Kontak</a>
+
+                    <a href="StructureKomisi3.html#ForbisaSection" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full shadow">
+                        Form Aduan
+                    </a>
+
+                    <button id="dark-toggle-btn" aria-pressed="false" title="Dark Mode" class="inline-flex items-center gap-2 px-3 py-2 rounded-lg">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun hidden"></i>
+                        <span class="sr-only">Dark Mode</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200/20">
+            <div class="px-6 py-4 space-y-2">
+                <a href="index.html" class="block py-2">Beranda</a>
+                <a href="index.html#about" class="block py-2">Tentang</a>
+                <a href="index.html#events" class="block py-2">Program</a>
+                <a href="index.html#team" class="block py-2">Komisi</a>
+                <a href="index.html#contact" class="block py-2">Kontak</a>
+
+                <a href="StructureKomisi3.html#ForbisaSection" class="block bg-blue-500 text-white px-4 py-2 rounded-full text-center">
+                    Form Aduan
+                </a>
+
+                <button id="dark-toggle-mobile" class="w-full text-left px-4 py-2 rounded-lg" title="Toggle dark mode">
+                    Dark Mode
+                    <i class="fas fa-moon ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative overflow-hidden text-white py-24 md:py-32">
+        <img src="picset/bg-dpm-fh-unnes.jpg" alt="background" class="absolute inset-0 w-full h-full object-cover opacity-40">
+        <div aria-hidden="true" class="absolute inset-0 bg-slate-950/60"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl" data-reveal>
+                <a href="index.html#team" class="inline-flex items-center gap-2 text-white/80 hover:underline mb-6">
+                    <span>←</span>
+                    <span>Kembali ke Beranda</span>
+                </a>
+
+                <p class="text-sm md:text-base uppercase tracking-[0.2em] text-white/65 mb-4">
+                    Dewan Perwakilan Mahasiswa Fakultas Hukum UNNES
+                </p>
+
+                <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight mb-5" data-reveal>
+                    Badan Pengurus Harian
+                </h1>
+
+                <p class="text-lg md:text-xl text-white/75 max-w-2xl" data-reveal>
+                    Struktur kepemimpinan dan unsur pengurus harian DPM FH UNNES.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section id="explanation" class="py-20 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-reveal>
+                        Tentang BPH
+                    </h2>
+
+                    <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed" data-reveal>
+                        Badan Pengurus Harian merupakan unsur pimpinan dan pelaksana utama dalam menjalankan fungsi internal DPM FH UNNES.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    <div class="glass-card p-6 md:p-8" data-reveal>
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center mb-5">
+                            <i class="fas fa-users"></i>
+                        </div>
+
+                        <h3 class="text-xl font-bold mb-3">
+                            Koordinasi
+                        </h3>
+
+                        <p class="text-gray-600 leading-relaxed">
+                            BPH berperan dalam mengoordinasikan pelaksanaan tugas dan fungsi kelembagaan DPM FH UNNES.
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-6 md:p-8" data-reveal>
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center mb-5">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+
+                        <h3 class="text-xl font-bold mb-3">
+                            Organisasi
+                        </h3>
+
+                        <p class="text-gray-600 leading-relaxed">
+                            BPH memastikan organisasi berjalan secara terarah, terstruktur, dan sesuai dengan tujuan kelembagaan.
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-6 md:p-8" data-reveal>
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center mb-5">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+
+                        <h3 class="text-xl font-bold mb-3">
+                            Representasi
+                        </h3>
+
+                        <p class="text-gray-600 leading-relaxed">
+                            BPH menjadi bagian penting dalam menjalankan representasi kelembagaan DPM FH UNNES.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="structure" class="py-20 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <p class="text-sm uppercase tracking-[0.2em] text-blue-500 font-semibold mb-3" data-reveal>
+                        Struktur Organisasi
+                    </p>
+
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-reveal>
+                        Badan Pengurus Harian
+                    </h2>
+                </div>
+
+                <div class="max-w-5xl mx-auto space-y-6">
+
+                    <div class="glass-card p-6 md:p-8 flex flex-col md:flex-row items-center gap-6" data-reveal>
+                        <img src="picset/Mas Zaki.png" alt="Ahmad Zaki Mubarok" loading="eager" class="w-24 h-24 rounded-full object-cover border-4 border-white/70 dark:border-slate-700">
+
+                        <div class="text-center md:text-left">
+                            <span class="inline-block bg-slate-900/90 dark:bg-blue-500/20 dark:text-blue-300 text-white text-sm px-3 py-1 rounded-full mb-3">
+                                Ketua
+                            </span>
+
+                            <h3 class="text-xl md:text-2xl font-bold">
+                                Ahmad Zaki Mubarok
+                            </h3>
+
+                            <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                                Ketua Dewan Perwakilan Mahasiswa Fakultas Hukum Universitas Negeri Semarang.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 md:p-8 flex flex-col md:flex-row items-center gap-6" data-reveal>
+                        <img src="picset/Lubas.png" alt="Lubas Adam Istawi" class="w-24 h-24 rounded-full object-cover border-4 border-white/70 dark:border-slate-700">
+
+                        <div class="text-center md:text-left">
+                            <span class="inline-block bg-slate-900/90 dark:bg-blue-500/20 dark:text-blue-300 text-white text-sm px-3 py-1 rounded-full mb-3">
+                                Wakil Ketua
+                            </span>
+
+                            <h3 class="text-xl md:text-2xl font-bold">
+                                Lubas Adam Istawi
+                            </h3>
+
+                            <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                                Wakil Ketua Dewan Perwakilan Mahasiswa Fakultas Hukum Universitas Negeri Semarang.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 md:p-8 flex flex-col md:flex-row items-center gap-6" data-reveal>
+                        <img src="picset/Miguel.png" alt="Miguel Torang Panganju Gultom" class="w-24 h-24 rounded-full object-cover border-4 border-white/70 dark:border-slate-700">
+
+                        <div class="text-center md:text-left">
+                            <span class="inline-block bg-slate-900/90 dark:bg-blue-500/20 dark:text-blue-300 text-white text-sm px-3 py-1 rounded-full mb-3">
+                                Sekretaris
+                            </span>
+
+                            <h3 class="text-xl md:text-2xl font-bold">
+                                Miguel Torang Panganju Gultom
+                            </h3>
+
+                            <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                                Sekretaris Dewan Perwakilan Mahasiswa Fakultas Hukum Universitas Negeri Semarang.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 md:p-8 flex flex-col md:flex-row items-center gap-6" data-reveal>
+                        <img src="picset/Naura.png" alt="Naura Nashtia Khansa" class="w-24 h-24 rounded-full object-cover border-4 border-white/70 dark:border-slate-700">
+
+                        <div class="text-center md:text-left">
+                            <span class="inline-block bg-slate-900/90 dark:bg-blue-500/20 dark:text-blue-300 text-white text-sm px-3 py-1 rounded-full mb-3">
+                                Bendahara
+                            </span>
+
+                            <h3 class="text-xl md:text-2xl font-bold">
+                                Naura Nashtia Khansa
+                            </h3>
+
+                            <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                                Bendahara Dewan Perwakilan Mahasiswa Fakultas Hukum Universitas Negeri Semarang.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 md:p-8 flex flex-col md:flex-row items-center gap-6" data-reveal>
+                        <img src="picset/Siti.png" alt="Siti Arofah Wiryo" class="w-24 h-24 rounded-full object-cover border-4 border-white/70 dark:border-slate-700">
+
+                        <div class="text-center md:text-left">
+                            <span class="inline-block bg-slate-900/90 dark:bg-blue-500/20 dark:text-blue-300 text-white text-sm px-3 py-1 rounded-full mb-3">
+                                Koordinator Komisi
+                            </span>
+
+                            <h3 class="text-xl md:text-2xl font-bold">
+                                Siti Arofah Wiryo
+                            </h3>
+
+                            <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                                Koordinator Komisi Dewan Perwakilan Mahasiswa Fakultas Hukum Universitas Negeri Semarang.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 md:p-8 flex flex-col md:flex-row items-center gap-6" data-reveal>
+                        <img src="picset/Viola.png" alt="Ananda Viola Maharani" class="w-24 h-24 rounded-full object-cover border-4 border-white/70 dark:border-slate-700">
+
+                        <div class="text-center md:text-left">
+                            <span class="inline-block bg-slate-900/90 dark:bg-blue-500/20 dark:text-blue-300 text-white text-sm px-3 py-1 rounded-full mb-3">
+                                Anggota
+                            </span>
+
+                            <h3 class="text-xl md:text-2xl font-bold">
+                                Ananda Viola Maharani
+                            </h3>
+
+                            <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                                Anggota Badan Pengurus Harian Dewan Perwakilan Mahasiswa Fakultas Hukum Universitas Negeri Semarang.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 md:p-8 flex flex-col md:flex-row items-center gap-6" data-reveal>
+                        <img src="picset/Dedey.png" alt="Dedey Tantry Wijayanty" class="w-24 h-24 rounded-full object-cover border-4 border-white/70 dark:border-slate-700">
+
+                        <div class="text-center md:text-left">
+                            <span class="inline-block bg-slate-900/90 dark:bg-blue-500/20 dark:text-blue-300 text-white text-sm px-3 py-1 rounded-full mb-3">
+                                Anggota
+                            </span>
+
+                            <h3 class="text-xl md:text-2xl font-bold">
+                                Dedey Tantry Wijayanty
+                            </h3>
+
+                            <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                                Anggota Badan Pengurus Harian Dewan Perwakilan Mahasiswa Fakultas Hukum Universitas Negeri Semarang.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="flex justify-center mt-14" data-reveal>
+                    <a href="StructureKomisi1.html" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-6 py-3 rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                        Selanjutnya
+                        <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="footer-loader.js"></script>
+    <script src="ui-interactions.js"></script>
+</body>
+</html>
