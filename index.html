@@ -14,11 +14,11 @@
 <body class="font-sans bg-transparent pt-20">
 
     <!-- Hero Background -->
-    <div aria-hidden="true" class="absolute inset-0 -z-50 pointer-events-none">
+    <div aria-hidden="true" class="absolute inset-0 z-0 pointer-events-none">
         <img src="picset/bg-dpm-fh-unnes.jpg" alt="" class="absolute left-0 w-full object-cover" id="site-hero-bg"
-             style="top:64px; height: calc(26rem + 15vh); z-index: -60;">
+             style="top:64px; height: calc(26rem + 15vh); z-index: 0;">
         <div id="bg-overlay" class="hero-overlay absolute left-0 pointer-events-none"
-             style="top:64px; height: calc(30rem + 30vh); width:75%; z-index:-55;
+             style="top:64px; height: calc(30rem + 30vh); width:75%; z-index: 1;
                     background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 15%,
                     rgba(255,255,255,0.85) 35%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%);">
         </div>
@@ -79,6 +79,7 @@
     <!-- ═══════════════════════════════════════════════════
          HERO SECTION
     ═══════════════════════════════════════════════════ -->
+    <main class="relative z-10">
     <section id="home">
         <div class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-8">
             <div class="flex-1 space-y-6">
@@ -316,6 +317,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <button id="back-to-top"
             class="fixed bottom-8 right-8 bg-blue-500 text-white w-12 h-12 rounded-full shadow-lg
