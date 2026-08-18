@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="logo dpm fh.png" type="image/png">
+    <link rel="icon" href="picset/logo dpm fh.png" type="image/png">
     <title>Dewan Perwakilan Mahasiswa FH UNNES</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Untitled-1.css">
     <style>
         /* small decorative divider as pseudo-element for headings */
         .section-heading-with-divider::after {
@@ -22,17 +23,12 @@
         html.dark .section-heading-with-divider::after { background: #f3f4f6; }
     </style>
 </head>
-<body class="font-sans bg-transparent pt-20">
+<body class="font-sans pt-20">
 
-    <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none">
-        <img src="bg-dpm-fh-unnes.jpg" alt="background" class="absolute inset-0 w-full h-full object-cover opacity-50">
-        <div aria-hidden="true" class="absolute inset-0" style="background: rgba(3,37,65,0.6); mix-blend-mode: multiply;"></div>
-    </div>
-
-    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+    <nav class="glass-nav fixed top-0 left-0 right-0 z-50 mb-6">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="index.html" class="flex items-center space-x-2">
-                <img src="logo dpm fh.png" alt="Logo DPM FH UNNES" class="h-10 w-auto object-contain">
+                <img src="picset/logo dpm fh.png" alt="Logo DPM FH UNNES" class="h-10 w-auto object-contain">
                 <span class="text-xl font-bold text-gray-800">DPM FH UNNES</span>
             </a>
 
@@ -68,12 +64,28 @@
         </div>
     </nav>
 
-    <section id="home" class="bg-grey-100 text-white py-20">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-8">
-            <div class="flex-1 flex flex-col items-start space-y-4">
-                <a href="index.html#team" class="text-white text-xl font-medium hover:underline" aria-label="Back to team" title="Back to team">← Kembali ke Beranda</a>
-                <h1 class="text-3xl md:text-4xl font-bold animate-fade-in">Komisi 6 - Media dan Informasi</h1>
-                <span class="text-lg md:text-xl animate-fade-in">Dewan Perwakilan Mahasiswa Fakultas Hukum UNNES</span>
+    <section id="home" class="relative overflow-hidden text-white py-24 md:py-32">
+        <img src="picset/bg-dpm-fh-unnes.jpg" alt="background" class="absolute inset-0 w-full h-full object-cover opacity-40">
+        <div aria-hidden="true" class="absolute inset-0 bg-slate-950/60"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl">
+                <a href="index.html#team" class="inline-flex items-center gap-2 text-white/80 hover:underline mb-6">
+                    <span>←</span>
+                    <span>Kembali ke Beranda</span>
+                </a>
+
+                <p class="text-sm md:text-base uppercase tracking-[0.2em] text-white/65 mb-4">
+                    Dewan Perwakilan Mahasiswa Fakultas Hukum UNNES
+                </p>
+
+                <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight mb-5">
+                    Komisi 6 - Media dan Informasi
+                </h1>
+
+                <p class="text-lg md:text-xl text-white/75 max-w-2xl">
+                    Struktur keanggotaan Komisi Media dan Informasi DPM FH UNNES.
+                </p>
             </div>
         </div>
     </section>
@@ -111,7 +123,7 @@
 
             <div class="max-w-3xl mx-auto mb-10">
                 <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
-                    <img src="ody.png" alt="Foto Claudya Mareshky" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <img src="picset/ody.png" alt="Foto Claudya Mareshky" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
                     <div class="flex-1">
                         <h3 class="text-xl font-bold text-gray-800">Claudya Mareshky</h3>
                         <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Ketua Komisi 6</span>
@@ -122,7 +134,7 @@
 
             <div class="max-w-3xl mx-auto mb-10">
                 <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
-                    <img src="stevi.png" alt="Foto Stevani Anekhe Dwinita Karo" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <img src="picset/stevi.png" alt="Foto Stevani Anekhe Dwinita Karo" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
                     <div class="flex-1">
                         <h3 class="text-xl font-bold text-gray-800">Stevani Anekhe Dwinita Karo</h3>
                         <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Wakil Ketua Komisi 6</span>
@@ -134,7 +146,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">      
                 <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
-                    <img src="hbb.png" alt="Foto Maulana Habibie Yahya" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <img src="picset/hbb.png" alt="Foto Maulana Habibie Yahya" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
                     <div class="flex-1">
                         <h3 class="text-xl font-bold text-gray-800">Maulana Habibie Yahya</h3>
                         <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Penanggung Jawab Website dan Desain</span>
@@ -143,7 +155,7 @@
                 </div>
 
                 <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
-                    <img src="regina.png" alt="Foto Regina Rahajeng Herdian" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <img src="picset/regina.png" alt="Foto Regina Rahajeng Herdian" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
                     <div class="flex-1">
                         <h3 class="text-xl font-bold text-gray-800">Regina Rahajeng Herdian</h3>
                         <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Penanggung Jawab Media Sosial dan Desain</span>
@@ -152,7 +164,7 @@
                 </div>
 
                 <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
-                    <img src="nadine.png" alt="Foto Nadine Aura Kamila" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <img src="picset/nadine.png" alt="Foto Nadine Aura Kamila" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
                     <div class="flex-1">
                         <h3 class="text-xl font-bold text-gray-800">Nadine Aura Kamila</h3>
                         <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Penanggung Jawab Media Sosial dan Desain</span>
@@ -161,7 +173,7 @@
                 </div>
 
                 <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
-                    <img src="alviana.png" alt="Foto Alviana Dwi Tama" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <img src="picset/alviana.png" alt="Foto Alviana Dwi Tama" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
                     <div class="flex-1">
                         <h3 class="text-xl font-bold text-gray-800">Alviana Dwi Tama</h3>
                         <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Penanggung Jawab Media Sosial dan Desain</span>
@@ -170,7 +182,7 @@
                 </div>
 
                 <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
-                    <img src="alviani.png" alt="Foto Alviani Tri Tama" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <img src="picset/alviani.png" alt="Foto Alviani Tri Tama" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
                     <div class="flex-1">
                         <h3 class="text-xl font-bold text-gray-800">Alviani Tri Tama</h3>
                         <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Penanggung Jawab Media Sosial dan Desain</span>
@@ -179,7 +191,7 @@
                 </div>
 
                 <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
-                    <img src="hani.png" alt="Foto Hani Yuliana Lestari" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <img src="picset/hani.png" alt="Foto Hani Yuliana Lestari" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
                     <div class="flex-1">
                         <h3 class="text-xl font-bold text-gray-800">Hani Yuliana Lestari</h3>
                         <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Penanggung Jawab Media Sosial dan Desain</span>
@@ -188,7 +200,7 @@
                 </div>
 
                 <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
-                    <img src="reni.png" alt="Foto Reni Nur'asih" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <img src="picset/reni.png" alt="Foto Reni Nur'asih" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
                     <div class="flex-1">
                         <h3 class="text-xl font-bold text-gray-800">Reni Nur'asih</h3>
                         <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Penanggung Jawab Media Sosial dan Desain</span>
@@ -197,7 +209,7 @@
                 </div>
 
                 <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
-                    <img src="euclid.png" alt="Foto Euclid Abraham Pasaribu" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <img src="picset/euclid.png" alt="Foto Euclid Abraham Pasaribu" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
                     <div class="flex-1">
                         <h3 class="text-xl font-bold text-gray-800">Euclid Abraham Pasaribu</h3>
                         <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Penanggung Jawab Videografi</span>
@@ -212,7 +224,7 @@
         <div class="container mx-auto px-6">
             <div class="max-w-3xl mx-auto mb-10">
                 <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
-                    <img src="fislam.png" alt="Foto Fislam Binar Albayasin" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
+                    <img src="picset/fislam.png" alt="Foto Fislam Binar Albayasin" class="w-24 h-24 rounded-full object-cover border-4 border-gray-800" />
                     <div class="flex-1">
                         <h3 class="text-xl font-bold text-gray-800">Fislam Binar Albayasin</h3>
                         <span class="inline-block bg-gray-800 text-white text-sm px-3 py-1 rounded-full mt-2">Penanggung Jawab Videografi</span>
@@ -241,82 +253,6 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script>
-        // enable smooth in-page scrolling
-        document.documentElement.style.scrollBehavior = 'smooth';
-        // simple mobile nav toggle
-        const navToggle = document.getElementById('navToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        navToggle?.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
-        tailwind.config = {
-            theme: {
-                extend: {
-                    animation: {
-                        'fade-in': 'fadeIn 1s ease-out',
-                        'fade-in-up': 'fadeInUp 1s ease-out'
-                    },
-                    keyframes: {
-                        fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
-                        fadeInUp: { '0%': { opacity: '0', transform: 'translateY(40px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <script>
-        (function(){
-            const KEY = 'dpmfh-theme';
-            const btn = document.getElementById('dark-toggle-btn');
-            const mobileBtn = document.getElementById('dark-toggle-mobile');
-
-            function updateDesktopIcon(isDark){
-                if(!btn) return;
-                const moon = btn.querySelector('.fa-moon');
-                const sun = btn.querySelector('.fa-sun');
-                if(moon) moon.style.display = isDark ? 'none' : 'inline-block';
-                if(sun) sun.style.display = isDark ? 'inline-block' : 'none';
-                btn.setAttribute('aria-pressed', isDark);
-            }
-
-            function updateMobileIcon(isDark){
-                if(!mobileBtn) return;
-                const hasSun = mobileBtn.querySelector('.fa-sun');
-                const hasMoon = mobileBtn.querySelector('.fa-moon');
-                if(hasSun || hasMoon){
-                    if(hasSun) hasSun.style.display = isDark ? 'inline-block' : 'none';
-                    if(hasMoon) hasMoon.style.display = isDark ? 'none' : 'inline-block';
-                } else {
-                    mobileBtn.innerHTML = 'Toggle dark mode <i class="fas ' + (isDark ? 'fa-sun' : 'fa-moon') + ' ml-2"></i>';
-                }
-            }
-
-            function applyTheme(theme){
-                const isDark = theme === 'dark';
-                if(isDark) document.documentElement.classList.add('dark');
-                else document.documentElement.classList.remove('dark');
-                updateDesktopIcon(isDark);
-                updateMobileIcon(isDark);
-            }
-
-            function toggle(){
-                const isDark = document.documentElement.classList.contains('dark');
-                const next = isDark ? 'light' : 'dark';
-                try { localStorage.setItem(KEY, next); } catch(e) { }
-                applyTheme(next);
-            }
-
-            btn?.addEventListener('click', toggle);
-            mobileBtn?.addEventListener('click', toggle);
-
-            try {
-                const saved = localStorage.getItem(KEY);
-                if(saved) applyTheme(saved);
-                else applyTheme('light'); // FIX: Default Light
-            } catch(e){
-                applyTheme('light');
-            }
-        })();
-    </script>
+    <script src="ui-interactions.js"></script>
 </body>
 </html>

@@ -1,10 +1,26 @@
+/* ============================================================
+   DPM FH UNNES — DESIGN SYSTEM v2
+   Modern · Institutional · Minimalis
+   - Plus Jakarta Sans
+   - Glassmorphism ringan pada card
+   - Soft drop-shadows, border-radius proporsional
+   - Dark mode Slate-900 / Charcoal (bukan hitam pekat)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+
+/* ============================================================
+   01. DESIGN TOKENS (LIGHT)
+   ============================================================ */
+
 :root {
-    --dpm-bg: #f7f9fc;
+    --dpm-bg: #f6f8fc;
     --dpm-bg-elevated: #ffffff;
     --dpm-surface: #ffffff;
-    --dpm-surface-glass: rgba(255, 255, 255, 0.78);
+    --dpm-surface-glass: rgba(255, 255, 255, 0.72);
 
-    --dpm-text: #172033;
+    --dpm-text: #0f172a;
     --dpm-text-secondary: #334155;
     --dpm-muted: #64748b;
     --dpm-subtle: #94a3b8;
@@ -12,32 +28,28 @@
     --dpm-primary: #2563eb;
     --dpm-primary-hover: #1d4ed8;
     --dpm-primary-soft: rgba(37, 99, 235, 0.10);
+    --dpm-primary-border: rgba(37, 99, 235, 0.22);
 
     --dpm-border: rgba(15, 23, 42, 0.08);
     --dpm-border-strong: rgba(15, 23, 42, 0.14);
 
     --dpm-shadow-sm:
-        0 4px 18px rgba(15, 23, 42, 0.05);
-
+        0 6px 22px rgba(15, 23, 42, 0.06);
     --dpm-shadow:
-        0 16px 45px rgba(15, 23, 42, 0.08);
-
+        0 16px 45px rgba(15, 23, 42, 0.09);
     --dpm-shadow-lg:
-        0 26px 70px rgba(15, 23, 42, 0.13);
+        0 28px 72px rgba(15, 23, 42, 0.14);
 
     --dpm-radius-sm: 10px;
     --dpm-radius-md: 14px;
     --dpm-radius-lg: 20px;
     --dpm-radius-xl: 26px;
 
-    --dpm-ease:
-        cubic-bezier(0.2, 0.8, 0.2, 1);
-
+    --dpm-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
     --dpm-duration-fast: 180ms;
     --dpm-duration: 300ms;
     --dpm-duration-slow: 650ms;
 
-    /* Navigation */
     --dpm-nav-height: 72px;
 
     color-scheme: light;
@@ -45,35 +57,34 @@
 
 
 /* ============================================================
-   02. DARK MODE TOKENS
+   02. DESIGN TOKENS (DARK) — Slate-900 / Charcoal
    ============================================================ */
 
 html.dark {
-    --dpm-bg: #080d18;
-    --dpm-bg-elevated: #0d1422;
-    --dpm-surface: #111827;
-    --dpm-surface-glass: rgba(17, 24, 39, 0.84);
+    --dpm-bg: #0f172a;
+    --dpm-bg-elevated: #16203a;
+    --dpm-surface: #1a2438;
+    --dpm-surface-glass: rgba(26, 36, 56, 0.72);
 
-    --dpm-text: #f1f5f9;
-    --dpm-text-secondary: #cbd5e1;
+    --dpm-text: #e7edf7;
+    --dpm-text-secondary: #c6d0e0;
     --dpm-muted: #94a3b8;
     --dpm-subtle: #64748b;
 
     --dpm-primary: #60a5fa;
     --dpm-primary-hover: #93c5fd;
-    --dpm-primary-soft: rgba(96, 165, 250, 0.12);
+    --dpm-primary-soft: rgba(96, 165, 250, 0.14);
+    --dpm-primary-border: rgba(96, 165, 250, 0.28);
 
-    --dpm-border: rgba(255, 255, 255, 0.075);
-    --dpm-border-strong: rgba(255, 255, 255, 0.13);
+    --dpm-border: rgba(255, 255, 255, 0.08);
+    --dpm-border-strong: rgba(255, 255, 255, 0.14);
 
     --dpm-shadow-sm:
-        0 6px 22px rgba(0, 0, 0, 0.20);
-
+        0 6px 24px rgba(0, 0, 0, 0.22);
     --dpm-shadow:
-        0 18px 55px rgba(0, 0, 0, 0.28);
-
+        0 18px 55px rgba(0, 0, 0, 0.30);
     --dpm-shadow-lg:
-        0 30px 80px rgba(0, 0, 0, 0.40);
+        0 30px 80px rgba(0, 0, 0, 0.42);
 
     color-scheme: dark;
 }
@@ -88,9 +99,13 @@ html {
     background: var(--dpm-bg);
 }
 
-body {
-    margin: 0;
+html.dark {
+    background: var(--dpm-bg);
+}
 
+body,
+body.font-sans {
+    margin: 0;
     font-family:
         'Plus Jakarta Sans',
         Inter,
@@ -105,22 +120,36 @@ body {
         radial-gradient(
             circle at 8% 0%,
             rgba(37, 99, 235, 0.055),
-            transparent 28rem
+            transparent 30rem
         ),
         radial-gradient(
-            circle at 92% 10%,
+            circle at 92% 12%,
             rgba(14, 165, 233, 0.045),
-            transparent 24rem
+            transparent 26rem
         ),
         var(--dpm-bg);
 
     color: var(--dpm-text);
 
     transition:
-        background-color 350ms ease,
-        color 350ms ease;
+        background-color 400ms ease,
+        color 400ms ease;
 }
 
+html.dark body {
+    background:
+        radial-gradient(
+            circle at 8% 0%,
+            rgba(96, 165, 250, 0.07),
+            transparent 30rem
+        ),
+        radial-gradient(
+            circle at 92% 12%,
+            rgba(14, 165, 233, 0.05),
+            transparent 26rem
+        ),
+        var(--dpm-bg);
+}
 
 body,
 nav,
@@ -133,17 +162,24 @@ aside,
 button,
 input,
 textarea,
-select {
+select,
+details,
+summary {
     transition:
-        background-color 300ms ease,
-        border-color 300ms ease,
-        color 300ms ease,
-        box-shadow 300ms ease;
+        background-color 320ms ease,
+        border-color 320ms ease,
+        color 320ms ease,
+        box-shadow 320ms ease;
+}
+
+::selection {
+    background: var(--dpm-primary-soft);
+    color: var(--dpm-text);
 }
 
 
 /* ============================================================
-   04. TYPOGRAPHY
+   04. TYPOGRAPHY + TAILWIND UTILITY MAPPING
    ============================================================ */
 
 body .text-gray-900,
@@ -156,12 +192,13 @@ body .text-gray-600 {
     color: var(--dpm-text-secondary) !important;
 }
 
-body .text-gray-500 {
+body .text-gray-500,
+body .text-gray-400 {
     color: var(--dpm-muted) !important;
 }
 
-body .text-gray-400 {
-    color: var(--dpm-subtle) !important;
+body .text-gray-300 {
+    color: var(--dpm-muted) !important;
 }
 
 h1,
@@ -184,10 +221,10 @@ a {
 
 
 /* ============================================================
-   05. NAVIGATION
+   05. NAVIGATION — Glassmorphism
    ============================================================ */
 
-.glass-nav {
+nav {
     background:
         var(--dpm-surface-glass) !important;
 
@@ -195,7 +232,7 @@ a {
         1px solid var(--dpm-border) !important;
 
     box-shadow:
-        0 8px 30px rgba(15, 23, 42, 0.045) !important;
+        0 8px 30px rgba(15, 23, 42, 0.05) !important;
 
     backdrop-filter:
         blur(18px)
@@ -206,34 +243,32 @@ a {
         saturate(150%);
 }
 
-html.dark .glass-nav {
+html.dark nav {
     box-shadow:
-        0 8px 35px rgba(0, 0, 0, 0.20) !important;
+        0 8px 35px rgba(0, 0, 0, 0.28) !important;
 }
 
-
 /* Navbar links */
-
-nav a {
+nav a:not([class*="bg-"]) {
     color: var(--dpm-text-secondary);
 
     transition:
-        color 200ms ease,
-        transform 200ms var(--dpm-ease);
+        color 220ms ease,
+        transform 220ms var(--dpm-ease);
 }
 
-nav a:hover {
+nav a:not([class*="bg-"]):hover {
     color: var(--dpm-primary);
     transform: translateY(-1px);
 }
 
+/* Navbar CTA (Form Aduan) tetap terlihat baik di mode terang/gelap */
+nav a[class*="bg-"] {
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.22);
+}
 
-/* Mobile menu */
-
-#navMenu {
-    transition:
-        opacity 250ms ease,
-        transform 250ms var(--dpm-ease);
+html.dark nav a[class*="bg-"] {
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
 }
 
 #navToggle {
@@ -247,7 +282,51 @@ nav a:hover {
 
 
 /* ============================================================
-   06. DARK MODE BUTTON
+   06. MOBILE MENU — smooth open/close
+   ============================================================ */
+
+#mobileMenu {
+    background: var(--dpm-surface-glass) !important;
+
+    border-top:
+        1px solid var(--dpm-border) !important;
+
+    backdrop-filter:
+        blur(20px)
+        saturate(150%);
+
+    -webkit-backdrop-filter:
+        blur(20px)
+        saturate(150%);
+
+    transform-origin: top;
+
+    transition:
+        opacity 360ms var(--dpm-ease),
+        transform 360ms var(--dpm-ease),
+        display 360ms allow-discrete;
+}
+
+#navMenu {
+    transition:
+        opacity 360ms var(--dpm-ease),
+        transform 360ms var(--dpm-ease),
+        display 360ms allow-discrete;
+}
+
+#mobileMenu a,
+#navMenu a {
+    border-radius: 12px;
+
+    transition:
+        color 200ms ease,
+        background-color 200ms ease,
+        transform 200ms var(--dpm-ease);
+}
+
+
+/* ============================================================
+   07. DARK MODE TOGGLE BUTTON
    ============================================================ */
 
 #dark-toggle-btn {
@@ -272,7 +351,7 @@ nav a:hover {
         var(--dpm-primary-soft) !important;
 
     border-color:
-        rgba(96, 165, 250, 0.18) !important;
+        var(--dpm-primary-border) !important;
 
     transform:
         translateY(-1px);
@@ -284,9 +363,17 @@ nav a:hover {
         opacity 200ms ease;
 }
 
+html.dark #dark-toggle-btn i.fa-moon {
+    transform: rotate(30deg) scale(0.4);
+}
+
+html.dark #dark-toggle-btn i.fa-sun {
+    transform: rotate(0deg) scale(1);
+}
+
 
 /* ============================================================
-   07. GLOBAL GLASS CARD
+   08. GLOBAL GLASS CARD
    ============================================================ */
 
 .glass-card {
@@ -310,7 +397,7 @@ nav a:hover {
         blur(16px)
         saturate(135%);
 
-   transition:
+    transition:
         transform 350ms var(--dpm-ease),
         box-shadow 350ms ease,
         border-color 350ms ease,
@@ -325,37 +412,127 @@ nav a:hover {
         var(--dpm-shadow-lg) !important;
 
     border-color:
-        rgba(37, 99, 235, 0.18) !important;
-}
-
-html.dark .glass-card:hover {
-    border-color:
-        rgba(96, 165, 250, 0.20) !important;
+        var(--dpm-primary-border) !important;
 }
 
 
 /* ============================================================
-   08. HOVER LIFT
+   09. LEGACY WHITE CARDS → GLASS CARD
+   (Komisi, Parlemen, Policy, Terms — bg-white langsung diganti)
    ============================================================ */
 
-.hover-lift {
+body section .bg-white,
+body main .bg-white,
+#ForbisaSection {
+    background:
+        var(--dpm-surface-glass) !important;
+
+    border:
+        1px solid var(--dpm-border) !important;
+
+    box-shadow:
+        var(--dpm-shadow-sm) !important;
+
+    border-radius:
+        var(--dpm-radius-lg) !important;
+
+    backdrop-filter:
+        blur(16px)
+        saturate(135%);
+
+    -webkit-backdrop-filter:
+        blur(16px)
+        saturate(135%);
+
     transition:
-        transform 280ms var(--dpm-ease),
-        box-shadow 280ms ease,
-        filter 280ms ease;
+        transform 350ms var(--dpm-ease),
+        box-shadow 350ms ease,
+        border-color 350ms ease;
 }
 
-.hover-lift:hover {
+body section .bg-white:hover,
+body main .bg-white:hover {
     transform:
-        translateY(-3px);
+        translateY(-4px);
 
-    filter:
-        brightness(1.015);
+    box-shadow:
+        var(--dpm-shadow) !important;
+
+    border-color:
+        var(--dpm-primary-border) !important;
+}
+
+/* Policy: <details> dengan bg-white/60 */
+body main .bg-white\/60,
+body main .bg-white\/50 {
+    background:
+        var(--dpm-surface-glass) !important;
+
+    border:
+        1px solid var(--dpm-border) !important;
+
+    box-shadow:
+        var(--dpm-shadow-sm) !important;
+
+    border-radius:
+        var(--dpm-radius-lg) !important;
+
+    backdrop-filter:
+        blur(16px)
+        saturate(135%);
+
+    -webkit-backdrop-filter:
+        blur(16px)
+        saturate(135%);
+}
+
+body main details[class*="bg-white"] summary {
+    border-radius: calc(var(--dpm-radius-lg) - 4px);
+    padding: 0.15rem 0;
+}
+
+body main details[class*="bg-white"] summary:hover {
+    color: var(--dpm-primary);
 }
 
 
 /* ============================================================
-   09. BUTTON SYSTEM
+   10. LEGACY SECTION BACKGROUNDS
+   (section bg-gray-100 / bg-gray-50 milik halaman lama)
+   ============================================================ */
+
+html.dark section.bg-gray-100,
+html.dark section.bg-gray-50 {
+    background: transparent;
+}
+
+html.dark main.bg-gray-100,
+html.dark main.bg-gray-50 {
+    background: transparent;
+}
+
+/* Surface abu-abu kecil (ikon sosmed, dll) saat dark mode */
+html.dark .bg-gray-100,
+html.dark .bg-gray-50 {
+    background-color: var(--dpm-surface);
+    border: 1px solid var(--dpm-border-strong);
+}
+
+/* Badge peran (bg-gray-800) → accent blue saat dark mode */
+html.dark section .bg-gray-800,
+html.dark main .bg-gray-800 {
+    background: var(--dpm-primary-soft) !important;
+    color: #bfdbfe !important;
+}
+
+/* Foto anggota: border menyesuaikan tema */
+html.dark .border-gray-800 {
+    border-color: rgba(148, 163, 184, 0.35) !important;
+}
+
+
+/* ============================================================
+   11. BUTTON SYSTEM / HOVER
    ============================================================ */
 
 button,
@@ -363,11 +540,17 @@ a {
     -webkit-tap-highlight-color: transparent;
 }
 
+button:active,
+a:active {
+    transform: scale(0.98);
+}
+
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
-select:focus-visible {
+select:focus-visible,
+summary:focus-visible {
     outline:
         3px solid
         rgba(96, 165, 250, 0.35);
@@ -376,9 +559,31 @@ select:focus-visible {
         3px;
 }
 
+.hover-lift {
+    transition:
+        transform 280ms var(--dpm-ease),
+        box-shadow 280ms ease,
+        filter 280ms ease,
+        background-color 250ms ease,
+        color 250ms ease;
+}
+
+.hover-lift:hover {
+    transform:
+        translateY(-3px);
+
+    filter:
+        brightness(1.02);
+}
+
+.hover-lift:active {
+    transform:
+        translateY(-1px) scale(0.98);
+}
+
 
 /* ============================================================
-   10. HERO
+   12. HERO
    ============================================================ */
 
 #home h1 {
@@ -389,57 +594,65 @@ select:focus-visible {
         balance;
 }
 
-#home a {
+#home a[class*="bg-"] {
     box-shadow:
-        0 10px 25px
-        rgba(37, 99, 235, 0.16);
+        0 12px 28px
+        rgba(37, 99, 235, 0.18);
 }
 
-html.dark #home a {
+html.dark #home a[class*="bg-"] {
     box-shadow:
-        0 12px 30px
-        rgba(0, 0, 0, 0.28);
+        0 14px 32px
+        rgba(0, 0, 0, 0.32);
 }
 
-
-/* Hero background */
-
+/* Hero background image */
 #site-hero-bg {
     transition:
         transform 1200ms var(--dpm-ease),
-        filter 450ms ease;
+        filter 500ms ease;
 }
 
-html.dark #site-hero-bg {
+html.dark #site-hero-bg,
+html.dark #page-bg-image {
     filter:
-        brightness(0.52)
+        brightness(0.5)
         saturate(0.82);
 }
 
-
 /* Hero overlay */
-
 #bg-overlay {
     transition:
-        background 450ms ease,
-        opacity 450ms ease;
+        background 500ms ease,
+        opacity 500ms ease;
 }
 
 html.dark #bg-overlay {
     background:
         linear-gradient(
             to right,
-            rgba(8, 13, 24, 0.98) 0%,
-            rgba(8, 13, 24, 0.93) 20%,
-            rgba(8, 13, 24, 0.72) 42%,
-            rgba(8, 13, 24, 0.28) 70%,
-            rgba(8, 13, 24, 0) 100%
+            rgba(15, 23, 42, 0.98) 0%,
+            rgba(15, 23, 42, 0.92) 18%,
+            rgba(15, 23, 42, 0.70) 42%,
+            rgba(15, 23, 42, 0.28) 70%,
+            rgba(15, 23, 42, 0) 100%
+        ) !important;
+}
+
+html.dark #bg-overlay[style*="to bottom"] {
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(15, 23, 42, 0) 0px,
+            rgba(15, 23, 42, 0.12) 64px,
+            rgba(15, 23, 42, 0.82) 160px,
+            rgba(15, 23, 42, 1) 240px
         ) !important;
 }
 
 
 /* ============================================================
-   11. SECTION SYSTEM
+   13. SECTION SYSTEM
    ============================================================ */
 
 section {
@@ -447,54 +660,19 @@ section {
         calc(var(--dpm-nav-height) + 18px);
 }
 
-#events {
-    background:
-        rgba(255, 255, 255, 0.18);
-
-    border-top:
-        1px solid var(--dpm-border);
-
-    border-bottom:
-        1px solid var(--dpm-border);
-}
-
-html.dark #events {
-    background:
-        rgba(8, 13, 24, 0.38);
-}
-
 
 /* ============================================================
-   12. SOCIAL BUTTONS
-   ============================================================ */
-
-#contact a {
-    transition:
-        transform 250ms var(--dpm-ease),
-        background-color 250ms ease,
-        color 250ms ease,
-        box-shadow 250ms ease;
-}
-
-#contact a:hover {
-    transform:
-        translateY(-4px);
-}
-
-
-/* ============================================================
-   13. SCROLL REVEAL
+   14. SCROLL REVEAL (Intersection Observer via JS)
    ============================================================ */
 
 /*
-   IMPORTANT:
-   Elements remain visible by default.
-   JS adds .dpm-reveal-ready when the animation engine
-   is available. This prevents the entire website from
-   becoming invisible if JavaScript fails to load.
+   Elemen tampil secara default.
+   JS menambahkan .dpm-reveal-ready saat engine tersedia
+   agar website tidak menjadi kosong jika JS gagal.
 */
 
-[data-reveal] {
+[data-reveal],
+.dpm-reveal-target {
     opacity: 1;
     transform: translateY(0);
 
@@ -503,26 +681,53 @@ html.dark #events {
         transform 720ms var(--dpm-ease);
 }
 
-
-/*
-   Only hide elements when the JS animation engine
-   explicitly enables the reveal system.
-*/
-
-.dpm-reveal-ready[data-reveal] {
+.dpm-reveal-ready[data-reveal],
+.dpm-reveal-ready.dpm-reveal-target {
     opacity: 0;
     transform: translateY(22px);
 }
 
-
-.dpm-reveal-ready[data-reveal].is-visible {
+.dpm-reveal-ready[data-reveal].is-visible,
+.dpm-reveal-ready.dpm-reveal-target.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
 
 
 /* ============================================================
-   14. BACK TO TOP
+   15. LEGACY FADE-IN KEYFRAMES
+   (animate-fade-in / animate-fade-in-up milik halaman lama)
+   ============================================================ */
+
+@keyframes dpmFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes dpmFadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: dpmFadeIn 1s ease-out;
+}
+
+.animate-fade-in-up {
+    animation: dpmFadeInUp 1s ease-out;
+}
+
+.fade-in {
+    animation: dpmFadeInUp 0.9s var(--dpm-ease) both;
+}
+
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.30s; }
+.delay-3 { animation-delay: 0.45s; }
+
+
+/* ============================================================
+   16. BACK TO TOP
    ============================================================ */
 
 #back-to-top {
@@ -533,8 +738,8 @@ html.dark #events {
         #ffffff !important;
 
     box-shadow:
-        0 12px 30px
-        rgba(37, 99, 235, 0.22) !important;
+        0 14px 32px
+        rgba(37, 99, 235, 0.26) !important;
 
     opacity:
         0 !important;
@@ -543,12 +748,12 @@ html.dark #events {
         hidden !important;
 
     transform:
-        translateY(12px) !important;
+        translateY(14px) !important;
 
     transition:
-        opacity 300ms ease,
-        visibility 300ms ease,
-        transform 300ms var(--dpm-ease),
+        opacity 320ms ease,
+        visibility 320ms ease,
+        transform 320ms var(--dpm-ease),
         background-color 250ms ease !important;
 }
 
@@ -573,28 +778,187 @@ html.dark #events {
 
 
 /* ============================================================
-   15. IMAGES
+   17. FOOTER
    ============================================================ */
 
-img {
-    max-width:
-        100%;
+.site-footer {
+    position: relative;
+
+    color: #cbd5e1;
+
+    background:
+        radial-gradient(
+            circle at 12% 0%,
+            rgba(96, 165, 250, 0.10),
+            transparent 26rem
+        ),
+        linear-gradient(
+            180deg,
+            #101a30 0%,
+            #0c1426 100%
+        );
+
+    border-top:
+        1px solid rgba(96, 165, 250, 0.16);
+
+    box-shadow:
+        0 -20px 50px rgba(15, 23, 42, 0.18);
+}
+
+.site-footer::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(96, 165, 250, 0.35),
+        transparent
+    );
+}
+
+.site-footer a {
+    transition:
+        color 220ms ease,
+        transform 220ms var(--dpm-ease);
+}
+
+.site-footer a:hover {
+    color: #ffffff;
+}
+
+.footer-title {
+    font-weight: 700;
+    font-size: 1.02rem;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.footer-brand-name {
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.footer-tagline {
+    font-style: italic;
+    color: #8ea1c3;
+    font-size: 0.8rem;
+}
+
+.footer-link {
+    color: #94a3b8;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 8px;
+}
+
+.footer-link i {
+    color: #60a5fa;
+    width: 1.1rem;
+    text-align: center;
+}
+
+.footer-link:hover {
+    transform: translateX(2px);
+}
+
+.footer-blurb {
+    color: #aebcd6;
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
+.footer-text {
+    color: #aebcd6;
+}
+
+.footer-block-link {
+    color: #94a3b8;
+    display: block;
+    border-radius: 8px;
 
     transition:
-        filter 350ms ease,
-        opacity 350ms ease;
+        color 220ms ease,
+        transform 220ms var(--dpm-ease);
+}
+
+.footer-block-link:hover {
+    color: #ffffff;
+}
+
+.footer-sep {
+    color: #52617f;
+}
+
+.footer-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.6rem;
+    height: 2.6rem;
+
+    border-radius: 9999px;
+
+    color: #cbd5e1;
+
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    transition:
+        transform 260ms var(--dpm-ease),
+        background-color 260ms ease,
+        color 260ms ease,
+        border-color 260ms ease;
+}
+
+.footer-social:hover {
+    transform: translateY(-4px);
+    background: rgba(96, 165, 250, 0.18);
+    border-color: rgba(96, 165, 250, 0.35);
+    color: #ffffff;
+}
+
+.footer-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.footer-bottom-link {
+    color: #8ea1c3;
+}
+
+.footer-bottom-link:hover {
+    color: #ffffff;
 }
 
 
-/*
-   IMPORTANT:
-   Jangan menggunakan global invert/filter untuk PNG.
-   Foto anggota, logo, dan aset visual harus tetap natural.
-*/
+/* ============================================================
+   18. SCROLLBAR
+   ============================================================ */
+
+::-webkit-scrollbar {
+    width: 11px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dpm-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(100, 116, 139, 0.35);
+    border-radius: 9999px;
+    border: 3px solid var(--dpm-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 116, 139, 0.55);
+}
 
 
 /* ============================================================
-   16. MOBILE
+   19. RESPONSIVE
    ============================================================ */
 
 @media (max-width: 767px) {
@@ -603,12 +967,36 @@ img {
         --dpm-nav-height: 64px;
     }
 
+    /* State awal animasi menu mobile (buka/tutup sangat mulus) */
+    @starting-style {
+        #mobileMenu,
+        #navMenu {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+    }
+
+    /* Tautan menu mobile: area tap nyaman + hover lembut */
+    #mobileMenu a,
+    #navMenu a {
+        display: block;
+        padding: 0.625rem 0.875rem;
+    }
+
+    #mobileMenu a:hover,
+    #navMenu a:hover {
+        background: var(--dpm-primary-soft);
+        color: var(--dpm-primary);
+    }
+
     #home h1 {
         font-size:
             clamp(2.25rem, 10vw, 3.4rem);
     }
 
-    .glass-card {
+    .glass-card,
+    body section .bg-white,
+    body main .bg-white {
         border-radius:
             var(--dpm-radius-md) !important;
     }
@@ -624,20 +1012,7 @@ img {
 
 
 /* ============================================================
-   17. TABLET
-   ============================================================ */
-
-@media (min-width: 768px) and (max-width: 1023px) {
-
-    .glass-card {
-        border-radius:
-            var(--dpm-radius-md) !important;
-    }
-}
-
-
-/* ============================================================
-   18. REDUCED MOTION
+   20. REDUCED MOTION
    ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
@@ -663,7 +1038,8 @@ img {
             auto !important;
     }
 
-    [data-reveal] {
+    [data-reveal],
+    .dpm-reveal-target {
         opacity:
             1;
 
